@@ -353,7 +353,20 @@
     </div>
 
     <div class="films-grid" id="galleryFilmsGrid">
-      <!-- Full Film 1 -->
+      <!-- Full Film 1: Full Celebration Showcase -->
+      <article class="film-card">
+        <div class="film-video-box">
+          <video src="videos/full/full-celebration-film.mp4" poster="videos/posters/poster-full-celebration-film.jpg" controls preload="metadata"></video>
+          <span class="film-tag">🎬 FULL FILM · 1:50 MIN</span>
+        </div>
+        <div class="film-details">
+          <h3>Full-Length Celebration Showcase</h3>
+          <p>Complete uncut celebration film preserving pure original live audio without any distortion. Walk through the decorated entry, royal mandap ceremonies, and lively festive atmosphere.</p>
+          <button type="button" class="film-btn-theater" onclick="openTheater(0)">⛶ Open in Cinema Lightbox</button>
+        </div>
+      </article>
+
+      <!-- Full Film 2: Sacred Stage Aarti Ceremony -->
       <article class="film-card">
         <div class="film-video-box">
           <video src="videos/full/sacred-aarti-ceremony.mp4" poster="videos/posters/poster-sacred-aarti.jpg" controls preload="metadata"></video>
@@ -362,11 +375,11 @@
         <div class="film-details">
           <h3>Sacred Stage Aarti &amp; Traditional Rituals</h3>
           <p>Ceremonial Ganga Aarti on the royal wedding stage with lit brass diyas, traditional priests, and floral mandap backdrop.</p>
-          <button type="button" class="film-btn-theater" onclick="openTheater(0)">⛶ Open in Cinema Lightbox</button>
+          <button type="button" class="film-btn-theater" onclick="openTheater(1)">⛶ Open in Cinema Lightbox</button>
         </div>
       </article>
 
-      <!-- Full Film 2 -->
+      <!-- Full Film 3: Covered Banquet Hall Tour -->
       <article class="film-card">
         <div class="film-video-box">
           <video src="videos/full/venue-grand-tour.mp4" poster="videos/posters/poster-venue-tour.jpg" controls preload="metadata"></video>
@@ -375,11 +388,11 @@
         <div class="film-details">
           <h3>Covered Banquet Hall &amp; Night Grounds Tour</h3>
           <p>Set to the iconic Mirzapur instrumental soundtrack. Complete walk-through of the grand banquet hall, crystal chandeliers, floral aisle arches, and outdoor DJ lawn.</p>
-          <button type="button" class="film-btn-theater" onclick="openTheater(1)">⛶ Open in Cinema Lightbox</button>
+          <button type="button" class="film-btn-theater" onclick="openTheater(2)">⛶ Open in Cinema Lightbox</button>
         </div>
       </article>
 
-      <!-- Full Film 3 -->
+      <!-- Full Film 4: Live Celebration Walkthrough -->
       <article class="film-card">
         <div class="film-video-box">
           <video src="videos/uploads/full-celebration-video-2.mp4" poster="videos/posters/poster-full-celebration-2.jpg" controls preload="metadata"></video>
@@ -388,7 +401,7 @@
         <div class="film-details">
           <h3>Live Celebration &amp; Mandap Walkthrough</h3>
           <p>Complete untouched authentic celebration capture preserving live wedding audio, grand guest entrance, illuminated floral pathway, and active party grounds.</p>
-          <button type="button" class="film-btn-theater" onclick="openTheater(2)">⛶ Open in Cinema Lightbox</button>
+          <button type="button" class="film-btn-theater" onclick="openTheater(3)">⛶ Open in Cinema Lightbox</button>
         </div>
       </article>
     </div>
@@ -402,34 +415,34 @@
     <div class="media-grid" id="galleryMediaGrid">
       <!-- Item 0: Full Film 1 -->
       <div class="media-card" data-category="films" onclick="openTheater(0)">
+        <img src="videos/posters/poster-full-celebration-film.jpg" alt="Full-Length Celebration Showcase" loading="lazy">
+        <span class="card-badge">🎬 FULL FILM</span>
+        <div class="card-play-btn">▶</div>
+        <div class="card-caption">Full Celebration Showcase<small>1:50 Min · Untouched Original Audio</small></div>
+      </div>
+
+      <!-- Item 1: Full Film 2 -->
+      <div class="media-card" data-category="films" onclick="openTheater(1)">
         <img src="videos/posters/poster-sacred-aarti.jpg" alt="Sacred Stage Aarti &amp; Traditional Rituals" loading="lazy">
         <span class="card-badge">🎬 FULL FILM</span>
         <div class="card-play-btn">▶</div>
         <div class="card-caption">Sacred Stage Aarti Ceremony<small>1:12 Min · Traditional Vedic Blessing</small></div>
       </div>
 
-      <!-- Item 1: Full Film 2 -->
-      <div class="media-card" data-category="films" onclick="openTheater(1)">
+      <!-- Item 2: Full Film 3 -->
+      <div class="media-card" data-category="films" onclick="openTheater(2)">
         <img src="videos/posters/poster-venue-tour.jpg" alt="Covered Banquet Hall &amp; Night Grounds Tour" loading="lazy">
         <span class="card-badge">🎬 FULL FILM</span>
         <div class="card-play-btn">▶</div>
         <div class="card-caption">Covered Banquet &amp; Grounds Tour<small>1:11 Min · Mirzapur Theme Soundtrack</small></div>
       </div>
 
-      <!-- Item 2: Full Film 3 -->
-      <div class="media-card" data-category="films" onclick="openTheater(2)">
+      <!-- Item 3: Full Film 4 -->
+      <div class="media-card" data-category="films" onclick="openTheater(3)">
         <img src="videos/posters/poster-full-celebration-2.jpg" alt="Live Celebration &amp; Mandap Walkthrough" loading="lazy">
         <span class="card-badge">🎬 FULL FILM</span>
         <div class="card-play-btn">▶</div>
         <div class="card-caption">Live Celebration Walkthrough<small>35s Film · Authentic Live Wedding Capture</small></div>
-      </div>
-
-      <!-- Item 3: Full Film 4 - Royal Wedding Invitation Card Film -->
-      <div class="media-card" data-category="films" onclick="openTheater(3)">
-        <img src="videos/posters/poster-wedding-invitation.jpg" alt="Royal Shubh Vivah Gatefold Invitation Film" loading="lazy">
-        <span class="card-badge">🎬 FULL FILM</span>
-        <div class="card-play-btn">▶</div>
-        <div class="card-caption">Royal Shubh Vivah Invitation<small>10s Cinematic · Gatefold Opening &amp; Namaste</small></div>
       </div>
 
       <!-- Item 4: Photo Illuminated Red Carpet Walkway & Banquet Hall (NEW) -->
@@ -532,7 +545,17 @@
 
   <script>
     const mediaItems = [
-      // 0: Full Film 1
+      // 0: Full Film 1 - Full-Length Celebration Showcase (1:50 Min, untouched live audio)
+      {
+        type: 'video',
+        src: 'videos/full/full-celebration-film.mp4',
+        poster: 'videos/posters/poster-full-celebration-film.jpg',
+        category: 'films',
+        badge: '🎬 Full HD Film (1:50 Min)',
+        title: 'Full-Length Celebration Showcase',
+        desc: 'Complete untouched original celebration video capturing the grand night atmosphere, glowing entrance, decorated lawn, and joyful wedding festivities with authentic live sound.'
+      },
+      // 1: Full Film 2
       {
         type: 'video',
         src: 'videos/full/sacred-aarti-ceremony.mp4',
@@ -542,7 +565,7 @@
         title: 'Sacred Stage Aarti & Traditional Rituals',
         desc: 'Ceremonial Ganga Aarti on the royal wedding stage with lit brass diyas, traditional Vedic chants, and floral mandap backdrop.'
       },
-      // 1: Full Film 2
+      // 2: Full Film 3
       {
         type: 'video',
         src: 'videos/full/venue-grand-tour.mp4',
@@ -552,7 +575,7 @@
         title: 'Covered Banquet Hall & Night Grounds Tour',
         desc: 'Featuring the iconic Mirzapur theme background score. Comprehensive walkthrough of the covered banquet hall, crystal chandeliers, illuminated flower tunnel, and outdoor DJ lawn.'
       },
-      // 2: Full Film 3
+      // 3: Full Film 4
       {
         type: 'video',
         src: 'videos/uploads/full-celebration-video-2.mp4',
@@ -561,16 +584,6 @@
         badge: '🎬 Full Celebration Film (35s)',
         title: 'Live Celebration & Mandap Walkthrough',
         desc: 'Complete untouched authentic celebration capture preserving live wedding audio, grand guest entrance, illuminated floral pathway, and active party grounds.'
-      },
-      // 3: Full Film 4 - Royal Wedding Invitation Card Film
-      {
-        type: 'video',
-        src: 'videos/wedding-invitation-cinematic.mp4',
-        poster: 'videos/posters/poster-wedding-invitation.jpg',
-        category: 'films',
-        badge: '🎬 Royal Gatefold Film (10s)',
-        title: 'Royal Shubh Vivah Gatefold Invitation Film',
-        desc: 'Cinematic royal wedding invitation card opening with falling petals to reveal the traditional bridal Namaste greeting in the palace arch.'
       },
       // 4: Photo Illuminated Red Carpet Walkway & Banquet Hall (NEW)
       {
@@ -662,7 +675,27 @@
         title: 'Authentic Circular Durga Maa Medallion',
         desc: 'The sacred red circular emblem of Maa Durga featured prominently on the grand entrance signboard of Maa Sharda Utsav Lawn.'
       },
-      // 14: Highlight 1
+      // 14: Clip 1 (Grand Hall with Mirzapur BGM)
+      {
+        type: 'video',
+        src: 'videos/clips/grand-hall.mp4',
+        poster: 'videos/posters/poster-grand-hall.jpg',
+        category: 'highlight',
+        badge: '✨ Mirzapur BGM Clip (7s)',
+        title: 'Grand Banquet Hall Walkthrough',
+        desc: 'Covered grand banquet hall walkthrough set to the iconic Mirzapur theme music.'
+      },
+      // 15: Clip 2 (Night Aerial with Mirzapur BGM)
+      {
+        type: 'video',
+        src: 'videos/clips/night-aerial.mp4',
+        poster: 'videos/posters/poster-night-aerial.jpg',
+        category: 'highlight',
+        badge: '✨ Mirzapur BGM Clip (5s)',
+        title: 'Night Aerial Grounds & Palms',
+        desc: 'Sweeping night grounds and illuminated palms with the energetic Mirzapur background score.'
+      },
+      // 16: Highlight 1 (Illuminated Gateway)
       {
         type: 'video',
         src: 'videos/uploads/illuminated-entrance-highlight.mp4',
@@ -672,7 +705,7 @@
         title: 'Illuminated Grand Gateway',
         desc: 'Spectacular entrance arch with celebratory instrumental background score.'
       },
-      // 15: Highlight 2
+      // 17: Highlight 2 (Crystal Banquet)
       {
         type: 'video',
         src: 'videos/uploads/illuminated-banquet-highlight.mp4',
