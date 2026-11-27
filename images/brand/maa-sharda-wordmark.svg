@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 300" role="img" aria-labelledby="title desc">
 <title id="title">माँ शारदा उत्सव लॉन</title><desc id="desc">Maa Sharda Utsav Lawn red Devanagari wordmark with a trident-inspired symbol.</desc>
 <rect width="1400" height="300" fill="#fff" fill-opacity="0"/>
-<g fill="#e21b18">
+<g fill="#F15A24">
 <path d="M115 44c-8-26-2-38 12-39 0 29 10 42 27 61 13 15 15 31 7 46-9 17-26 18-37 5-10-12-8-26-9-43-1-13-6-22-16-30 1 19 0 36-10 49-9 12-22 15-33 8-12-8-15-24-9-39 8-20 6-35-4-51 30 12 47 32 51 62 2 16 1 28 8 37 8 11 23 7 25-7 2-13-6-24-12-37z"/>
 <path d="M44 154h150l-9 24H44zM95 173l-19 101h34l18-101zM150 174l-10 100h31l12-100z"/>
 <path d="M184 114c21-29 47-40 72-29 23 10 31 33 21 55-10 22-37 31-61 19-19-9-28-24-32-45zm35 6c4 15 14 24 27 20 12-4 17-16 11-27-7-12-23-12-38 7z"/>
 <path d="M188 157c34 22 72 25 109 5l10 25c-45 25-91 22-130-5z"/>
 </g>
-<g fill="#e21b18" font-family="'Noto Sans Devanagari','Mangal',sans-serif" font-weight="800" font-size="155">
+<g fill="#F15A24" font-family="'Noto Sans Devanagari','Mangal',sans-serif" font-weight="800" font-size="155">
 <text x="330" y="218" textLength="990" lengthAdjust="spacingAndGlyphs">शारदा उत्सव लॉन</text>
 </g>
-<path d="M333 232H1320" stroke="#e21b18" stroke-width="7" stroke-linecap="round"/>
+<path d="M333 232H1320" stroke="#E2B04A" stroke-width="8" stroke-linecap="round"/>
 </svg>
