@@ -2113,6 +2113,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         });
       });
       card.addEventListener('pointerleave', () => {
+        if (tiltFrame) cancelAnimationFrame(tiltFrame);
+        tiltFrame = 0;
         card.style.transform = '';
       });
     });
