@@ -437,6 +437,289 @@
       min-height: 340px; height: 340px;
     }
 
+    /* ═══════════ CINEMA & ATMOSPHERE IN MOTION ═══════════ */
+    .cinema-section {
+      background: #23120b; color: var(--plaster); padding: 90px 0; position: relative; overflow: hidden;
+    }
+    .cinema-section:before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 20%, rgba(184,151,106,.15), transparent 70%);
+      pointer-events: none;
+    }
+    .cinema-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px;
+    }
+    .cinema-card {
+      position: relative; border-radius: var(--radius); overflow: hidden;
+      background: #190c07; border: 1px solid rgba(184,151,106,.2);
+      min-height: 380px; height: 380px; display: flex; flex-direction: column;
+      justify-content: flex-end; transition: transform .4s cubic-bezier(.16,1,.3,1), border-color .3s ease, box-shadow .3s ease;
+    }
+    .cinema-card:hover {
+      transform: translateY(-6px); border-color: var(--gold);
+      box-shadow: 0 20px 45px rgba(0,0,0,.5), 0 0 20px rgba(184,151,106,.2);
+    }
+    .cinema-video-wrap {
+      position: absolute; inset: 0; z-index: 1; overflow: hidden;
+    }
+    .cinema-video-wrap video {
+      width: 100%; height: 100%; object-fit: cover; filter: brightness(.92) saturate(1.05);
+      transition: transform .6s ease;
+    }
+    .cinema-card:hover .cinema-video-wrap video {
+      transform: scale(1.06);
+    }
+    .cinema-card:after {
+      content: ""; position: absolute; inset: 0; z-index: 2;
+      background: linear-gradient(180deg, rgba(25,12,7,.3) 0%, transparent 40%, rgba(25,12,7,.9) 100%);
+      pointer-events: none;
+    }
+    .cinema-top-badge {
+      position: absolute; top: 14px; left: 14px; z-index: 3;
+      background: rgba(35,18,11,.8); backdrop-filter: blur(8px);
+      border: 1px solid rgba(184,151,106,.3); border-radius: 999px;
+      padding: 4px 10px; font-size: 10px; font-weight: 700; color: var(--gold);
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .cinema-mute-btn {
+      position: absolute; top: 14px; right: 14px; z-index: 3;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(35,18,11,.8); backdrop-filter: blur(8px);
+      border: 1px solid rgba(184,151,106,.3); color: var(--plaster);
+      display: inline-flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 13px; transition: all .2s;
+    }
+    .cinema-mute-btn:hover {
+      background: var(--gold); color: var(--espresso);
+    }
+    .cinema-caption {
+      position: relative; z-index: 3; padding: 20px;
+    }
+    .cinema-title {
+      font: 600 18px/1.3 'Cormorant Garamond', serif; color: var(--plaster); margin: 0 0 6px;
+    }
+    .cinema-desc {
+      font-size: 12px; color: rgba(232,224,216,.7); line-height: 1.45; margin: 0 0 12px;
+    }
+    .cinema-action-row {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cinema-watch-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 700; color: var(--gold-light);
+      background: rgba(184,151,106,.15); border: 1px solid rgba(184,151,106,.3);
+      padding: 5px 12px; border-radius: 999px; cursor: pointer; text-decoration: none;
+      transition: all .2s;
+    }
+    .cinema-watch-btn:hover {
+      background: var(--gold); color: var(--espresso); border-color: var(--gold);
+    }
+
+    /* ═══════════ COMPLETE ART GALLERY & MEDIA VAULT ═══════════ */
+    .gallery-section {
+      background: var(--espresso); color: var(--plaster); padding: 100px 0; overflow: hidden;
+    }
+    .gallery-section .eyebrow { color: var(--gold) }
+    .gallery-section .section-head p { color: rgba(232,224,216,.75); max-width: 620px }
+
+    /* Media Filters */
+    .media-filters {
+      display: flex; flex-wrap: wrap; gap: 8px; margin: 30px 0 35px;
+      border-bottom: 1px solid rgba(184,151,106,.16); padding-bottom: 20px;
+    }
+    .media-filter-btn {
+      background: rgba(232,224,216,.06); color: rgba(232,224,216,.8);
+      border: 1px solid rgba(184,151,106,.2); padding: 8px 16px; border-radius: 999px;
+      font-size: 12px; font-weight: 600; letter-spacing: .03em; cursor: pointer;
+      transition: all .25s ease;
+    }
+    .media-filter-btn:hover, .media-filter-btn.active {
+      background: var(--gold); color: var(--espresso); border-color: var(--gold);
+      box-shadow: 0 4px 14px rgba(184,151,106,.25);
+    }
+
+    /* Full Films Spotlight Cards */
+    .films-spotlight {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px;
+    }
+    .film-spotlight-card {
+      background: #1d0f09; border: 1px solid rgba(184,151,106,.25); border-radius: 22px;
+      overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,.4); display: flex; flex-direction: column;
+      transition: transform .3s ease, border-color .3s ease;
+    }
+    .film-spotlight-card:hover {
+      border-color: var(--gold); transform: translateY(-4px);
+    }
+    .film-player-wrap {
+      position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; overflow: hidden;
+    }
+    .film-player-wrap video {
+      width: 100%; height: 100%; object-fit: contain; background: #000;
+    }
+    .film-badge {
+      position: absolute; top: 12px; left: 12px; z-index: 2;
+      background: rgba(35,18,11,.85); backdrop-filter: blur(8px);
+      border: 1px solid var(--gold); color: var(--gold-light);
+      padding: 4px 10px; border-radius: 999px; font-size: 10px; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+    }
+    .film-card-info {
+      padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .film-meta-row {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+      font-size: 11px; color: var(--gold); font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    }
+    .film-card-title {
+      font: 600 22px/1.3 'Cormorant Garamond', serif; color: var(--plaster); margin: 0 0 10px;
+    }
+    .film-card-desc {
+      font-size: 13px; color: rgba(232,224,216,.75); line-height: 1.6; margin: 0 0 18px;
+    }
+    .film-card-actions {
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+    }
+    .film-btn-theater {
+      background: var(--gold); color: var(--espresso); border: 1px solid var(--gold);
+      padding: 9px 18px; border-radius: 999px; font-size: 12px; font-weight: 700;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+      transition: all .2s;
+    }
+    .film-btn-theater:hover {
+      background: var(--gold-light); transform: translateY(-1px);
+    }
+
+    /* Media Vault Comprehensive Grid */
+    .media-vault-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .vault-card {
+      position: relative; border-radius: var(--radius); overflow: hidden;
+      min-height: 310px; height: 310px; background: #190c07;
+      border: 1px solid rgba(184,151,106,.15); cursor: pointer;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+    .vault-card:hover {
+      transform: translateY(-5px); border-color: var(--gold);
+      box-shadow: 0 15px 35px rgba(0,0,0,.45);
+    }
+    .vault-card img, .vault-card video {
+      width: 100%; height: 100%; object-fit: cover; filter: saturate(.85) brightness(.92);
+      transition: transform .6s ease;
+    }
+    .vault-card:hover img, .vault-card:hover video {
+      transform: scale(1.06);
+    }
+    .vault-card:after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(35,18,11,.88) 100%);
+      pointer-events: none;
+    }
+    .vault-card-badge {
+      position: absolute; top: 12px; left: 12px; z-index: 2;
+      background: rgba(35,18,11,.8); backdrop-filter: blur(8px);
+      border: 1px solid rgba(184,151,106,.3); color: var(--gold-light);
+      padding: 3px 8px; border-radius: 999px; font-size: 9.5px; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+    }
+    .vault-card-caption {
+      position: absolute; bottom: 16px; left: 16px; right: 16px; z-index: 2;
+      font: 500 17px/1.3 'Cormorant Garamond', serif; color: var(--plaster);
+    }
+    .vault-card-caption small {
+      display: block; font: 400 11px/1.4 'Plus Jakarta Sans', sans-serif;
+      color: rgba(232,224,216,.65); margin-top: 3px;
+    }
+    .vault-play-icon {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(35,18,11,.75); backdrop-filter: blur(8px);
+      border: 1px solid var(--gold); color: var(--gold-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; z-index: 2; transition: all .25s ease;
+    }
+    .vault-card:hover .vault-play-icon {
+      background: var(--gold); color: var(--espresso); transform: translate(-50%, -50%) scale(1.12);
+    }
+
+    /* Vault Dedicated Page CTA banner */
+    .vault-cta-banner {
+      margin-top: 50px; background: rgba(232,224,216,.04);
+      border: 1px solid rgba(184,151,106,.25); border-radius: 20px;
+      padding: 32px; display: flex; align-items: center; justify-content: space-between;
+      gap: 20px;
+    }
+    .vault-cta-banner h3 {
+      font: 500 24px 'Cormorant Garamond', serif; margin: 0 0 6px; color: var(--plaster);
+    }
+    .vault-cta-banner p {
+      font-size: 13.5px; color: rgba(232,224,216,.7); margin: 0;
+    }
+
+    /* ═══════════ THEATER / CINEMA LIGHTBOX MODAL ═══════════ */
+    .theater-backdrop {
+      position: fixed; inset: 0; z-index: 999;
+      background: rgba(15, 8, 5, 0.94); backdrop-filter: blur(20px);
+      display: none; align-items: center; justify-content: center; padding: 24px;
+      opacity: 0; transition: opacity .3s ease;
+    }
+    .theater-backdrop.active {
+      display: flex; opacity: 1;
+    }
+    .theater-container {
+      position: relative; width: 100%; max-width: 1080px; max-height: 90vh;
+      background: #1a0e08; border: 1px solid rgba(184,151,106,.3); border-radius: 24px;
+      overflow: hidden; display: flex; flex-direction: column;
+      box-shadow: 0 30px 90px rgba(0,0,0,.7);
+    }
+    .theater-close {
+      position: absolute; top: 16px; right: 16px; z-index: 10;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(35,18,11,.85); backdrop-filter: blur(8px);
+      border: 1px solid rgba(184,151,106,.3); color: var(--plaster);
+      font-size: 18px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all .2s;
+    }
+    .theater-close:hover {
+      background: var(--gold); color: var(--espresso);
+    }
+    .theater-media-wrap {
+      width: 100%; max-height: 65vh; background: #000;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .theater-media-wrap img, .theater-media-wrap video {
+      max-width: 100%; max-height: 65vh; object-fit: contain; width: auto; height: auto;
+    }
+    .theater-controls-bar {
+      padding: 20px 28px; background: #1f100a; border-top: 1px solid rgba(184,151,106,.15);
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .theater-tag {
+      font-size: 10px; font-weight: 700; color: var(--gold);
+      letter-spacing: .08em; text-transform: uppercase; display: inline-block; margin-bottom: 4px;
+    }
+    .theater-title {
+      font: 600 20px 'Cormorant Garamond', serif; color: var(--plaster); margin: 0 0 4px;
+    }
+    .theater-desc {
+      font-size: 12.5px; color: rgba(232,224,216,.7); margin: 0; line-height: 1.4;
+    }
+    .theater-nav-actions {
+      display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+    }
+    .theater-counter {
+      font-size: 12px; color: var(--gold); font-weight: 600; padding: 0 10px;
+    }
+    .theater-btn {
+      background: rgba(232,224,216,.08); color: var(--plaster);
+      border: 1px solid rgba(184,151,106,.25); border-radius: 999px;
+      padding: 7px 16px; font-size: 12px; font-weight: 600; cursor: pointer;
+      transition: all .2s;
+    }
+    .theater-btn:hover {
+      background: var(--gold); color: var(--espresso); border-color: var(--gold);
+    }
+
     /* ═══════════ TESTIMONIALS ═══════════ */
     .testimonials { background: var(--cream-warm) }
     .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px }
@@ -568,6 +851,9 @@
       .service.s1, .service.s2, .service.s3, .service.s4 { grid-column: span 6 }
       .service.s5 { grid-column: span 12 }
       .gallery-grid { grid-template-columns: 1fr 1fr } .gallery-card.tall { grid-row: span 1; min-height: 320px }
+      .cinema-grid { grid-template-columns: repeat(2, 1fr) }
+      .films-spotlight { grid-template-columns: 1fr }
+      .media-vault-grid { grid-template-columns: repeat(2, 1fr) }
       .testi-grid { grid-template-columns: 1fr }
       .footer-grid { grid-template-columns: 1.2fr .8fr .8fr }
     }
@@ -587,6 +873,11 @@
       .service.s1, .service.s2, .service.s3, .service.s4, .service.s5 { grid-column: span 1; min-height: 220px }
       .service.s5 { display: block }
       .gallery-grid { grid-template-columns: 1fr } .gallery-card { min-height: 260px }
+      .cinema-grid { grid-template-columns: 1fr }
+      .media-vault-grid { grid-template-columns: 1fr }
+      .theater-controls-bar { flex-direction: column; align-items: flex-start }
+      .theater-nav-actions { width: 100%; justify-content: space-between }
+      .vault-cta-banner { flex-direction: column; text-align: center }
       .cta-box { padding: 40px 22px } .cta-box:after { font-size: 70px }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px }
       .footer-grid > div:first-child { grid-column: span 2 }
@@ -955,6 +1246,28 @@
   </div>
 </div>
 
+<!-- ═══════ THEATER / CINEMA & MEDIA LIGHTBOX MODAL ═══════ -->
+<div class="theater-backdrop" id="theaterModal" aria-hidden="true">
+  <div class="theater-container">
+    <button class="theater-close" id="closeTheaterBtn" type="button" aria-label="Close theater" onclick="closeTheater()">✕</button>
+    <div class="theater-media-wrap" id="theaterMediaWrap">
+      <!-- Media dynamically loaded here -->
+    </div>
+    <div class="theater-controls-bar">
+      <div class="theater-info">
+        <span class="theater-tag" id="theaterTag">🎬 FULL FILM</span>
+        <h4 class="theater-title" id="theaterTitle">Title</h4>
+        <p class="theater-desc" id="theaterDesc">Description...</p>
+      </div>
+      <div class="theater-nav-actions">
+        <span class="theater-counter" id="theaterCounter">1 / 18</span>
+        <button class="theater-btn" id="theaterPrevBtn" type="button" aria-label="Previous media" onclick="prevTheaterItem()">← Prev</button>
+        <button class="theater-btn" id="theaterNextBtn" type="button" aria-label="Next media" onclick="nextTheaterItem()">Next →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════ HEADER ═══════ -->
 <header id="top">
   <div class="wrap">
@@ -974,7 +1287,8 @@
         <a href="#invitation" style="color:var(--gold);font-weight:600">✦ Royal Invitation</a>
         <a href="#about">About</a>
         <a href="#services">Venues</a>
-        <a href="#gallery">Gallery</a>
+        <a href="#cinema">Atmosphere</a>
+        <a href="#gallery">Art Gallery &amp; Cinema</a>
         <a href="#testimonials">Reviews</a>
         <a href="#location">Location &amp; Map</a>
       </div>
@@ -1367,6 +1681,89 @@
     </div>
   </section>
 
+  <!-- ═══════ CINEMATIC ATMOSPHERE · LIVE MOTION ═══════ -->
+  <section class="cinema-section" id="cinema">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div>
+          <div class="eyebrow" style="color:var(--gold)">Atmosphere In Motion</div>
+          <h2>Experience the grandeur.<br><span class="serif" style="color:var(--gold-light)">Feel the living energy.</span></h2>
+        </div>
+        <p style="color:rgba(232,224,216,.75)">Immerse yourself in authentic live moments captured during real celebrations at Maa Sharda Utsav Lawn — from divine stage rituals to sweeping crystal chandelier canopies.</p>
+      </div>
+
+      <div class="cinema-grid" data-reveal>
+        <!-- Clip 1: Chandeliers & Aisle -->
+        <article class="cinema-card" id="cardClip1">
+          <div class="cinema-video-wrap">
+            <video src="videos/clips/clip-chandeliers-aisle.mp4" poster="videos/posters/poster-clip-chandeliers.jpg" autoplay loop muted playsinline preload="metadata" id="videoClip1"></video>
+          </div>
+          <span class="cinema-top-badge">✨ 12s AMBIENT</span>
+          <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClip1', this)">🔇</button>
+          <div class="cinema-caption">
+            <h3 class="cinema-title">Grand Chandelier Walkway</h3>
+            <p class="cinema-desc">Cascading crystal chandeliers over royal carpeted ceremonial aisle.</p>
+            <div class="cinema-action-row">
+              <button type="button" class="cinema-watch-btn" onclick="openTheater(1)">Watch Full Film ↗</button>
+              <span style="font-size:11px;color:var(--gold);font-weight:600">Banquet Hall</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Clip 2: Sacred Aarti Stage Blessing -->
+        <article class="cinema-card" id="cardClip2">
+          <div class="cinema-video-wrap">
+            <video src="videos/clips/clip-sacred-aarti.mp4" poster="videos/posters/poster-clip-aarti.jpg" autoplay loop muted playsinline preload="metadata" id="videoClip2"></video>
+          </div>
+          <span class="cinema-top-badge">✨ 12s BLESSING</span>
+          <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClip2', this)">🔇</button>
+          <div class="cinema-caption">
+            <h3 class="cinema-title">Sacred Ganga Aarti Ritual</h3>
+            <p class="cinema-desc">Priests performing divine multi-tiered brass lamp aarti on central stage.</p>
+            <div class="cinema-action-row">
+              <button type="button" class="cinema-watch-btn" onclick="openTheater(0)">Watch Full Film ↗</button>
+              <span style="font-size:11px;color:var(--gold);font-weight:600">Royal Stage</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Clip 3: Floral Ring Tunnel -->
+        <article class="cinema-card" id="cardClip3">
+          <div class="cinema-video-wrap">
+            <video src="videos/clips/clip-floral-archway.mp4" poster="videos/posters/poster-clip-archway.jpg" autoplay loop muted playsinline preload="metadata" id="videoClip3"></video>
+          </div>
+          <span class="cinema-top-badge">✨ 12s PROCESSION</span>
+          <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClip3', this)">🔇</button>
+          <div class="cinema-caption">
+            <h3 class="cinema-title">Illuminated Floral Tunnel</h3>
+            <p class="cinema-desc">Mesmerizing ring arches leading the couple towards the royal mandap.</p>
+            <div class="cinema-action-row">
+              <button type="button" class="cinema-watch-btn" onclick="openTheater(1)">Watch Full Film ↗</button>
+              <span style="font-size:11px;color:var(--gold);font-weight:600">Aisle Arch</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Clip 4: Night Lawn & DJ Lighting -->
+        <article class="cinema-card" id="cardClip4">
+          <div class="cinema-video-wrap">
+            <video src="videos/clips/clip-night-lawn.mp4" poster="videos/posters/poster-clip-lawn.jpg" autoplay loop muted playsinline preload="metadata" id="videoClip4"></video>
+          </div>
+          <span class="cinema-top-badge">✨ 12s NIGHT GROUNDS</span>
+          <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClip4', this)">🔇</button>
+          <div class="cinema-caption">
+            <h3 class="cinema-title">Celebration Lawn &amp; DJ</h3>
+            <p class="cinema-desc">Festive illumination towers and lit floral canopy under the night sky.</p>
+            <div class="cinema-action-row">
+              <button type="button" class="cinema-watch-btn" onclick="openTheater(1)">Watch Full Film ↗</button>
+              <span style="font-size:11px;color:var(--gold);font-weight:600">Open Grounds</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════ WHY CHOOSE US ═══════ -->
   <section class="why-section" id="about">
     <div class="wrap why-grid">
@@ -1396,38 +1793,272 @@
     </div>
   </section>
 
-  <!-- ═══════ GALLERY ═══════ -->
+  <!-- ═══════ COMPLETE ART GALLERY & MEDIA VAULT ═══════ -->
   <section class="gallery-section" id="gallery">
     <div class="wrap">
       <div class="section-head" data-reveal>
-        <div><div class="eyebrow">Visual Stories</div><h2>Moments we've<br><span class="serif">had the honour to host.</span></h2></div>
-        <p>Explore the authentic spaces of Maa Sharda Utsav Lawn — from our expansive private driveway to the covered grand banquet.</p>
+        <div>
+          <div class="eyebrow">The Complete Media Vault</div>
+          <h2>Moments we've<br><span class="serif">had the honour to host.</span></h2>
+        </div>
+        <p>Explore every authentic space, ceremony, and celebration at Maa Sharda Utsav Lawn through our comprehensive vault of uncut cinematic films, ambient motion clips, and high-resolution venue photography.</p>
       </div>
-      <div class="gallery-grid venue-6" data-reveal>
-        <div class="gallery-card">
-          <img src="images/venue/venue-grand-entrance-clean.jpg" alt="Grand entrance gate with illuminated signboard" loading="lazy">
-          <div class="gallery-caption">Grand Entrance</div>
+
+      <!-- Filter Navigation Tabs -->
+      <div class="media-filters" data-reveal>
+        <button type="button" class="media-filter-btn active" onclick="filterMedia('all', this)">✦ All Media (18)</button>
+        <button type="button" class="media-filter-btn" onclick="filterMedia('films', this)">🎬 Full Cinematic Films (2)</button>
+        <button type="button" class="media-filter-btn" onclick="filterMedia('clips', this)">✨ Motion Clips (4)</button>
+        <button type="button" class="media-filter-btn" onclick="filterMedia('exterior', this)">🏛️ Facade &amp; Grounds (5)</button>
+        <button type="button" class="media-filter-btn" onclick="filterMedia('banquet', this)">👑 Royal Banquet &amp; Mandap (4)</button>
+        <button type="button" class="media-filter-btn" onclick="filterMedia('ceremonies', this)">🕯️ Celebrations &amp; Rituals (3)</button>
+      </div>
+
+      <!-- Spotlight: Two Full Uncut Cinematic Films -->
+      <div class="films-spotlight" id="filmsSpotlight" data-reveal>
+        <!-- Full Film 1 -->
+        <article class="film-spotlight-card">
+          <div class="film-player-wrap">
+            <video src="videos/full/sacred-aarti-ceremony.mp4" poster="videos/posters/poster-sacred-aarti.jpg" controls preload="metadata"></video>
+            <span class="film-badge">🎬 FULL FILM · 1:12 MIN</span>
+          </div>
+          <div class="film-card-info">
+            <div>
+              <div class="film-meta-row">
+                <span>✦ Authentic Live Ceremony</span>
+                <span>•</span>
+                <span>Stage Ganga Aarti</span>
+              </div>
+              <h3 class="film-card-title">Sacred Stage Aarti &amp; Traditional Rituals</h3>
+              <p class="film-card-desc">Recorded live during a traditional wedding celebration on the central grand stage. Features traditional priests performing multi-tiered brass lamp aarti with sacred mantras and auspicious wedding rituals.</p>
+            </div>
+            <div class="film-card-actions">
+              <button type="button" class="film-btn-theater" onclick="openTheater(0)">⛶ Fullscreen Cinema Mode</button>
+              <a href="#contact" class="btn" style="padding:9px 16px;font-size:12px;background:rgba(232,224,216,.08);color:var(--plaster);border:1px solid rgba(184,151,106,.3)">Inquire for Your Date ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Full Film 2 -->
+        <article class="film-spotlight-card">
+          <div class="film-player-wrap">
+            <video src="videos/full/venue-grand-tour.mp4" poster="videos/posters/poster-venue-tour.jpg" controls preload="metadata"></video>
+            <span class="film-badge">🎬 FULL FILM · 1:11 MIN</span>
+          </div>
+          <div class="film-card-info">
+            <div>
+              <div class="film-meta-row">
+                <span>✦ Complete Venue Tour</span>
+                <span>•</span>
+                <span>1024×576 Widescreen HD</span>
+              </div>
+              <h3 class="film-card-title">Covered Banquet Hall &amp; Night Grounds Tour</h3>
+              <p class="film-card-desc">An uncut walkthrough of the sprawling facilities at Maa Sharda Utsav Lawn: from the cascading crystal chandeliers and VIP floral circular walkway to the open-air lawn party setup with live DJ sound stage.</p>
+            </div>
+            <div class="film-card-actions">
+              <button type="button" class="film-btn-theater" onclick="openTheater(1)">⛶ Fullscreen Cinema Mode</button>
+              <a href="#contact" class="btn" style="padding:9px 16px;font-size:12px;background:rgba(232,224,216,.08);color:var(--plaster);border:1px solid rgba(184,151,106,.3)">Inquire for Your Date ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Comprehensive Media Vault Grid (18 Items) -->
+      <div class="media-vault-grid" id="mediaVaultGrid" data-reveal>
+        <!-- Item 0: Full Film 1 -->
+        <div class="vault-card" data-category="films" onclick="openTheater(0)">
+          <img src="videos/posters/poster-sacred-aarti.jpg" alt="Sacred Stage Aarti &amp; Traditional Rituals" loading="lazy">
+          <span class="vault-card-badge">🎬 FULL FILM</span>
+          <div class="vault-play-icon">▶</div>
+          <div class="vault-card-caption">
+            Sacred Stage Aarti Ceremony
+            <small>1:12 Min · Traditional Vedic Blessing</small>
+          </div>
         </div>
-        <div class="gallery-card">
-          <img src="images/venue/venue-daytime-facade.jpg" alt="Daytime facade with welcome arch and lush landscaped garden" loading="lazy">
-          <div class="gallery-caption">Daytime View</div>
+
+        <!-- Item 1: Full Film 2 -->
+        <div class="vault-card" data-category="films" onclick="openTheater(1)">
+          <img src="videos/posters/poster-venue-tour.jpg" alt="Covered Banquet Hall &amp; Night Grounds Tour" loading="lazy">
+          <span class="vault-card-badge">🎬 FULL FILM</span>
+          <div class="vault-play-icon">▶</div>
+          <div class="vault-card-caption">
+            Covered Banquet &amp; Grounds Tour
+            <small>1:11 Min · Chandeliers, Archwalk &amp; Lawn</small>
+          </div>
         </div>
-        <div class="gallery-card">
-          <img src="images/venue/venue-driveway-night.jpg" alt="Expansive private driveway and spacious open-air grounds" loading="lazy">
-          <div class="gallery-caption">Spacious Grounds &amp; Driveway</div>
+
+        <!-- Item 2: Clip 1 -->
+        <div class="vault-card" data-category="clips" onclick="openTheater(2)">
+          <img src="videos/posters/poster-clip-chandeliers.jpg" alt="Grand Banquet &amp; Chandelier Aisle" loading="lazy">
+          <span class="vault-card-badge">✨ MOTION CLIP</span>
+          <div class="vault-play-icon">▶</div>
+          <div class="vault-card-caption">
+            Grand Chandelier Walkway
+            <small>12s Clip · Covered Banquet Hall</small>
+          </div>
         </div>
-        <div class="gallery-card">
-          <img src="images/venue/venue-event-space-1.jpg" alt="Outdoor lawn with chandeliers and decorated mandap setup" loading="lazy">
-          <div class="gallery-caption">Open-Air Mandap Setup</div>
+
+        <!-- Item 3: Clip 2 -->
+        <div class="vault-card" data-category="clips" onclick="openTheater(3)">
+          <img src="videos/posters/poster-clip-aarti.jpg" alt="Priests Aarti Blessing on Stage" loading="lazy">
+          <span class="vault-card-badge">✨ MOTION CLIP</span>
+          <div class="vault-play-icon">▶</div>
+          <div class="vault-card-caption">
+            Sacred Ganga Aarti Blessing
+            <small>12s Clip · Live Ceremony Ritual</small>
+          </div>
         </div>
-        <div class="gallery-card">
-          <img src="images/venue/venue-event-space-2.jpg" alt="Buffet counter with lighting tower and event decorations" loading="lazy">
-          <div class="gallery-caption">Buffet &amp; Event Lighting</div>
+
+        <!-- Item 4: Clip 3 -->
+        <div class="vault-card" data-category="clips" onclick="openTheater(4)">
+          <img src="videos/posters/poster-clip-archway.jpg" alt="Illuminated Circular Floral Walkway" loading="lazy">
+          <span class="vault-card-badge">✨ MOTION CLIP</span>
+          <div class="vault-play-icon">▶</div>
+          <div class="vault-card-caption">
+            Illuminated Circular Archwalk
+            <small>12s Clip · Procession Pathway</small>
+          </div>
         </div>
-        <div class="gallery-card">
-          <img src="images/venue/venue-night-video-thumb-1.jpg" alt="Indoor banquet hall with ceiling chandeliers and ceremonial stage" loading="lazy">
-          <div class="gallery-caption">Covered Banquet Celebration</div>
+
+        <!-- Item 5: Clip 4 -->
+        <div class="vault-card" data-category="clips" onclick="openTheater(5)">
+          <img src="videos/posters/poster-clip-lawn.jpg" alt="Open-Air Lawn Night DJ &amp; Star Illumination" loading="lazy">
+          <span class="vault-card-badge">✨ MOTION CLIP</span>
+          <div class="vault-play-icon">▶</div>
+          <div class="vault-card-caption">
+            Night Celebration Lawn &amp; DJ
+            <small>12s Clip · Open Grounds &amp; Lighting</small>
+          </div>
         </div>
+
+        <!-- Item 6: Photo Grand Entrance -->
+        <div class="vault-card" data-category="exterior" onclick="openTheater(6)">
+          <img src="images/venue/venue-grand-entrance-clean.jpg" alt="Grand Entrance Gate &amp; Hindi Signboard" loading="lazy">
+          <span class="vault-card-badge">🏛️ EXTERIOR</span>
+          <div class="vault-card-caption">
+            Grand Entrance &amp; Signboard
+            <small>Maa Sharda Utsav Lawn Facade</small>
+          </div>
+        </div>
+
+        <!-- Item 7: Photo Daytime Facade -->
+        <div class="vault-card" data-category="exterior" onclick="openTheater(7)">
+          <img src="images/venue/venue-daytime-facade.jpg" alt="Daytime Front Facade &amp; Landscaped Garden" loading="lazy">
+          <span class="vault-card-badge">🏛️ EXTERIOR</span>
+          <div class="vault-card-caption">
+            Daytime View &amp; Gardens
+            <small>Architectural Front Elevation</small>
+          </div>
+        </div>
+
+        <!-- Item 8: Photo Night Driveway -->
+        <div class="vault-card" data-category="exterior" onclick="openTheater(8)">
+          <img src="images/venue/venue-driveway-night.jpg" alt="Illuminated Star Night Gate &amp; Private Driveway" loading="lazy">
+          <span class="vault-card-badge">🏛️ GROUNDS</span>
+          <div class="vault-card-caption">
+            Spacious Grounds &amp; Driveway
+            <small>Illuminated Star Arch &amp; Driveway</small>
+          </div>
+        </div>
+
+        <!-- Item 9: Photo Dusk Entrance -->
+        <div class="vault-card" data-category="exterior" onclick="openTheater(9)">
+          <img src="images/venue/venue-exterior-1.jpg" alt="Grand Entrance Gate at Twilight" loading="lazy">
+          <span class="vault-card-badge">🏛️ EXTERIOR</span>
+          <div class="vault-card-caption">
+            Main Gate at Twilight
+            <small>Evening Arrival Perspective</small>
+          </div>
+        </div>
+
+        <!-- Item 10: Photo Sprawling Lawns -->
+        <div class="vault-card" data-category="exterior" onclick="openTheater(10)">
+          <img src="images/venue/venue-exterior-3.jpg" alt="Expansive Private Lawns &amp; Driveway" loading="lazy">
+          <span class="vault-card-badge">🏛️ GROUNDS</span>
+          <div class="vault-card-caption">
+            Expansive Open Lawns
+            <small>500+ Guest Capacity Grounds</small>
+          </div>
+        </div>
+
+        <!-- Item 11: Photo Indoor Banquet -->
+        <div class="vault-card" data-category="banquet" onclick="openTheater(11)">
+          <img src="images/venue/venue-night-video-thumb-1.jpg" alt="Indoor Banquet Hall &amp; Crystal Chandeliers" loading="lazy">
+          <span class="vault-card-badge">👑 BANQUET</span>
+          <div class="vault-card-caption">
+            Covered Banquet Celebration
+            <small>Grand Chandeliers &amp; Stage</small>
+          </div>
+        </div>
+
+        <!-- Item 12: Photo Mandap Setup -->
+        <div class="vault-card" data-category="banquet" onclick="openTheater(12)">
+          <img src="images/venue/venue-event-space-1.jpg" alt="Open-Air Mandap &amp; Stage Setup" loading="lazy">
+          <span class="vault-card-badge">👑 MANDAP</span>
+          <div class="vault-card-caption">
+            Open-Air Mandap Setup
+            <small>Royal Floral Canopy &amp; Seating</small>
+          </div>
+        </div>
+
+        <!-- Item 13: Photo Buffet & Lighting -->
+        <div class="vault-card" data-category="banquet" onclick="openTheater(13)">
+          <img src="images/venue/venue-event-space-2.jpg" alt="Buffet Counter &amp; Event Lighting Tower" loading="lazy">
+          <span class="vault-card-badge">👑 DINING</span>
+          <div class="vault-card-caption">
+            Buffet &amp; Event Lighting
+            <small>Multi-Cuisine Service Layout</small>
+          </div>
+        </div>
+
+        <!-- Item 14: Photo Welcome Gate -->
+        <div class="vault-card" data-category="banquet" onclick="openTheater(14)">
+          <img src="images/venue/venue-exterior-2.jpg" alt="Festive Welcome Canopy &amp; Draping" loading="lazy">
+          <span class="vault-card-badge">👑 ENTRANCE</span>
+          <div class="vault-card-caption">
+            Festive Welcome Arch
+            <small>Colorful Celebration Drapes</small>
+          </div>
+        </div>
+
+        <!-- Item 15: Photo Stage Aarti Ritual -->
+        <div class="vault-card" data-category="ceremonies" onclick="openTheater(15)">
+          <img src="videos/posters/poster-sacred-aarti.jpg" alt="Traditional Wedding Stage Aarti" loading="lazy">
+          <span class="vault-card-badge">🕯️ RITUAL</span>
+          <div class="vault-card-caption">
+            Vedic Aarti Ceremony
+            <small>Holy Blessings &amp; Deepaks</small>
+          </div>
+        </div>
+
+        <!-- Item 16: Photo Aisle Ring Arches -->
+        <div class="vault-card" data-category="ceremonies" onclick="openTheater(16)">
+          <img src="videos/posters/poster-clip-archway.jpg" alt="Aisle of Rings Floral Entry" loading="lazy">
+          <span class="vault-card-badge">🕯️ PROCESSION</span>
+          <div class="vault-card-caption">
+            Aisle of Lighted Rings
+            <small>Bridal &amp; Groom Grand Entry</small>
+          </div>
+        </div>
+
+        <!-- Item 17: Photo Night Party Truss -->
+        <div class="vault-card" data-category="ceremonies" onclick="openTheater(17)">
+          <img src="images/venue/venue-night-video-thumb-2.jpg" alt="Evening Celebration Grounds &amp; DJ Truss" loading="lazy">
+          <span class="vault-card-badge">🕯️ CELEBRATION</span>
+          <div class="vault-card-caption">
+            Evening Party &amp; DJ Truss
+            <small>Music &amp; Lighting Atmosphere</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dedicated Art Gallery Standalone Page CTA -->
+      <div class="vault-cta-banner" data-reveal>
+        <div>
+          <h3>Dedicated Art Gallery &amp; Cinema Vault</h3>
+          <p>Looking for a standalone, distraction-free viewing room? Browse uncompressed high-resolution captures, download ceremony media, and view full cinematic archives on our dedicated gallery page.</p>
+        </div>
+        <a href="gallery.html" class="btn primary" style="background:var(--gold);color:var(--espresso);border:none;padding:12px 26px;font-size:13px;font-weight:700;white-space:nowrap">Open Full Art Gallery ↗</a>
       </div>
     </div>
   </section>
@@ -1538,7 +2169,9 @@
         <h4>Explore</h4>
         <a href="#about">About Us</a>
         <a href="#services">Venues &amp; Services</a>
-        <a href="#gallery">Gallery</a>
+        <a href="#cinema">Atmosphere in Motion</a>
+        <a href="#gallery">Art Gallery &amp; Cinema</a>
+        <a href="gallery.html">Full Cinema Vault (Page) ↗</a>
         <a href="#testimonials">Reviews</a>
       </div>
       <div class="foot-col">
@@ -1815,6 +2448,319 @@
       btnOpen?.classList.remove('active');
     }
   };
+
+  // ═════════════════════════════════════════════════════
+  // ── 5. CINEMA & MEDIA VAULT DATASET & THEATER MODAL ──
+  // ═════════════════════════════════════════════════════
+  const mediaItems = [
+    // 0: Full Film 1
+    {
+      type: 'video',
+      src: 'videos/full/sacred-aarti-ceremony.mp4',
+      poster: 'videos/posters/poster-sacred-aarti.jpg',
+      category: 'films',
+      badge: '🎬 Full HD Film (1:12 Min)',
+      title: 'Sacred Stage Aarti & Traditional Rituals',
+      desc: 'Ceremonial Ganga Aarti on the royal wedding stage with lit brass diyas, traditional priests, and floral mandap backdrop.'
+    },
+    // 1: Full Film 2
+    {
+      type: 'video',
+      src: 'videos/full/venue-grand-tour.mp4',
+      poster: 'videos/posters/poster-venue-tour.jpg',
+      category: 'films',
+      badge: '🎬 Full HD Film (1:11 Min)',
+      title: 'Covered Banquet Hall & Night Grounds Tour',
+      desc: 'Comprehensive walkthrough of the covered grand banquet hall, ceiling crystal chandeliers, illuminated flower tunnel, and outdoor celebration DJ lawn.'
+    },
+    // 2: Clip 1
+    {
+      type: 'video',
+      src: 'videos/clips/clip-chandeliers-aisle.mp4',
+      poster: 'videos/posters/poster-clip-chandeliers.jpg',
+      category: 'clips',
+      badge: '✨ 12s Ambient Clip',
+      title: 'Grand Banquet & Chandelier Aisle',
+      desc: 'Cascading golden chandeliers over the carpeted royal ceremonial walkway.'
+    },
+    // 3: Clip 2
+    {
+      type: 'video',
+      src: 'videos/clips/clip-sacred-aarti.mp4',
+      poster: 'videos/posters/poster-clip-aarti.jpg',
+      category: 'clips',
+      badge: '✨ 12s Sacred Blessing',
+      title: 'Priests Aarti Blessing on Stage',
+      desc: 'Authentic ceremonial flame offering during wedding reception.'
+    },
+    // 4: Clip 3
+    {
+      type: 'video',
+      src: 'videos/clips/clip-floral-archway.mp4',
+      poster: 'videos/posters/poster-clip-archway.jpg',
+      category: 'clips',
+      badge: '✨ 12s Walkway Motion',
+      title: 'Illuminated Circular Floral Walkway',
+      desc: 'Grand glowing ring arches leading to the royal mandap stage.'
+    },
+    // 5: Clip 4
+    {
+      type: 'video',
+      src: 'videos/clips/clip-night-lawn.mp4',
+      poster: 'videos/posters/poster-clip-lawn.jpg',
+      category: 'clips',
+      badge: '✨ 12s Night Grounds',
+      title: 'Open-Air Lawn Night DJ & Star Illumination',
+      desc: 'Celebration lighting towers, sound stage, and glowing palm trees.'
+    },
+    // 6: Photo Grand Entrance
+    {
+      type: 'image',
+      src: 'images/venue/venue-grand-entrance-clean.jpg',
+      category: 'exterior',
+      badge: '🏛️ Venue Exterior',
+      title: 'Grand Entrance Gate & Hindi Signboard',
+      desc: 'Pristine daytime facade of Maa Sharda Utsav Lawn with draped entrance and Durga emblem.'
+    },
+    // 7: Photo Daytime Facade
+    {
+      type: 'image',
+      src: 'images/venue/venue-daytime-facade.jpg',
+      category: 'exterior',
+      badge: '🏛️ Daytime Facade',
+      title: 'Daytime Front Facade & Landscaped Garden',
+      desc: 'Full-width architectural view of the main hall and celebration entrance.'
+    },
+    // 8: Photo Night Driveway
+    {
+      type: 'image',
+      src: 'images/venue/venue-driveway-night.jpg',
+      category: 'exterior',
+      badge: '🏛️ Night Grounds',
+      title: 'Illuminated Night Gate & Private Driveway',
+      desc: 'Grand neon star archway and wide paved driveway leading to the banquet lawn.'
+    },
+    // 9: Photo Dusk Entrance
+    {
+      type: 'image',
+      src: 'images/venue/venue-exterior-1.jpg',
+      category: 'exterior',
+      badge: '🏛️ Dusk View',
+      title: 'Grand Entrance Gate at Twilight',
+      desc: 'Warm evening illumination at the main venue threshold.'
+    },
+    // 10: Photo Sprawling Lawns
+    {
+      type: 'image',
+      src: 'images/venue/venue-exterior-3.jpg',
+      category: 'exterior',
+      badge: '🏛️ Sprawling Grounds',
+      title: 'Expansive Private Lawns & Driveway',
+      desc: 'Spacious open grounds capable of hosting 500+ guests with valet parking.'
+    },
+    // 11: Photo Indoor Banquet
+    {
+      type: 'image',
+      src: 'images/venue/venue-night-video-thumb-1.jpg',
+      category: 'banquet',
+      badge: '👑 Royal Banquet',
+      title: 'Indoor Banquet Hall & Crystal Chandeliers',
+      desc: 'Fully covered hall with draped ceiling, crystal fixtures, and stage.'
+    },
+    // 12: Photo Mandap Setup
+    {
+      type: 'image',
+      src: 'images/venue/venue-event-space-1.jpg',
+      category: 'banquet',
+      badge: '👑 Mandap & Stage',
+      title: 'Open-Air Mandap & Stage Setup',
+      desc: 'Curated royal wedding mandap with traditional drapery and floral design.'
+    },
+    // 13: Photo Buffet & Lighting
+    {
+      type: 'image',
+      src: 'images/venue/venue-event-space-2.jpg',
+      category: 'banquet',
+      badge: '👑 Dining & Catering',
+      title: 'Buffet Counter & Event Lighting Tower',
+      desc: 'Expansive catering spread layout with dedicated service corridors.'
+    },
+    // 14: Photo Welcome Gate
+    {
+      type: 'image',
+      src: 'images/venue/venue-exterior-2.jpg',
+      category: 'banquet',
+      badge: '👑 Welcome Gate',
+      title: 'Festive Welcome Canopy & Draping',
+      desc: 'Multi-color fabric entrance canopy welcoming arriving guests.'
+    },
+    // 15: Photo Stage Aarti Ritual
+    {
+      type: 'image',
+      src: 'videos/posters/poster-sacred-aarti.jpg',
+      category: 'ceremonies',
+      badge: '🕯️ Sacred Ritual',
+      title: 'Traditional Wedding Stage Aarti',
+      desc: 'Sacred ceremonial blessing with tiered brass lamps and auspicious prayers.'
+    },
+    // 16: Photo Aisle Ring Arches
+    {
+      type: 'image',
+      src: 'videos/posters/poster-clip-archway.jpg',
+      category: 'ceremonies',
+      badge: '🕯️ Grand Varmala',
+      title: 'Aisle of Rings Floral Entry',
+      desc: 'Bridal and groom procession pathway with circular light arches.'
+    },
+    // 17: Photo Night Party Truss
+    {
+      type: 'image',
+      src: 'images/venue/venue-night-video-thumb-2.jpg',
+      category: 'ceremonies',
+      badge: '🕯️ Night Celebration',
+      title: 'Evening Celebration Grounds & DJ Truss',
+      desc: 'Vibrant party atmosphere under the stars with concert-grade lighting.'
+    }
+  ];
+
+  let currentTheaterIndex = 0;
+
+  window.openTheater = function(index) {
+    if (index < 0 || index >= mediaItems.length) return;
+    currentTheaterIndex = index;
+    const item = mediaItems[index];
+    const modal = document.getElementById('theaterModal');
+    const wrap = document.getElementById('theaterMediaWrap');
+    const tag = document.getElementById('theaterTag');
+    const title = document.getElementById('theaterTitle');
+    const desc = document.getElementById('theaterDesc');
+    const counter = document.getElementById('theaterCounter');
+
+    if (!modal || !wrap) return;
+
+    tag.textContent = item.badge;
+    title.textContent = item.title;
+    desc.textContent = item.desc;
+    counter.textContent = `${index + 1} / ${mediaItems.length}`;
+
+    wrap.innerHTML = '';
+    if (item.type === 'video') {
+      const vid = document.createElement('video');
+      vid.src = item.src;
+      vid.poster = item.poster || '';
+      vid.controls = true;
+      vid.autoplay = true;
+      vid.playsInline = true;
+      vid.style.width = '100%';
+      vid.style.height = '100%';
+      vid.style.objectFit = 'contain';
+      wrap.appendChild(vid);
+    } else {
+      const img = document.createElement('img');
+      img.src = item.src;
+      img.alt = item.title;
+      wrap.appendChild(img);
+    }
+
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeTheater = function() {
+    const modal = document.getElementById('theaterModal');
+    const wrap = document.getElementById('theaterMediaWrap');
+    if (!modal) return;
+    if (wrap) {
+      const vid = wrap.querySelector('video');
+      if (vid) vid.pause();
+      wrap.innerHTML = '';
+    }
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  window.nextTheaterItem = function() {
+    let nextIdx = (currentTheaterIndex + 1) % mediaItems.length;
+    openTheater(nextIdx);
+  };
+
+  window.prevTheaterItem = function() {
+    let prevIdx = (currentTheaterIndex - 1 + mediaItems.length) % mediaItems.length;
+    openTheater(prevIdx);
+  };
+
+  // Keyboard navigation for Theater Modal
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('theaterModal');
+    if (!modal || !modal.classList.contains('active')) return;
+    if (e.key === 'Escape') closeTheater();
+    if (e.key === 'ArrowRight') nextTheaterItem();
+    if (e.key === 'ArrowLeft') prevTheaterItem();
+  });
+
+  // Close theater on backdrop click
+  document.getElementById('theaterModal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'theaterModal') closeTheater();
+  });
+
+  // Filter Media Categories
+  window.filterMedia = function(category, btn) {
+    document.querySelectorAll('.media-filter-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const spotlight = document.getElementById('filmsSpotlight');
+    if (spotlight) {
+      if (category === 'all' || category === 'films') {
+        spotlight.style.display = 'grid';
+      } else {
+        spotlight.style.display = 'none';
+      }
+    }
+
+    const cards = document.querySelectorAll('.vault-card');
+    cards.forEach(card => {
+      const cardCat = card.getAttribute('data-category');
+      if (category === 'all' || cardCat === category) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  };
+
+  // Toggle Sound for Ambient Video Clips
+  window.toggleClipSound = function(videoId, btn) {
+    const video = document.getElementById(videoId);
+    if (!video) return;
+    video.muted = !video.muted;
+    if (video.muted) {
+      btn.textContent = '🔇';
+      btn.setAttribute('aria-label', 'Unmute sound');
+    } else {
+      btn.textContent = '🔊';
+      btn.setAttribute('aria-label', 'Mute sound');
+    }
+  };
+
+  // Viewport IntersectionObserver to optimize ambient clip playback
+  if ('IntersectionObserver' in window) {
+    const clipObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const vid = entry.target;
+        if (entry.isIntersecting) {
+          vid.play().catch(() => {});
+        } else {
+          vid.pause();
+        }
+      });
+    }, { threshold: 0.25 });
+
+    document.querySelectorAll('.cinema-video-wrap video').forEach(v => clipObserver.observe(v));
+  }
 </script>
 </body>
 </html>
