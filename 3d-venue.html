@@ -5,15 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>माँ शारदा उत्सव लॉन — 3D Venue Virtual Tour</title>
 <link rel="icon" type="image/png" href="images/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-<script src="js/three/three.min.js"></script>
-<script src="js/three/controls/OrbitControls.js"></script>
-<script src="js/three/postprocessing/EffectComposer.js"></script>
-<script src="js/three/postprocessing/RenderPass.js"></script>
-<script src="js/three/postprocessing/ShaderPass.js"></script>
-<script src="js/three/postprocessing/UnrealBloomPass.js"></script>
-<script src="js/three/shaders/CopyShader.js"></script>
-<script src="js/three/shaders/LuminosityHighPassShader.js"></script>
 <style>
 *{box-sizing:border-box;margin:0}
 html,body{height:100%;overflow:hidden;background:#05070f;color:#eaf4ff;font-family:Inter,system-ui,sans-serif;user-select:none}
@@ -54,6 +48,14 @@ button:hover,button.on,a.back-btn:hover{background:rgba(255,170,60,.3);border-co
 </div>
 <div id="nav" class="g"></div>
 
+<script src="js/three/three.min.js"></script>
+<script src="js/three/controls/OrbitControls.js"></script>
+<script src="js/three/postprocessing/EffectComposer.js"></script>
+<script src="js/three/postprocessing/RenderPass.js"></script>
+<script src="js/three/postprocessing/ShaderPass.js"></script>
+<script src="js/three/postprocessing/UnrealBloomPass.js"></script>
+<script src="js/three/shaders/CopyShader.js"></script>
+<script src="js/three/shaders/LuminosityHighPassShader.js"></script>
 <script>
 const V=THREE.Vector3,R=Math.random;
 let scene,camera,renderer,composer,bloom,controls,sky,stars,grid,mode='real',showL=true,placingPin=false,anim=null,cars=[],pl=[];
@@ -313,7 +315,9 @@ function init(){
   camera.position.set(...presets[0][1]);
 
   renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
-  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  // Bound ultra-high-DPI render cost on phones while preserving the original scene and effects.
+  const maxPixelRatio = matchMedia('(max-width: 640px)').matches ? 1.25 : 1.6;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, maxPixelRatio));
   renderer.setSize(innerWidth,innerHeight);
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
   document.body.prepend(renderer.domElement);
@@ -456,7 +460,7 @@ addEventListener('resize',()=>{
 });
 
 const go=()=>init();
-Promise.race([document.fonts.load('800 80px "Noto Sans Devanagari"'),new Promise(r=>setTimeout(r,1500))]).then(go,go);
+go();
 </script>
 </body>
 </html>
