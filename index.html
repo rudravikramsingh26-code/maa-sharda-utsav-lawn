@@ -1535,8 +1535,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
       <div class="cinema-grid" data-reveal>
         <!-- Clip 1: Panoramic Aerial Grounds Tour with Devotional BGM -->
         <article class="cinema-card" id="cardClipAerial">
-          <div class="cinema-video-wrap">
-            <video data-src="videos/clips/aerial-view.mp4" poster="videos/posters/poster-aerial-view.jpg" loop muted playsinline preload="none" id="videoClipAerial"></video>
+          <div class="cinema-video-wrap" onclick="openTheater(14)" style="cursor:pointer" title="Click to watch fullscreen in HD">
+            <video src="videos/clips/aerial-view.mp4" data-src="videos/clips/aerial-view.mp4" poster="videos/posters/poster-aerial-view.jpg" loop muted playsinline preload="metadata" id="videoClipAerial"></video>
           </div>
           <span class="cinema-top-badge">✨ 15s DEVOTIONAL BGM</span>
           <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClipAerial', this)">🔇</button>
@@ -1552,8 +1552,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Clip 2: Outdoor Walkthrough with Devotional BGM -->
         <article class="cinema-card" id="cardClipWalkthrough">
-          <div class="cinema-video-wrap">
-            <video data-src="videos/clips/outdoor-walkthrough.mp4" poster="videos/posters/poster-outdoor-walkthrough.jpg" loop muted playsinline preload="none" id="videoClipWalkthrough"></video>
+          <div class="cinema-video-wrap" onclick="openTheater(15)" style="cursor:pointer" title="Click to watch fullscreen in HD">
+            <video src="videos/clips/outdoor-walkthrough.mp4" data-src="videos/clips/outdoor-walkthrough.mp4" poster="videos/posters/poster-outdoor-walkthrough.jpg" loop muted playsinline preload="metadata" id="videoClipWalkthrough"></video>
           </div>
           <span class="cinema-top-badge">✨ 12s DEVOTIONAL BGM</span>
           <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClipWalkthrough', this)">🔇</button>
@@ -2543,6 +2543,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
     } else {
       btn.textContent = '🔊';
       btn.setAttribute('aria-label', 'Mute sound');
+      video.play().catch(() => {});
     }
   };
 
