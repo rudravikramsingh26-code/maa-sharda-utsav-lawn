@@ -1317,64 +1317,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow"></div>
-<!-- ═══════ INTERACTIVE BOOKING INQUIRY MODAL ═══════ -->
-<div class="modal-backdrop" id="inquiryModal">
-  <div class="modal-card">
-    <button class="modal-close" id="closeModalBtn" type="button" aria-label="Close modal">✕</button>
-    <div class="eyebrow">Direct Venue Reservation</div>
-    <h3 class="modal-title">Plan Your Celebration</h3>
-    <p class="modal-desc">Share your expected dates and event preferences, or call our venue desk directly at <a href="tel:07947134176" style="color:var(--gold);font-weight:700">07947134176</a>. Our events manager will connect within 2 hours.</p>
-    
-    <form class="inquiry-form" id="bookingForm" onsubmit="handleInquirySubmit(event)">
-      <div class="form-row">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" placeholder="e.g. Ramesh Singh" required id="inqName">
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+91 98765 43210" required id="inqPhone">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Event Type</label>
-          <select id="inqEvent" required>
-            <option value="Grand Wedding">Grand Wedding</option>
-            <option value="Reception / Ring Ceremony">Reception / Ring Ceremony</option>
-            <option value="Haldi / Sangeet / Mehendi">Haldi / Sangeet / Mehendi</option>
-            <option value="Birthday / Anniversary Gala">Birthday / Anniversary Gala</option>
-            <option value="Corporate / Community Gathering">Corporate / Community Gathering</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Estimated Guests</label>
-          <select id="inqGuests">
-            <option value="200-350 Guests">200 - 350 Guests</option>
-            <option value="350-500 Guests" selected>350 - 500 Guests</option>
-            <option value="500+ Guests">500+ Guests</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>Expected Date</label>
-        <input type="date" required id="inqDate">
-      </div>
-
-      <div class="form-group">
-        <label>Special Notes or Catering Preferences</label>
-        <textarea rows="2" placeholder="e.g. Pure vegetarian buffet, mandap floral setup, 2 green rooms..." id="inqNotes"></textarea>
-      </div>
-
-      <button type="submit" class="submit-btn">
-        <span>Send Inquiry via WhatsApp / Direct</span> ↗
-      </button>
-    </form>
-  </div>
-</div>
-
 <!-- ═══════ THEATER / CINEMA & MEDIA LIGHTBOX MODAL ═══════ -->
 <div class="theater-backdrop" id="theaterModal" aria-hidden="true">
   <div class="theater-container">
@@ -1410,7 +1352,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
       </a>
       <div class="nav-links">
         <a href="gallery.html">Gallery</a>
-        <a href="3d-venue.html" target="_blank" style="color:#d97706;font-weight:700">🏛️ Explore 3D Banquet ↗</a>
+        <a href="3d-venue.html" target="_blank" rel="noopener" class="nav-3d-link">Explore 3D Banquet ↗</a>
         <a href="#about">About</a>
         <a href="#services">Venues</a>
         <a href="#cinema">Atmosphere</a>
@@ -1419,8 +1361,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <a href="#location">Location</a>
       </div>
       <div class="nav-actions">
-        <a class="btn" href="tel:07947134176">📞 07947134176</a>
-        <a class="btn primary" href="#contact">Book Your Date ↗</a>
+        <a class="btn" href="tel:07947134176">Call Venue ↗</a>
         <button class="menu" type="button" aria-label="Open navigation"><span></span><span></span><span></span></button>
       </div>
     </nav>
@@ -1428,6 +1369,42 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 </header>
 
 <main>
+  <!-- ═══════ SIGNATURE WEDDING INVITATION ═══════ -->
+  <section class="invitation-section" id="invitation" aria-labelledby="invitationHeading">
+    <div class="wrap invitation-grid">
+      <div class="invitation-copy" data-reveal>
+        <div class="invitation-eyebrow">MAA SHARDA UTSAV LAWN <span>·</span> AN INVITATION</div>
+        <img class="invitation-wordmark" src="images/brand/maa-sharda-wordmark.svg" alt="माँ शारदा उत्सव लॉन" width="1400" height="300" fetchpriority="high">
+        <h1 id="invitationHeading">A gracious beginning<br><em>to every celebration.</em></h1>
+        <p>Rooted in tradition and made for unforgettable gatherings, Maa Sharda Utsav Lawn welcomes you to celebrate life’s most meaningful moments.</p>
+        <a class="invitation-tour-btn" href="3d-venue.html" target="_blank" rel="noopener">Explore 3D Banquet <span aria-hidden="true">↗</span></a>
+        <div class="invitation-note">Take a closer look around the venue in our interactive 3D tour.</div>
+      </div>
+
+      <div class="invitation-film-column" data-reveal>
+        <div class="invitation-film-frame">
+          <video
+            id="invitationVideo"
+            src="videos/wedding-invitation-cinematic.mp4"
+            poster="videos/posters/poster-wedding-invitation.jpg"
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            aria-label="Maa Sharda Utsav Lawn wedding invitation film"
+          ></video>
+        </div>
+        <div class="invitation-film-controls" aria-label="Invitation film controls">
+          <button type="button" id="btnInviteSoundBar" onclick="toggleInviteSound()" aria-label="Enable or mute invitation music">
+            <span id="barSoundIcon" aria-hidden="true">🔊</span> <span id="inviteMusicText">Enable music</span>
+          </button>
+          <button type="button" onclick="replayInviteVideo()" aria-label="Replay invitation film">↻ <span>Replay</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════ HERO ═══════ -->
   <section class="hero" id="hero">
     <div class="hero-bg"></div>
@@ -1441,9 +1418,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <h1>Where every<br><span class="soft">celebration becomes</span><br><span class="gold-line">a legacy.</span></h1>
         <p class="hero-copy">Maa Sharda Utsav Lawn offers a distinguished setting for weddings, receptions, and grand celebrations — where architectural elegance meets heartfelt hospitality in the heart of Uttar Pradesh.</p>
         <div class="hero-actions">
-          <a href="#contact" class="btn primary">Book Your Celebration ↗</a>
-          <a href="3d-venue.html" target="_blank" class="btn" style="border-color:var(--gold);color:var(--espresso);font-weight:600">🏛️ Explore 3D Banquet ↗</a>
-          <a href="#services" class="btn">Explore Venues ↓</a>
+          <a href="#services" class="btn primary">Discover the Venue ↓</a>
+          <a href="#gallery" class="btn">View Gallery ↗</a>
         </div>
         <div class="hero-proof">
           <div><div class="proof-num counter" data-target="500">0</div><div class="proof-label">Guest Capacity</div></div>
@@ -2038,15 +2014,15 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
     </div>
   </section>
 
-  <!-- ═══════ CTA ═══════ -->
+  <!-- ═══════ VISIT & CONTACT ═══════ -->
   <section class="final-cta" id="contact">
     <div class="wrap">
       <div class="cta-box" data-reveal>
-        <div class="eyebrow">Begin your celebration</div>
-        <h2>Your moment.<br><span class="faded serif">Our honour to host it.</span></h2>
-        <p>Tell us about your celebration — the date, the size, the vision — and we'll craft a proposal that honours your traditions and exceeds your expectations.</p>
+        <div class="eyebrow">Visit Maa Sharda Utsav Lawn</div>
+        <h2>We would be delighted<br><span class="faded serif">to welcome you.</span></h2>
+        <p>Speak with our team, plan a visit or find your way to the venue. We look forward to welcoming you.</p>
         <div class="cta-actions">
-          <a href="tel:07947134176" class="btn gold">Call 07947134176 ↗</a>
+          <a href="tel:07947134176" class="btn gold">Call the Venue ↗</a>
           <a href="https://www.google.com/maps/dir/?api=1&destination=26.452228527778,82.726181027778" target="_blank" rel="noopener" class="btn ghost">Get Directions ↗</a>
         </div>
       </div>
@@ -2082,7 +2058,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <a href="#services">Corporate Events</a>
       </div>
       <div class="foot-col">
-        <h4>Contact &amp; Booking</h4>
+        <h4>Contact</h4>
         <a href="tel:07947134176">📞 07947134176</a>
         <a href="https://www.google.com/maps/dir/?api=1&destination=26.452228527778,82.726181027778" target="_blank" rel="noopener">🗺️ Google Maps Directions ↗</a>
         <a href="https://www.justdial.com/Ambedkar-Nagar/Ma-Sarda-Utsav-Lawn-Masdha-Bazar-Barahi-Bela-Parsa/9999P5271-5271-250609152009-K2M9_BZDET" target="_blank" rel="noopener">⭐ Justdial Profile (5.0 ★) ↗</a>
@@ -2096,7 +2072,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 </footer>
 
 <!-- ═══════ FLOATING WHATSAPP BUTTON ═══════ -->
-<a href="https://wa.me/919876543210?text=Hello%20Maa%20Sharda%20Utsav%20Lawn%2C%20I%20would%20like%20to%20inquire%20about%20booking%20dates%20and%20rates." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/919876543210?text=Hello%20Maa%20Sharda%20Utsav%20Lawn%2C%20I%20would%20like%20to%20know%20more%20about%20the%20venue." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
   <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.13.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
   <span>Inquire via WhatsApp</span>
 </a>
@@ -2199,50 +2175,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         card.style.transform = '';
       });
     });
-  }
-
-  // ── 5. Booking Modal Logic ──
-  const modal = document.getElementById('inquiryModal');
-  const closeBtn = document.getElementById('closeModalBtn');
-  
-  function openBookingModal() {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeBookingModal() {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  // Connect all "Book" buttons to the modal
-  document.querySelectorAll('a[href="#contact"]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openBookingModal();
-    });
-  });
-
-  closeBtn?.addEventListener('click', closeBookingModal);
-  modal?.addEventListener('click', (e) => {
-    if (e.target === modal) closeBookingModal();
-  });
-
-  // Handle Form Submission -> WhatsApp redirect or Confirmation
-  function handleInquirySubmit(e) {
-    e.preventDefault();
-    const name = document.getElementById('inqName').value;
-    const phone = document.getElementById('inqPhone').value;
-    const eventType = document.getElementById('inqEvent').value;
-    const guests = document.getElementById('inqGuests').value;
-    const date = document.getElementById('inqDate').value;
-    const notes = document.getElementById('inqNotes').value;
-
-    const msg = encodeURIComponent(`*New Booking Inquiry - Maa Sharda Utsav Lawn*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Event:* ${eventType}\n*Guests:* ${guests}\n*Date:* ${date}\n*Notes:* ${notes || 'None'}`);
-    
-    // Redirect to WhatsApp
-    window.open(`https://wa.me/919876543210?text=${msg}`, '_blank');
-    closeBookingModal();
   }
 
   // ── 6. Fallback Scroll reveal ──
@@ -2679,13 +2611,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
       if (icon) icon.textContent = "🔊";
       if (label) label.textContent = "Mute";
       if (barIcon) barIcon.textContent = "🔇";
-      if (barBtn) barBtn.innerHTML = "<span>🔇</span> Mute Music";
+      if (barBtn) barBtn.innerHTML = '<span id="barSoundIcon">🔇</span> <span id="inviteMusicText">Mute music</span>';
     } else {
       vid.muted = true;
       if (icon) icon.textContent = "🔇";
       if (label) label.textContent = "Sound On";
       if (barIcon) barIcon.textContent = "🔊";
-      if (barBtn) barBtn.innerHTML = "<span>🔊</span> Enable Wedding Music";
+      if (barBtn) barBtn.innerHTML = '<span id="barSoundIcon">🔊</span> <span id="inviteMusicText">Enable music</span>';
     }
   };
 
