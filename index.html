@@ -981,149 +981,99 @@
       filter: blur(35px);
       pointer-events: none;
     }
-    .wedding-card-section .stage {
-      position: relative;
-      width: 360px;
-      height: 510px;
-      display: grid;
-      place-items: center;
-      animation: stageLoop 7s linear infinite;
-      z-index: 1;
-    }
-    .wedding-card-section .card {
-      position: relative;
-      width: 260px;
-      height: 340px;
-      perspective: 1200px;
-      transform-style: preserve-3d;
-      margin-top: -60px;
-    }
-    .wedding-card-section .inner {
-      position: absolute;
-      inset: 0;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.65), 0 0 0 2px #e2b04a;
-      background: #3a0813;
-    }
-    .wedding-card-section .inner svg,
-    .wedding-card-section .face svg {
-      position: absolute;
-      inset: 0;
-      width: 260px;
-      height: 340px;
-    }
-    .wedding-card-section .door {
-      position: absolute;
-      top: 0;
-      width: 130px;
-      height: 340px;
-      transform-style: preserve-3d;
-    }
-    .wedding-card-section .l {
-      left: 0;
-      transform-origin: left center;
-      animation: dl 7s ease-in-out infinite;
-    }
-    .wedding-card-section .r {
-      right: 0;
-      transform-origin: right center;
-      animation: dr 7s ease-in-out infinite;
-    }
-    .wedding-card-section .face {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      backface-visibility: hidden;
-    }
-    .wedding-card-section .r .face svg {
-      left: -130px;
-    }
-    .wedding-card-section .back {
-      transform: rotateY(180deg);
-      background: #f6e7c1;
-      box-shadow: inset 0 0 0 3px #e2b04a, inset 0 0 0 8px #f6e7c1, inset 0 0 0 9px #e2b04a;
-    }
-    .wedding-card-section .cap {
-      position: absolute;
-      bottom: 18px;
-      text-align: center;
-      opacity: 0;
-      animation: cap 7s ease-out infinite;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
-    }
-    .wedding-card-section .cap b {
-      display: block;
-      font-size: 34px;
-      font-weight: 400;
+        /* ═══════════ CINEMATIC WEDDING INVITATION CARD ═══════════ */
+    .shloka-sanskrit {
       font-family: 'Tiro Devanagari Hindi', Georgia, serif;
+      font-size: clamp(13px, 1.8vw, 17px);
+      color: #ffe9b8;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.6);
     }
-    .wedding-card-section .cap i {
-      font: normal 500 11px Cinzel, Georgia, serif;
-      letter-spacing: 0.28em;
-      color: #f6e7c1;
+    .ganesha-emblem {
+      margin-bottom: 8px;
     }
-    .wedding-card-section .side {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 160px;
-      height: 100%;
-      pointer-events: none;
-      -webkit-mask-image: linear-gradient(90deg, #000 60%, transparent);
-      mask-image: linear-gradient(90deg, #000 60%, transparent);
-      opacity: 0.55;
-      z-index: 1;
+    .ganesha-svg {
+      width: 58px;
+      height: 58px;
+      filter: drop-shadow(0 0 14px rgba(226,176,74,0.4));
     }
-    .wedding-card-section .side.l { left: 0; }
-    .wedding-card-section .side.r { right: 0; transform: scaleX(-1); }
-    .wedding-card-section .spin { animation: spin 50s linear infinite; }
-    .wedding-card-section .pivot { transform-box: view-box; }
-    .wedding-card-section .upper { transform-origin: 100px 178px; animation: bow 7s ease-in-out infinite; }
-    .wedding-card-section .ual { transform-origin: 80px 100px; animation: ual 7s ease-in-out infinite; }
-    .wedding-card-section .far { transform-origin: 80px 130px; animation: fal 7s ease-in-out infinite; }
-    .wedding-card-section .uar { transform-origin: 120px 100px; animation: uar 7s ease-in-out infinite; }
-    .wedding-card-section .fal { transform-origin: 120px 130px; animation: far 7s ease-in-out infinite; }
-    .wedding-card-section .head { transform-origin: 100px 80px; animation: head 7s ease-in-out infinite; }
-    .wedding-card-section .palms { opacity: 0; animation: palms 7s linear infinite; }
-    .wedding-card-section .flame { transform-box: fill-box; transform-origin: 50% 100%; animation: fl .5s ease-in-out infinite alternate; }
-
-    /* Falling Petals inside section */
-    .wedding-card-section .pt {
-      position: absolute;
-      top: -20px;
-      width: 9px;
-      height: 13px;
-      border-radius: 60% 0 60% 0;
-      opacity: 0.85;
-      pointer-events: none;
-      animation: ptFall linear infinite;
-      z-index: 1;
-    }
-
-    .card-intro-col {
+    .cinematic-card-podium {
       position: relative;
+      width: min(340px, 92vw);
+      margin: 8px auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 3;
+    }
+    .card-ornate-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3.5px solid #e2b04a;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.75), 0 0 40px rgba(226,176,74,0.4);
+      background: #2a050d;
+    }
+    .card-ornate-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .card-video-overlay {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      display: flex;
+      gap: 8px;
+      z-index: 6;
+    }
+    .video-overlay-btn {
+      background: rgba(35, 6, 12, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid #e2b04a;
+      color: #ffe9b8;
+      border-radius: 99px;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: all .25s ease;
+    }
+    .video-overlay-btn:hover {
+      background: #e2b04a;
+      color: #2a050d;
+      transform: scale(1.05);
+    }
+    .corner-filigree {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border: 2px solid #e2b04a;
+      pointer-events: none;
       z-index: 5;
     }
+    .corner-filigree.top-left { top: 6px; left: 6px; border-right: none; border-bottom: none; border-top-left-radius: 12px; }
+    .corner-filigree.top-right { top: 6px; right: 6px; border-left: none; border-bottom: none; border-top-right-radius: 12px; }
+    .corner-filigree.bottom-left { bottom: 6px; left: 6px; border-right: none; border-top: none; border-bottom-left-radius: 12px; }
+    .corner-filigree.bottom-right { bottom: 6px; right: 6px; border-left: none; border-top: none; border-bottom-right-radius: 12px; }
 
-    /* Interactive state: when .keep-open is applied to stage */
-    .wedding-card-section .stage.keep-open { animation: none !important; opacity: 1 !important; }
-    .wedding-card-section .stage.keep-open .door.l { animation: none !important; transform: rotateY(-125deg) !important; }
-    .wedding-card-section .stage.keep-open .door.r { animation: none !important; transform: rotateY(125deg) !important; }
-    .wedding-card-section .stage.keep-open .upper { animation: none !important; }
-    .wedding-card-section .stage.keep-open .head { animation: none !important; }
-    .wedding-card-section .stage.keep-open .ual { animation: none !important; transform: rotate(15deg) !important; }
-    .wedding-card-section .stage.keep-open .uar { animation: none !important; transform: rotate(-15deg) !important; }
-    .wedding-card-section .stage.keep-open .fal { animation: none !important; transform: rotate(136deg) !important; }
-    .wedding-card-section .stage.keep-open .far { animation: none !important; transform: rotate(-136deg) !important; }
-    .wedding-card-section .stage.keep-open .palms { animation: none !important; opacity: 1 !important; }
-    .wedding-card-section .stage.keep-open .cap { animation: none !important; opacity: 1 !important; transform: none !important; }
 
     .card-controls {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      margin-top: 10px;
-      max-width: 320px;
+      margin-top: 14px;
+      width: 100%;
+      max-width: 420px;
       margin-left: auto;
       margin-right: auto;
       z-index: 10;
@@ -1134,9 +1084,11 @@
       border: 1px solid rgba(226, 176, 74, 0.35);
       color: #f6e7c1;
       font-size: 12px;
-      padding: 6px 16px;
+      font-weight: 500;
+      padding: 8px 18px;
       border-radius: 999px;
       cursor: pointer;
+      white-space: nowrap;
       transition: all 0.2s ease;
       font-family: var(--font-sans);
     }
@@ -1268,7 +1220,7 @@
         <p class="theater-desc" id="theaterDesc">Description...</p>
       </div>
       <div class="theater-nav-actions">
-        <span class="theater-counter" id="theaterCounter">1 / 20</span>
+        <span class="theater-counter" id="theaterCounter">1 / 21</span>
         <button class="theater-btn" id="theaterPrevBtn" type="button" aria-label="Previous media" onclick="prevTheaterItem()">← Prev</button>
         <button class="theater-btn" id="theaterNextBtn" type="button" aria-label="Next media" onclick="nextTheaterItem()">Next →</button>
       </div>
@@ -1288,13 +1240,14 @@
         </span>
       </a>
       <div class="nav-links">
+        <a href="#invitation" style="color:var(--gold);font-weight:600">✦ Royal Card</a>
         <a href="3d-venue.html" target="_blank" style="color:#d97706;font-weight:700">🏛️ Explore 3D Banquet ↗</a>
         <a href="#about">About</a>
         <a href="#services">Venues</a>
         <a href="#cinema">Atmosphere</a>
-        <a href="#gallery">Art Gallery &amp; Cinema</a>
+        <a href="#gallery">Art Gallery</a>
         <a href="#testimonials">Reviews</a>
-        <a href="#location">Location &amp; Map</a>
+        <a href="#location">Location</a>
       </div>
       <div class="nav-actions">
         <a class="btn" href="tel:07947134176">📞 07947134176</a>
@@ -1306,6 +1259,73 @@
 </header>
 
 <main>
+  <!-- ═══════ ROYAL WEDDING INVITATION CARD (CINEMATIC SHUBH VIVAH) ═══════ -->
+  <section class="wedding-card-section" id="invitation">
+    <div class="wrap wedding-card-center">
+      <!-- Sacred Shloka Crown -->
+      <div class="card-sacred-crown" data-reveal>
+        <div class="shloka-sanskrit">॥ वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ । निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</div>
+        <div class="ganesha-emblem">
+          <svg viewBox="0 0 100 100" class="ganesha-svg" aria-label="Lord Ganesha emblem">
+            <circle cx="50" cy="50" r="46" fill="rgba(66,10,21,0.85)" stroke="#e2b04a" stroke-width="2"/>
+            <path d="M50 16 L53 28 L65 28 L55 35 L59 47 L50 40 L41 47 L45 35 L35 28 L47 28 Z" fill="#e2b04a"/>
+            <path d="M50 38 Q62 38 64 50 Q66 64 52 68 Q44 70 42 64 Q40 56 48 56 Q54 56 54 60" fill="none" stroke="#e2b04a" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="44" cy="46" r="2.5" fill="#e2b04a"/>
+            <path d="M50 32 Q50 26 50 24" stroke="#e2b04a" stroke-width="2"/>
+            <path d="M47 34 Q50 31 53 34" stroke="#e2b04a" stroke-width="1.8" fill="none"/>
+          </svg>
+        </div>
+        <div class="card-shubh-title">शुभ विवाह आमंत्रण</div>
+        <p class="card-shubh-sub">Maa Sharda Utsav Lawn · Royal Gatefold Invitation</p>
+      </div>
+
+      <!-- Center Cinematic Video Card Podium -->
+      <div class="cinematic-card-podium" data-reveal>
+        <div class="card-ornate-frame">
+          <div class="corner-filigree top-left"></div>
+          <div class="corner-filigree top-right"></div>
+          <div class="corner-filigree bottom-left"></div>
+          <div class="corner-filigree bottom-right"></div>
+
+          <video 
+            id="invitationVideo" 
+            src="videos/wedding-invitation-cinematic.mp4" 
+            poster="videos/posters/poster-wedding-invitation.jpg" 
+            autoplay 
+            loop 
+            muted 
+            playsinline 
+            preload="auto"
+            aria-label="Maa Sharda Utsav Lawn Royal Wedding Invitation Card Opening Video"
+          ></video>
+
+          <div class="card-video-overlay">
+            <button type="button" class="video-overlay-btn" id="btnInviteSound" onclick="toggleInviteSound()" aria-label="Toggle Invitation Audio">
+              <span id="inviteSoundIcon">🔇</span> <span id="inviteSoundLabel">Sound On</span>
+            </button>
+            <button type="button" class="video-overlay-btn" id="btnInviteReplay" onclick="replayInviteVideo()" aria-label="Replay Invitation Video">
+              <span>🔄</span> <span>Replay</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Action Bar -->
+        <div class="card-controls">
+          <button type="button" class="btn-control active" id="btnInviteSoundBar" onclick="toggleInviteSound()">
+            <span id="barSoundIcon">🔊</span> Enable Wedding Music
+          </button>
+          <a href="3d-venue.html" target="_blank" class="btn-control" style="text-decoration:none">
+            🏛️ 3D Virtual Tour ↗
+          </a>
+        </div>
+
+        <a href="#hero" class="card-scroll-prompt">
+          <span>✦ Explore Maa Sharda Utsav Lawn ↓ ✦</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════ HERO ═══════ -->
   <section class="hero" id="hero">
     <div class="hero-bg"></div>
@@ -1551,8 +1571,8 @@
 
       <!-- Filter Navigation Tabs -->
       <div class="media-filters" data-reveal>
-        <button type="button" class="media-filter-btn active" onclick="filterMedia('all', this)">✦ All Media (20)</button>
-        <button type="button" class="media-filter-btn" onclick="filterMedia('films', this)">🎬 Full Cinematic Films (2)</button>
+        <button type="button" class="media-filter-btn active" onclick="filterMedia('all', this)">✦ All Media (21)</button>
+        <button type="button" class="media-filter-btn" onclick="filterMedia('films', this)">🎬 Full Cinematic Films (3)</button>
         <button type="button" class="media-filter-btn" onclick="filterMedia('clips', this)">✨ Motion Clips (5)</button>
         <button type="button" class="media-filter-btn" onclick="filterMedia('exterior', this)">🏛️ Facade &amp; Grounds (6)</button>
         <button type="button" class="media-filter-btn" onclick="filterMedia('banquet', this)">👑 Royal Banquet &amp; Mandap (4)</button>
@@ -1777,6 +1797,16 @@
           </div>
         </div>
       </div>
+        <!-- Item 20: Cinematic Wedding Invitation Card Opening Film -->
+        <div class="vault-card" data-category="films" onclick="openTheater(20)">
+          <img src="videos/posters/poster-wedding-invitation.jpg" alt="Shubh Vivah Gatefold Invitation Film" loading="lazy">
+          <span class="vault-card-badge">🎬 FULL FILM</span>
+          <div class="vault-play-icon">▶</div>
+          <div class="vault-card-caption">
+            Royal Shubh Vivah Invitation
+            <small>10s Cinematic · Gatefold Opening &amp; Namaste</small>
+          </div>
+        </div>
       </div>
 
       <!-- Dedicated Art Gallery Standalone Page CTA -->
@@ -2330,7 +2360,18 @@
       badge: '🕉️ Sacred Neon Emblem',
       title: 'Authentic Glowing Neon Board & Durga Medallion',
       desc: 'Handcrafted illuminated neon sign of Maa Sharda Utsav Lawn featuring the divine Trishul rising above the auspicious name and Goddess Durga medallion.'
+    },
+    // 20: Cinematic Wedding Invitation Card Opening Film
+    {
+      type: 'video',
+      src: 'videos/wedding-invitation-cinematic.mp4',
+      poster: 'videos/posters/poster-wedding-invitation.jpg',
+      category: 'films',
+      badge: '🎬 Royal Gatefold Film',
+      title: 'Royal Shubh Vivah Gatefold Invitation Film',
+      desc: 'Cinematic royal wedding invitation card opening with falling petals to reveal the traditional bridal Namaste greeting in the palace arch.'
     }
+
 
   ];
 
@@ -2472,6 +2513,39 @@
 
     document.querySelectorAll('.cinema-video-wrap video').forEach(v => clipObserver.observe(v));
   }
+
+  // ── Royal Cinematic Wedding Invitation Audio & Playback Controls ──
+  window.toggleInviteSound = function() {
+    const vid = document.getElementById("invitationVideo");
+    const icon = document.getElementById("inviteSoundIcon");
+    const label = document.getElementById("inviteSoundLabel");
+    const barIcon = document.getElementById("barSoundIcon");
+    const barBtn = document.getElementById("btnInviteSoundBar");
+    if (!vid) return;
+
+    if (vid.muted) {
+      vid.muted = false;
+      vid.play().catch(() => {});
+      if (icon) icon.textContent = "🔊";
+      if (label) label.textContent = "Mute";
+      if (barIcon) barIcon.textContent = "🔇";
+      if (barBtn) barBtn.innerHTML = "<span>🔇</span> Mute Music";
+    } else {
+      vid.muted = true;
+      if (icon) icon.textContent = "🔇";
+      if (label) label.textContent = "Sound On";
+      if (barIcon) barIcon.textContent = "🔊";
+      if (barBtn) barBtn.innerHTML = "<span>🔊</span> Enable Wedding Music";
+    }
+  };
+
+  window.replayInviteVideo = function() {
+    const vid = document.getElementById("invitationVideo");
+    if (!vid) return;
+    vid.currentTime = 0;
+    vid.play().catch(() => {});
+  };
+
 </script>
 </body>
 </html>

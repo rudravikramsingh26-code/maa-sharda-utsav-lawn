@@ -338,8 +338,8 @@
     <!-- Filter Buttons -->
     <div class="filter-bar-wrap">
       <div class="filters-list">
-        <button type="button" class="filter-btn active" onclick="filterGallery('all', this)">✦ All Media (20)</button>
-        <button type="button" class="filter-btn" onclick="filterGallery('films', this)">🎬 Full Cinematic Films (2)</button>
+        <button type="button" class="filter-btn active" onclick="filterGallery('all', this)">✦ All Media (21)</button>
+        <button type="button" class="filter-btn" onclick="filterGallery('films', this)">🎬 Full Cinematic Films (3)</button>
         <button type="button" class="filter-btn" onclick="filterGallery('clips', this)">✨ Motion Clips (5)</button>
         <button type="button" class="filter-btn" onclick="filterGallery('exterior', this)">🏛️ Facade &amp; Grounds (6)</button>
         <button type="button" class="filter-btn" onclick="filterGallery('banquet', this)">👑 Royal Banquet &amp; Mandap (4)</button>
@@ -506,6 +506,13 @@
         <span class="card-badge">🕉️ SACRED EMBLEM</span>
         <div class="card-caption">Illuminated Neon Insignia<small>Sacred Trishul &amp; Maa Durga Medallion</small></div>
       </div>
+      <!-- Item 20: Cinematic Wedding Invitation Card Opening Film -->
+      <div class="media-card" data-category="films" onclick="openTheater(20)">
+        <img src="videos/posters/poster-wedding-invitation.jpg" alt="Shubh Vivah Gatefold Invitation Film" loading="lazy">
+        <span class="card-badge">🎬 FULL FILM</span>
+        <div class="card-play-btn">▶</div>
+        <div class="card-caption">Royal Shubh Vivah Invitation<small>10s Cinematic · Gatefold Opening &amp; Namaste</small></div>
+      </div>
     </div>
   </main>
 
@@ -521,7 +528,7 @@
           <p class="theater-desc" id="theaterDesc">Description...</p>
         </div>
         <div class="theater-nav-actions">
-          <span class="theater-counter" id="theaterCounter">1 / 20</span>
+          <span class="theater-counter" id="theaterCounter">1 / 21</span>
           <button class="theater-btn" type="button" onclick="prevTheaterItem()">← Prev</button>
           <button class="theater-btn" type="button" onclick="nextTheaterItem()">Next →</button>
         </div>
@@ -703,7 +710,18 @@
         badge: '🕉️ Sacred Neon Emblem',
         title: 'Authentic Glowing Neon Board & Durga Medallion',
         desc: 'Handcrafted illuminated neon sign of Maa Sharda Utsav Lawn featuring the divine Trishul rising above the auspicious name and Goddess Durga medallion.'
-      }
+      },
+    // 20: Cinematic Wedding Invitation Card Opening Film
+    {
+      type: 'video',
+      src: 'videos/wedding-invitation-cinematic.mp4',
+      poster: 'videos/posters/poster-wedding-invitation.jpg',
+      category: 'films',
+      badge: '🎬 Royal Gatefold Film',
+      title: 'Royal Shubh Vivah Gatefold Invitation Film',
+      desc: 'Cinematic royal wedding invitation card opening with falling petals to reveal the traditional bridal Namaste greeting in the palace arch.'
+    }
+
     ];
 
     let currentTheaterIndex = 0;
