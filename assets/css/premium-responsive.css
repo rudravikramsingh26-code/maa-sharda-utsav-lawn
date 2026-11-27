@@ -325,3 +325,20 @@ footer .foot-col h4{letter-spacing:.12em}
 @media(prefers-reduced-motion:reduce){
   #invitation *{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+
+/* Performance and motion polish */
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+header.scrolled{box-shadow:0 10px 30px rgba(44,24,16,.075)!important}
+.cursor-glow{will-change:transform}
+.invitation-film-frame video{display:block;width:100%;height:100%;object-fit:contain;background:#1d0b11}
+.invitation-film-controls button{min-height:44px;touch-action:manipulation}
+.invitation-film-controls button:hover{transform:translateY(-1px)}
+@media(max-width:640px){
+  .invitation-film-controls{flex-wrap:wrap}
+  .invitation-film-controls button{min-width:0;flex:1 1 28%;white-space:nowrap}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
