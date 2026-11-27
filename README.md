@@ -8,28 +8,31 @@ A luxury single-page corporate profile for **Maa Sharda Utsav Lawn** (माँ 
 - **Typography:** Cormorant Garamond (serif headings) + Inter (body)
 - **Aesthetic:** Warm, architectural, timeless — luxury editorial style
 
-## 🎬 Animations & Tech
+## 🎬 Motion, Interaction & Performance
 
-- **GSAP 3.12.5** + ScrollTrigger — scroll-triggered reveals, parallax, counter animations
-- **Lenis v1.1.20** — buttery smooth scroll
-- **3D Tilt** — interactive mouse-following parallax on cards
-- **Cursor Glow** — ambient glow effect following the cursor
+- **Native smooth anchor scrolling** — smooth section navigation without scroll hijacking or an extra scroll library.
+- **Scroll reveals** — lightweight `IntersectionObserver` reveals, staggered subtly as sections enter view.
+- **Counters and interactions** — requestAnimationFrame-based counters, low-cost card hover/tilt effects, and a frame-coalesced sticky-header update.
+- **Reduced motion** — animation and smooth-scroll behavior respects the visitor's system preference.
+- **Invitation film** — poster loads first; the large video file downloads only when the visitor presses Play.
+- **Ambient clips** — clips are loaded near the viewport and paused when they leave it.
+- **Gallery films** — long videos use `preload="none"` so they do not compete with the page's initial load.
+- **3D tour** — Three.js scripts load after the tour interface markup; render resolution is capped for high-DPI devices without changing the tour's original visual styling.
 
 ## 📄 Sections
 
-1. Top bar with contact info
-2. Sticky header with mobile menu
-3. Hero with arch-frame photo + floating badges
+1. Invitation-led opening section with the wedding film and 3D Banquet link
+2. Sticky header with mobile navigation
+3. Venue hero with arch-frame photography and key details
 4. Cinematic cover photo banner
-5. Credibility bar (3+ years, 200+ events, 500+ capacity)
+5. Credibility bar (guest capacity, events and venue details)
 6. Scrolling marquee
-7. Services bento grid (5 service cards)
-8. "Why Choose Us" interactive step cards
-9. 6-photo venue gallery
-10. Testimonials (4 cards)
-11. Location with radar-style map
-12. CTA with Devanagari watermark
-13. Full footer with WhatsApp button
+7. Services grid
+8. "Why Choose Us" interactive steps
+9. Venue photo gallery and cinema section
+10. Testimonials
+11. Location and directions
+12. Contact section and WhatsApp button
 
 ## 📍 Verified Venue Details (Justdial)
 
