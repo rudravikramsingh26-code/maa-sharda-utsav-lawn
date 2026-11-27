@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2C1810" />
+  <title>Maa Sharda Utsav Lawn — Where Celebrations Become Legacies</title>
+  <meta name="description" content="Premium marriage & celebration venue in Ambedkar Nagar, Uttar Pradesh. Luxurious lawns, impeccable hospitality, timeless memories since 2023." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lenis Smooth Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
+  <!-- GSAP & ScrollTrigger Animation Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <style>
+    /* ═══════════════════════════════════════════════════════
+       EDITORIAL PLASTER & ESPRESSO — 3 Colour Palette
+       ═══════════════════════════════════════════════════════
+       1. Espresso    #2C1810  (deep warm brown-black)
+       2. Plaster     #E8E0D8  (warm Italian stucco)
+       3. Cream       #F5F0EB  (paper / light background)
+       + one accent for tiny highlights: Burnished Gold #B8976A
+    */
+    :root {
+      --espresso: #2C1810;
+      --espresso-soft: #3D2A20;
+      --espresso-surface: #1E100A;
+      --plaster: #E8E0D8;
+      --plaster-dark: #D8CEC4;
+      --cream: #F5F0EB;
+      --cream-warm: #FBF8F5;
+      --gold: #B8976A;
+      --gold-soft: rgba(184,151,106,.18);
+      --muted: #8C7E74;
+      --line: #DDD5CC;
+      --max: 1280px;
+      --radius: 20px;
+      --shadow: 0 30px 80px rgba(44,24,16,.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--cream);
+      color: var(--espresso);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none }
+    button { font: inherit; cursor: pointer }
+    img { display: block; max-width: 100% }
+    ::selection { background: var(--gold); color: var(--espresso) }
+
+    /* ── Ambient Interactive Cursor Glow ── */
+    .cursor-glow {
+      position: fixed; width: 440px; height: 440px; border-radius: 50%;
+      pointer-events: none; z-index: 1; transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(184,151,106,.14), rgba(44,24,16,.04) 50%, transparent 70%);
+      mix-blend-mode: multiply; opacity: .85; transition: opacity .3s ease;
+    }
+
+    /* ── Interactive Booking Modal & WhatsApp Float ── */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(28,15,10,.68); backdrop-filter: blur(10px);
+      z-index: 9999; display: grid; place-items: center; padding: 20px;
+      opacity: 0; pointer-events: none; transition: opacity .35s ease;
+    }
+    .modal-backdrop.active { opacity: 1; pointer-events: auto }
+    .modal-card {
+      background: var(--cream-warm); border: 1.5px solid var(--line); border-radius: 26px;
+      padding: 38px 36px; max-width: 540px; width: 100%; position: relative;
+      box-shadow: 0 40px 100px rgba(28,15,10,.35); transform: translateY(24px) scale(.98);
+      transition: all .35s cubic-bezier(.16,1,.3,1);
+    }
+    .modal-backdrop.active .modal-card { transform: translateY(0) scale(1) }
+    .modal-close {
+      position: absolute; right: 22px; top: 22px; width: 36px; height: 36px;
+      border-radius: 50%; border: 1px solid var(--line); background: var(--cream);
+      display: grid; place-items: center; font-size: 16px; color: var(--espresso);
+      transition: all .2s;
+    }
+    .modal-close:hover { background: var(--espresso); color: var(--plaster) }
+    .modal-title { font: 600 28px/1.1 'Cormorant Garamond', serif; margin: 10px 0 6px }
+    .modal-desc { font-size: 13px; color: var(--muted); margin-bottom: 22px }
+    .inquiry-form { display: grid; gap: 14px }
+    .form-group { display: flex; flex-direction: column; gap: 6px }
+    .form-group label { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; color: var(--espresso) }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 12px 16px; border-radius: 12px; border: 1.5px solid var(--line);
+      background: var(--cream); color: var(--espresso); font-family: inherit; font-size: 13.5px;
+      outline: none; transition: border-color .2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold) }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    .submit-btn {
+      background: var(--espresso); color: var(--plaster); border: 1.5px solid var(--espresso);
+      border-radius: 999px; padding: 14px 24px; font-weight: 700; font-size: 13px;
+      letter-spacing: .03em; margin-top: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      transition: all .3s;
+    }
+    .submit-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--espresso); transform: translateY(-2px) }
+    
+    /* WhatsApp Floating Widget */
+    .whatsapp-float {
+      position: fixed; right: 26px; bottom: 26px; z-index: 85;
+      display: flex; align-items: center; gap: 10px; padding: 12px 18px;
+      background: #25D366; color: white; border-radius: 999px; font-weight: 700;
+      font-size: 12.5px; box-shadow: 0 14px 34px rgba(37,211,102,.35);
+      transition: all .3s cubic-bezier(.2,.8,.2,1);
+    }
+    .whatsapp-float:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 18px 42px rgba(37,211,102,.45) }
+    .whatsapp-icon { width: 22px; height: 22px; fill: currentColor }
+
+    /* Parallax Tilt on Cards */
+    .service, .arch-frame, .cta-box {
+      will-change: transform;
+    }
+    .noise {
+      position: fixed; inset: 0; pointer-events: none; z-index: 999; opacity: .028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+    }
+
+    /* ── Layout ── */
+    .wrap { width: min(calc(100% - 48px), var(--max)); margin-inline: auto; position: relative; z-index: 2 }
+    .eyebrow {
+      font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+      font-weight: 700; color: var(--gold); display: inline-block;
+    }
+    .serif { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400 }
+    .serif-normal { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500 }
+
+    /* ═══════════ TOP BAR ═══════════ */
+    .topbar {
+      background: var(--espresso); color: var(--plaster); font-size: 11px; letter-spacing: .02em;
+    }
+    .topbar .wrap {
+      display: flex; justify-content: space-between; align-items: center;
+      min-height: 38px; gap: 16px;
+    }
+    .topbar .left { display: flex; gap: 10px; align-items: center }
+    .topbar-dot {
+      width: 6px; height: 6px; background: var(--gold); border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(184,151,106,.15);
+    }
+    .topbar a { opacity: .75; transition: opacity .2s } .topbar a:hover { opacity: 1 }
+
+    /* ═══════════ HEADER / NAV ═══════════ */
+    header {
+      position: sticky; top: 0; z-index: 80;
+      background: rgba(245,240,235,.88); backdrop-filter: blur(20px) saturate(1.2);
+      border-bottom: 1px solid rgba(221,213,204,.7);
+    }
+    nav { height: 78px; display: flex; align-items: center; justify-content: space-between }
+    .brand { display: flex; align-items: center; gap: 14px }
+    .brand-icon {
+      width: 44px; height: 44px; border: 1.5px solid var(--espresso); border-radius: 14px;
+      display: grid; place-items: center; position: relative; overflow: hidden;
+      background: var(--cream-warm);
+    }
+    .brand-icon svg { width: 24px; height: 24px; color: var(--espresso) }
+    .brand-text strong {
+      display: block; font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; font-weight: 600; letter-spacing: .02em; line-height: 1.1;
+    }
+    .brand-text span {
+      font-size: 8.5px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold); font-weight: 700;
+    }
+    .nav-links { display: flex; gap: 28px; align-items: center }
+    .nav-links a {
+      font-size: 12.5px; color: var(--muted); font-weight: 600; letter-spacing: .01em;
+      position: relative; transition: color .3s ease;
+    }
+    .nav-links a:after {
+      content: ""; position: absolute; left: 0; bottom: -6px;
+      width: 0; height: 1.5px; background: var(--gold); transition: width .3s ease;
+    }
+    .nav-links a:hover { color: var(--espresso) }
+    .nav-links a:hover:after { width: 100% }
+    .nav-actions { display: flex; gap: 10px; align-items: center }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 999px; padding: 12px 20px; font-size: 12px; font-weight: 700;
+      border: 1.5px solid var(--line); background: var(--cream-warm); color: var(--espresso);
+      letter-spacing: .02em; transition: all .3s ease;
+    }
+    .btn:hover { border-color: var(--espresso); transform: translateY(-2px); box-shadow: var(--shadow) }
+    .btn.primary { background: var(--espresso); color: var(--plaster); border-color: var(--espresso) }
+    .btn.primary:hover { background: var(--espresso-soft) }
+    .menu {
+      display: none; border: 1.5px solid var(--line); background: var(--cream-warm);
+      width: 44px; height: 44px; border-radius: 50%;
+    }
+    .menu span, .menu:before, .menu:after {
+      content: ""; display: block; width: 15px; height: 1.5px;
+      background: var(--espresso); margin: 3px auto;
+    }
+
+    /* ═══════════ HERO ═══════════ */
+    .hero {
+      padding: 100px 0 80px; min-height: calc(100vh - 116px);
+      display: grid; align-items: center; position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--plaster) 60%, var(--cream-warm) 100%);
+    }
+    .hero-pattern {
+      position: absolute; inset: 0; z-index: 1; opacity: .06;
+      background-image: radial-gradient(circle at 1px 1px, var(--espresso) .5px, transparent 0);
+      background-size: 32px 32px;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: center;
+      position: relative; z-index: 2;
+    }
+    .hero h1 {
+      font: 500 clamp(48px, 5.5vw, 82px)/.94 'Cormorant Garamond', serif;
+      letter-spacing: -.03em; max-width: 680px;
+    }
+    .hero h1 .soft { color: var(--muted); font-weight: 400 }
+    .hero h1 .gold-line { color: var(--gold) }
+    .hero-copy {
+      margin-top: 24px; max-width: 520px; color: var(--muted);
+      font-size: 15px; line-height: 1.8; font-weight: 400;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px }
+    .hero-proof {
+      display: flex; align-items: center; gap: 16px; margin-top: 38px;
+      padding-top: 28px; border-top: 1px solid var(--line);
+    }
+    .proof-num { font: 600 28px/1 'Cormorant Garamond', serif; letter-spacing: -.02em }
+    .proof-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-top: 2px }
+    .proof-divider { width: 1px; height: 36px; background: var(--line) }
+
+    /* Hero Art — Architectural Frame */
+    .hero-art { position: relative; min-height: 560px; display: flex; align-items: center; justify-content: center }
+    .arch-frame {
+      position: relative; width: min(440px, 90%); aspect-ratio: 3/4;
+      border-radius: 220px 220px 24px 24px; overflow: hidden;
+      border: 8px solid var(--cream-warm); box-shadow: 0 40px 100px rgba(44,24,16,.18);
+    }
+    .arch-frame img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.85) brightness(1.02) }
+    .arch-frame:after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(44,24,16,.25) 100%);
+    }
+    .floating-badge {
+      position: absolute; background: var(--cream-warm); color: var(--espresso);
+      border: 1px solid var(--line); box-shadow: 0 16px 40px rgba(44,24,16,.12);
+      border-radius: 16px; padding: 14px 18px; display: flex; align-items: center; gap: 12px;
+      animation: float 7s ease-in-out infinite; z-index: 5;
+    }
+    .floating-badge .icon {
+      width: 36px; height: 36px; background: var(--gold-soft); border-radius: 10px;
+      display: grid; place-items: center; font-size: 15px; color: var(--gold);
+    }
+    .floating-badge strong { font: 600 15px/1.2 'Cormorant Garamond', serif }
+    .floating-badge small { display: block; font-size: 9.5px; color: var(--muted); margin-top: 1px; letter-spacing: .03em }
+    .fb1 { left: -8%; top: 22%; animation-delay: -1s }
+    .fb2 { right: -4%; bottom: 24%; animation-delay: -3.5s }
+    .fb3 { left: 4%; bottom: 10%; animation-delay: -5s }
+    @keyframes float { 50% { transform: translateY(-12px) } }
+
+    /* ═══════════ CREDIBILITY BAR ═══════════ */
+    .cred-bar { padding: 20px 0; background: var(--cream) }
+    .cred-grid {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    }
+    .cred-item { padding: 28px 24px; position: relative; text-align: center }
+    .cred-item:not(:last-child):after {
+      content: ""; position: absolute; right: 0; top: 20px; bottom: 20px;
+      width: 1px; background: var(--line);
+    }
+    .cred-num { font: 600 clamp(28px, 3vw, 44px)/1 'Cormorant Garamond', serif; letter-spacing: -.03em }
+    .cred-label { color: var(--muted); font-size: 10px; margin-top: 6px; text-transform: uppercase; letter-spacing: .12em }
+
+    /* ═══════════ SECTIONS ═══════════ */
+    section { padding: 100px 0 }
+    .section-head {
+      display: flex; justify-content: space-between; gap: 40px;
+      align-items: flex-end; margin-bottom: 50px;
+    }
+    .section-head h2 {
+      font: 500 clamp(36px, 4.2vw, 64px)/.98 'Cormorant Garamond', serif;
+      letter-spacing: -.03em; max-width: 760px;
+    }
+    .section-head p { max-width: 340px; color: var(--muted); line-height: 1.75; font-size: 13.5px }
+
+    /* ═══════════ SERVICES ═══════════ */
+    .services-section { background: var(--cream-warm) }
+    .service-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px }
+    .service {
+      background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 28px; min-height: 240px; position: relative; overflow: hidden;
+      transition: all .4s ease;
+    }
+    .service:hover {
+      transform: translateY(-6px); background: var(--cream-warm);
+      border-color: var(--plaster-dark); box-shadow: var(--shadow);
+    }
+    .service.s1 { grid-column: span 7; min-height: 310px }
+    .service.s2 { grid-column: span 5 }
+    .service.s3 { grid-column: span 5 }
+    .service.s4 { grid-column: span 7; min-height: 310px }
+    .service.s5 { grid-column: span 12; min-height: 160px; display: flex; align-items: center; justify-content: space-between; gap: 30px }
+    .service-tag {
+      font-size: 9px; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--gold); font-weight: 700;
+    }
+    .service h3 {
+      font: 500 26px/1.1 'Cormorant Garamond', serif;
+      letter-spacing: -.02em; margin-top: 50px; max-width: 360px;
+    }
+    .service p { font-size: 12.5px; color: var(--muted); line-height: 1.7; max-width: 440px; margin-top: 12px }
+    .service .arrow {
+      position: absolute; right: 20px; top: 20px;
+      width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line);
+      display: grid; place-items: center; font-size: 13px; transition: .3s ease;
+    }
+    .service:hover .arrow {
+      background: var(--espresso); color: var(--plaster); border-color: var(--espresso);
+      transform: rotate(45deg);
+    }
+    .service .orb {
+      position: absolute; right: -80px; bottom: -100px;
+      width: 240px; height: 240px; border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(184,151,106,.3), rgba(184,151,106,.03) 50%, transparent 70%);
+      filter: blur(6px);
+    }
+    .service.s5 h3 { margin-top: 8px }
+    .service.s5 p { padding-right: 56px }
+
+    /* ═══════════ MARQUEE ═══════════ */
+    .ticker {
+      overflow: hidden; background: var(--espresso); color: var(--plaster);
+      border-block: 1px solid rgba(184,151,106,.15); padding: 16px 0;
+    }
+    .ticker-track {
+      display: flex; width: max-content; animation: marquee 30s linear infinite;
+      gap: 28px; align-items: center;
+    }
+    .ticker-track span { font-size: 11px; text-transform: uppercase; letter-spacing: .16em; white-space: nowrap }
+    .ticker-track b { color: var(--gold); font-weight: 500 }
+    @keyframes marquee { to { transform: translateX(-50%) } }
+
+    /* ═══════════ WHY CHOOSE US ═══════════ */
+    .why-section { background: var(--cream) }
+    .why-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 56px; align-items: start }
+    .sticky-col { position: sticky; top: 120px }
+    .sticky-col h2 {
+      font: 500 clamp(42px, 4.8vw, 70px)/.96 'Cormorant Garamond', serif;
+      letter-spacing: -.03em; margin-top: 14px;
+    }
+    .sticky-col h2 .faded { color: var(--muted) }
+    .steps { display: flex; flex-direction: column; gap: 12px }
+    .step {
+      display: grid; grid-template-columns: 54px 1fr; gap: 16px;
+      padding: 22px; border: 1px solid var(--line); border-radius: 18px;
+      background: var(--cream-warm); transition: .4s ease;
+    }
+    .step.active, .step:hover {
+      background: var(--espresso); color: var(--plaster);
+      transform: translateX(-6px); border-color: var(--espresso); box-shadow: var(--shadow);
+    }
+    .step-no { font: 600 13px 'Cormorant Garamond', serif; color: var(--muted) }
+    .step.active .step-no { color: var(--gold) }
+    .step h3 { font: 600 18px/1.2 'Cormorant Garamond', serif; letter-spacing: -.01em }
+    .step p { color: var(--muted); font-size: 12.5px; line-height: 1.65; margin-top: 6px; max-width: 480px }
+    .step.active p { color: rgba(232,224,216,.7) }
+
+    /* ═══════════ GALLERY PREVIEW ═══════════ */
+    .gallery-section { background: var(--espresso); color: var(--plaster); overflow: hidden }
+    .gallery-section .eyebrow { color: var(--gold) }
+    .gallery-section .section-head p { color: rgba(232,224,216,.6) }
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; grid-auto-rows: minmax(320px, auto) }
+    .gallery-card {
+      border-radius: var(--radius); overflow: hidden; position: relative;
+      min-height: 320px; border: 1px solid rgba(184,151,106,.12);
+    }
+    .gallery-card img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.8) brightness(.95); transition: transform .6s ease }
+    .gallery-card:hover img { transform: scale(1.05) }
+    .gallery-card:after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(44,24,16,.6) 100%);
+    }
+    .gallery-caption {
+      position: absolute; bottom: 18px; left: 18px; right: 18px; z-index: 2;
+      font: 500 18px 'Cormorant Garamond', serif;
+    }
+    /* ═══════════ COVER SHOWCASE BANNER ═══════════ */
+    .cover-showcase-section { padding: 40px 0 60px; background: var(--cream) }
+    .cover-card {
+      border-radius: 28px; overflow: hidden; border: 2px solid var(--line);
+      box-shadow: 0 35px 90px rgba(44,24,16,.14); background: var(--espresso);
+      position: relative;
+    }
+    .cover-img-wrapper {
+      position: relative; width: 100%; height: clamp(340px, 45vw, 520px); overflow: hidden;
+    }
+    .cover-main-img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      filter: saturate(1.05) contrast(1.02); transition: transform 1.2s cubic-bezier(.16,1,.3,1);
+    }
+    .cover-card:hover .cover-main-img { transform: scale(1.04) }
+    .cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(44,24,16,.1) 0%, rgba(44,24,16,.3) 40%, rgba(44,24,16,.85) 100%);
+    }
+    .cover-glass-caption {
+      position: absolute; bottom: 32px; left: 36px; right: 36px; z-index: 2;
+      background: rgba(245,240,235,.88); backdrop-filter: blur(18px) saturate(1.2);
+      border: 1.5px solid rgba(221,213,204,.9); border-radius: 20px; padding: 24px 30px;
+      box-shadow: 0 20px 50px rgba(44,24,16,.22); display: flex; flex-direction: column; gap: 6px;
+      max-width: 680px;
+    }
+    .cover-badge {
+      font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .2em; color: var(--gold);
+    }
+    .cover-heading {
+      font: 600 clamp(28px, 3.5vw, 42px)/1.1 'Cormorant Garamond', serif;
+      letter-spacing: -.02em; color: var(--espresso); margin: 0;
+    }
+    .cover-sub {
+      font-size: 13.5px; color: var(--muted); line-height: 1.6; margin: 0;
+    }
+
+    .gallery-grid.venue-6 {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .gallery-grid.venue-6 .gallery-card {
+      min-height: 340px; height: 340px;
+    }
+
+    /* ═══════════ TESTIMONIALS ═══════════ */
+    .testimonials { background: var(--cream-warm) }
+    .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px }
+    .testi-card {
+      background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 32px; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;
+      transition: all .3s ease;
+    }
+    .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow) }
+    .testi-card blockquote {
+      font: 400 15px/1.75 'Cormorant Garamond', serif; color: var(--espresso);
+      font-style: italic; letter-spacing: .01em;
+    }
+    .testi-card blockquote:before { content: '"'; font-size: 40px; color: var(--gold); line-height: 0; vertical-align: -12px; margin-right: 4px }
+    .testi-author { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line) }
+    .testi-author strong { font-size: 13px; font-weight: 700 }
+    .testi-author span { display: block; font-size: 11px; color: var(--muted); margin-top: 2px }
+
+    /* ═══════════ LOCATION ═══════════ */
+    .location-section { background: var(--cream) }
+    .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px }
+    .map-card {
+      min-height: 440px; border-radius: 24px; background: var(--plaster);
+      position: relative; overflow: hidden; border: 1px solid var(--line);
+    }
+    .map-card:before {
+      content: ""; position: absolute; inset: -10%;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(184,151,106,.25), transparent 30%),
+        repeating-radial-gradient(circle, transparent 0 45px, rgba(44,24,16,.05) 46px 47px);
+      transform: rotate(-8deg);
+    }
+    .map-grid-lines {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(44,24,16,.04) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(44,24,16,.04) 1px, transparent 1px);
+      background-size: 36px 36px; opacity: .5;
+    }
+    .pin {
+      position: absolute; width: 16px; height: 16px; border-radius: 50%;
+      background: var(--espresso); border: 4px solid var(--gold);
+      box-shadow: 0 0 0 8px rgba(184,151,106,.15);
+    }
+    .pin span {
+      position: absolute; left: 22px; top: -6px; white-space: nowrap;
+      font-size: 10px; color: var(--espresso); font-weight: 700; letter-spacing: .03em;
+    }
+    .pin-1 { left: 48%; top: 42% }
+    .map-caption {
+      position: absolute; left: 18px; bottom: 18px; right: 18px;
+      background: rgba(245,240,235,.9); backdrop-filter: blur(14px);
+      border: 1px solid var(--line); padding: 18px; border-radius: 16px;
+    }
+    .map-caption strong { font: 600 17px 'Cormorant Garamond', serif }
+    .map-caption p { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.5 }
+    .loc-copy { padding: 10px 0 }
+    .loc-copy h2 {
+      font: 500 clamp(38px, 4.5vw, 66px)/.96 'Cormorant Garamond', serif;
+      letter-spacing: -.03em; margin: 14px 0 20px;
+    }
+    .loc-copy p { font-size: 14px; line-height: 1.8; color: var(--muted); max-width: 440px }
+    .detail-list { margin-top: 32px; border-top: 1px solid var(--line) }
+    .detail-row {
+      display: flex; justify-content: space-between; gap: 20px;
+      padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 13px;
+    }
+    .detail-row span:last-child { color: var(--muted); text-align: right }
+
+    /* ═══════════ CTA ═══════════ */
+    .final-cta { padding: 30px 0 100px; background: var(--cream-warm) }
+    .cta-box {
+      border-radius: 28px; background: var(--espresso); color: var(--plaster);
+      overflow: hidden; position: relative; padding: 72px;
+    }
+    .cta-box:before {
+      content: ""; position: absolute; width: 500px; height: 500px; border-radius: 50%;
+      right: -100px; top: -200px;
+      background: radial-gradient(circle, rgba(184,151,106,.2), transparent 65%);
+    }
+    .cta-box:after {
+      content: "माँ शारदा"; position: absolute; right: 36px; bottom: -8px;
+      font: 700 120px/.8 'Cormorant Garamond', serif; color: rgba(255,255,255,.025);
+      letter-spacing: -.04em;
+    }
+    .cta-box .eyebrow { color: var(--gold) }
+    .cta-box h2 {
+      font: 500 clamp(40px, 4.5vw, 68px)/.98 'Cormorant Garamond', serif;
+      letter-spacing: -.03em; max-width: 680px; margin-top: 16px;
+    }
+    .cta-box h2 .faded { color: rgba(232,224,216,.5) }
+    .cta-box p { color: rgba(232,224,216,.6); max-width: 500px; line-height: 1.75; font-size: 14px; margin-top: 16px }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; position: relative; z-index: 2 }
+    .cta-actions .btn.gold {
+      background: var(--gold); color: var(--espresso); border-color: var(--gold);
+      font-weight: 800;
+    }
+    .cta-actions .btn.ghost {
+      background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12);
+      color: var(--plaster);
+    }
+
+    /* ═══════════ FOOTER ═══════════ */
+    footer { background: var(--espresso-surface); color: var(--plaster); padding: 56px 0 24px }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr .7fr .7fr .9fr; gap: 32px }
+    .foot-desc { font-size: 12px; line-height: 1.7; color: rgba(232,224,216,.45); max-width: 320px; margin-top: 16px }
+    .foot-col h4 {
+      font: 600 10px 'Inter', sans-serif; text-transform: uppercase;
+      letter-spacing: .14em; color: var(--plaster); margin-bottom: 14px;
+    }
+    .foot-col a { display: block; font-size: 12px; color: rgba(232,224,216,.5); margin: 8px 0; transition: color .2s }
+    .foot-col a:hover { color: var(--gold) }
+    .foot-bottom {
+      display: flex; justify-content: space-between; gap: 20px;
+      border-top: 1px solid rgba(184,151,106,.1); margin-top: 36px;
+      padding-top: 20px; color: rgba(232,224,216,.3); font-size: 10px;
+    }
+
+    /* ═══════════ SCROLL REVEALS ═══════════ */
+    [data-reveal] { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1) }
+    [data-reveal].visible { opacity: 1; transform: none }
+
+    /* ═══════════ RESPONSIVE ═══════════ */
+    @media (max-width: 1000px) {
+      .hero-grid, .why-grid, .loc-grid { grid-template-columns: 1fr }
+      .hero { padding-top: 60px } .hero-art { min-height: 460px }
+      .sticky-col { position: static }
+      .cred-grid { grid-template-columns: repeat(2, 1fr) }
+      .cred-item:nth-child(2):after { display: none }
+      .service.s1, .service.s2, .service.s3, .service.s4 { grid-column: span 6 }
+      .service.s5 { grid-column: span 12 }
+      .gallery-grid { grid-template-columns: 1fr 1fr } .gallery-card.tall { grid-row: span 1; min-height: 320px }
+      .testi-grid { grid-template-columns: 1fr }
+      .footer-grid { grid-template-columns: 1.2fr .8fr .8fr }
+    }
+    @media (max-width: 740px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)) }
+      .topbar .right { display: none }
+      nav { height: 66px } .nav-links, .nav-actions .btn { display: none } .menu { display: block }
+      .hero { min-height: auto; padding: 50px 0 30px } .hero-grid { gap: 20px }
+      .hero h1 { font-size: clamp(42px, 12vw, 68px) } .hero-copy { font-size: 13.5px }
+      .hero-art { min-height: 380px } .arch-frame { width: 85% }
+      .floating-badge { padding: 10px 12px; font-size: 12px }
+      .fb1 { left: -2%; top: 12% } .fb2 { right: -2%; bottom: 20% } .fb3 { left: 2%; bottom: 5% }
+      section { padding: 70px 0 }
+      .section-head { display: block; margin-bottom: 30px } .section-head p { margin-top: 12px }
+      .cred-grid { grid-template-columns: 1fr 1fr } .cred-item:after { display: none }
+      .service-grid { grid-template-columns: 1fr }
+      .service.s1, .service.s2, .service.s3, .service.s4, .service.s5 { grid-column: span 1; min-height: 220px }
+      .service.s5 { display: block }
+      .gallery-grid { grid-template-columns: 1fr } .gallery-card { min-height: 260px }
+      .cta-box { padding: 40px 22px } .cta-box:after { font-size: 70px }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px }
+      .footer-grid > div:first-child { grid-column: span 2 }
+      .foot-bottom { display: block } .foot-bottom span { display: block; margin-top: 6px }
+      .hero-proof { flex-wrap: wrap; gap: 20px }
+    }
+  </style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+<!-- ═══════ INTERACTIVE BOOKING INQUIRY MODAL ═══════ -->
+<div class="modal-backdrop" id="inquiryModal">
+  <div class="modal-card">
+    <button class="modal-close" id="closeModalBtn" type="button" aria-label="Close modal">✕</button>
+    <div class="eyebrow">Direct Venue Reservation</div>
+    <h3 class="modal-title">Plan Your Celebration</h3>
+    <p class="modal-desc">Share your expected dates and event preferences. Our event coordinator will connect within 2 hours.</p>
+    
+    <form class="inquiry-form" id="bookingForm" onsubmit="handleInquirySubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="e.g. Ramesh Singh" required id="inqName">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 98765 43210" required id="inqPhone">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Event Type</label>
+          <select id="inqEvent" required>
+            <option value="Grand Wedding">Grand Wedding</option>
+            <option value="Reception / Ring Ceremony">Reception / Ring Ceremony</option>
+            <option value="Haldi / Sangeet / Mehendi">Haldi / Sangeet / Mehendi</option>
+            <option value="Birthday / Anniversary Gala">Birthday / Anniversary Gala</option>
+            <option value="Corporate / Community Gathering">Corporate / Community Gathering</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Estimated Guests</label>
+          <select id="inqGuests">
+            <option value="200-350 Guests">200 - 350 Guests</option>
+            <option value="350-500 Guests" selected>350 - 500 Guests</option>
+            <option value="500+ Guests">500+ Guests</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Expected Date</label>
+        <input type="date" required id="inqDate">
+      </div>
+
+      <div class="form-group">
+        <label>Special Notes or Catering Preferences</label>
+        <textarea rows="2" placeholder="e.g. Pure vegetarian buffet, mandap floral setup, 2 green rooms..." id="inqNotes"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <span>Send Inquiry via WhatsApp / Direct</span> ↗
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ═══════ FLOATING WHATSAPP BUTTON ═══════ -->
+<a href="https://wa.me/919876543210?text=Hello%20Maa%20Sharda%20Utsav%20Lawn%2C%20I%20would%20like%20to%20inquire%20about%20booking%20dates." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg class="whatsapp-icon" viewBox="0 0 24 24">
+    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.13.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/>
+  </svg>
+  <span>Inquire via WhatsApp</span>
+</a>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="noise"></div>
+
+<!-- Interactive Date Inquiry Modal -->
+<div class="modal-backdrop" id="bookingModal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" type="button" id="closeModal" aria-label="Close dialog">✕</button>
+    <div class="eyebrow">Direct Venue Reservation</div>
+    <h3 class="modal-title">Check Date Availability</h3>
+    <p class="modal-desc">Share your celebration details and our events director will respond with hall availability and custom package options within 2 hours.</p>
+    <form class="inquiry-form" id="inquiryForm" onsubmit="handleInquirySubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="clientName">Full Name</label>
+          <input type="text" id="clientName" placeholder="e.g. Ramesh Verma" required>
+        </div>
+        <div class="form-group">
+          <label for="clientPhone">Phone Number</label>
+          <input type="tel" id="clientPhone" placeholder="+91 98765 43210" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="eventDate">Expected Event Date</label>
+          <input type="date" id="eventDate" required>
+        </div>
+        <div class="form-group">
+          <label for="eventType">Occasion / Ceremony</label>
+          <select id="eventType">
+            <option value="Wedding">Grand Wedding Ceremony</option>
+            <option value="Reception">Evening Reception</option>
+            <option value="Ring Ceremony / Engagement">Ring Ceremony / Engagement</option>
+            <option value="Haldi / Sangeet / Mehendi">Haldi / Sangeet / Mehendi</option>
+            <option value="Birthday / Anniversary">Birthday / Anniversary Gala</option>
+            <option value="Corporate / Community">Corporate / Community Gathering</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="guestCount">Estimated Guest Count</label>
+          <select id="guestCount">
+            <option value="150 - 250 Guests">150 – 250 Guests</option>
+            <option value="250 - 400 Guests">250 – 400 Guests</option>
+            <option value="400 - 600 Guests" selected>400 – 600 Guests</option>
+            <option value="600+ Guests">600+ Grand Gathering</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cateringPreference">Catering Requirement</label>
+          <select id="cateringPreference">
+            <option value="In-house Catering Required">In-House Royal Catering</option>
+            <option value="Own / External Caterer">External Caterer with Hall Kitchen</option>
+            <option value="Need Consultation">Need Guidance</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="specialRequests">Notes or Special Requirements</label>
+        <textarea id="specialRequests" rows="2" placeholder="Mandap style, bridal room, guest stay, specific dates..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">
+        <span>Send Inquiry via WhatsApp</span>
+        <span>↗</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Floating Quick WhatsApp Button -->
+<a href="https://wa.me/919876543210?text=Hello%20Maa%20Sharda%20Utsav%20Lawn%2C%20I%20would%20like%20to%20inquire%20about%20booking%20dates%20and%20rates." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <span>Inquire via WhatsApp</span>
+</a>
+
+<!-- ═══════ TOP BAR ═══════ -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="left"><span class="topbar-dot"></span><span>Premium event destination · Ambedkar Nagar, Uttar Pradesh</span></div>
+    <div class="right">Since 2023 · Where celebrations become legacies</div>
+  </div>
+</div>
+
+<!-- ═══════ HEADER ═══════ -->
+<header id="top">
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="brand" aria-label="Maa Sharda Utsav Lawn home">
+        <span class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>Maa Sharda</strong>
+          <span>Utsav Lawn</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Venues</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#location">Location</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn" href="tel:+91XXXXXXXXXX">Call Us</a>
+        <a class="btn primary" href="#contact">Book Your Date ↗</a>
+        <button class="menu" type="button" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="wrap hero-grid">
+      <div data-reveal>
+        <div class="eyebrow">Ambedkar Nagar's Premier Celebration Venue</div>
+        <h1>Where every<br><span class="soft">celebration becomes</span><br><span class="gold-line">a legacy.</span></h1>
+        <p class="hero-copy">Maa Sharda Utsav Lawn offers a distinguished setting for weddings, receptions, and grand celebrations — where architectural elegance meets heartfelt hospitality in the heart of Uttar Pradesh.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn primary">Book Your Celebration ↗</a>
+          <a href="#services" class="btn">Explore Our Venues ↓</a>
+        </div>
+        <div class="hero-proof">
+          <div><div class="proof-num counter" data-target="500">0</div><div class="proof-label">Guest Capacity</div></div>
+          <div class="proof-divider"></div>
+          <div><div class="proof-num counter" data-target="200">0</div><div class="proof-label">Events Hosted</div></div>
+          <div class="proof-divider"></div>
+          <div><div class="proof-num">★ 4.8</div><div class="proof-label">Client Rating</div></div>
+        </div>
+      </div>
+
+      <div class="hero-art" data-reveal>
+        <div class="floating-badge fb1">
+          <div class="icon">✦</div>
+          <div><strong>Est. 2023</strong><small>Trusted Since Day One</small></div>
+        </div>
+        <div class="floating-badge fb2">
+          <div class="icon">◎</div>
+          <div><strong>500+</strong><small>Guest Capacity</small></div>
+        </div>
+        <div class="floating-badge fb3">
+          <div class="icon">♡</div>
+          <div><strong>Premium</strong><small>Hospitality Standards</small></div>
+        </div>
+        <div class="arch-frame">
+          <img src="images/venue/venue-exterior-1.jpg" alt="Maa Sharda Utsav Lawn grand entrance gate with illuminated signboard at dusk" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CINEMATIC COVER PHOTO BANNER (MAA SHARDA UTSAV LAWN BOARD) ═══════ -->
+  <section class="cover-showcase-section">
+    <div class="wrap">
+      <div class="cover-card" data-reveal>
+        <div class="cover-img-wrapper">
+          <img src="images/venue/venue-exterior-2.jpg" alt="Maa Sharda Utsav Lawn daytime facade with welcome arch and signboard" class="cover-main-img">
+          <div class="cover-overlay"></div>
+          <div class="cover-glass-caption">
+            <div class="cover-badge">✦ Signature Landmark</div>
+            <h2 class="cover-heading">माँ शारदा उत्सव लॉन</h2>
+            <p class="cover-sub">The distinguished destination for majestic weddings & grand receptions in Ambedkar Nagar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CREDIBILITY BAR ═══════ -->
+  <section class="cred-bar">
+    <div class="wrap cred-grid">
+      <div class="cred-item" data-reveal><div class="cred-num counter" data-target="3">0</div><div class="cred-label">Years of Excellence</div></div>
+      <div class="cred-item" data-reveal><div class="cred-num counter" data-target="200">0</div><div class="cred-label">Grand Events</div></div>
+      <div class="cred-item" data-reveal><div class="cred-num counter" data-target="500">0</div><div class="cred-label">Guest Capacity</div></div>
+      <div class="cred-item" data-reveal><div class="cred-num">∞</div><div class="cred-label">Memories Created</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════ MARQUEE ═══════ -->
+  <div class="ticker" aria-hidden="true"><div class="ticker-track">
+    <span>Weddings</span><b>✦</b><span>Receptions</span><b>✦</b><span>Ring Ceremonies</span><b>✦</b><span>Birthday Celebrations</span><b>✦</b><span>Anniversary Galas</span><b>✦</b><span>Corporate Events</span><b>✦</b><span>Community Gatherings</span><b>✦</b>
+    <span>Weddings</span><b>✦</b><span>Receptions</span><b>✦</b><span>Ring Ceremonies</span><b>✦</b><span>Birthday Celebrations</span><b>✦</b><span>Anniversary Galas</span><b>✦</b><span>Corporate Events</span><b>✦</b><span>Community Gatherings</span><b>✦</b>
+  </div></div>
+
+  <!-- ═══════ SERVICES / VENUES ═══════ -->
+  <section class="services-section" id="services">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div><div class="eyebrow">Our Offerings</div><h2>One venue.<br><span class="serif">Every celebration, perfected.</span></h2></div>
+        <p>From intimate ring ceremonies to grand 500-guest weddings — every detail is curated to reflect your vision and honour your traditions.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service s1" data-reveal>
+          <span class="service-tag">01 · Signature</span><div class="arrow">↗</div>
+          <h3>Grand Wedding Lawn</h3>
+          <p>An expansive open-air lawn designed for majestic wedding ceremonies. Lush greenery, ambient lighting, and architectural mandap setups that create an unforgettable atmosphere.</p>
+          <div class="orb"></div>
+        </article>
+        <article class="service s2" data-reveal>
+          <span class="service-tag">02 · Intimate</span><div class="arrow">↗</div>
+          <h3>Reception &amp; Ring Ceremony Hall</h3>
+          <p>Elegantly appointed indoor spaces for receptions, engagements, and ring ceremonies with premium sound and lighting systems.</p>
+          <div class="orb"></div>
+        </article>
+        <article class="service s3" data-reveal>
+          <span class="service-tag">03 · Culinary</span><div class="arrow">↗</div>
+          <h3>Catering &amp; Cuisine</h3>
+          <p>Curated multi-cuisine menus featuring traditional Awadhi, North Indian, and contemporary dishes prepared by experienced culinary teams.</p>
+          <div class="orb"></div>
+        </article>
+        <article class="service s4" data-reveal>
+          <span class="service-tag">04 · Design</span><div class="arrow">↗</div>
+          <h3>Décor &amp; Theme Design</h3>
+          <p>From royal Rajwada themes to contemporary floral installations — our in-house decoration partnerships transform every corner into a visual masterpiece.</p>
+          <div class="orb"></div>
+        </article>
+        <article class="service s5" data-reveal>
+          <div><span class="service-tag">05 · Hospitality</span><h3>End-to-End Event Management</h3></div>
+          <p>Complete event coordination including guest management, valet parking, power backup, security, and bridal suites — so your family celebrates, while we orchestrate.</p>
+          <div class="arrow">↗</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ WHY CHOOSE US ═══════ -->
+  <section class="why-section" id="about">
+    <div class="wrap why-grid">
+      <div class="sticky-col" data-reveal>
+        <div class="eyebrow">Why families trust us</div>
+        <h2>Not just a venue.<br><span class="serif faded">A promise.</span></h2>
+        <p style="margin-top:20px;max-width:380px;color:var(--muted);line-height:1.8;font-size:13.5px">Every celebration at Maa Sharda Utsav Lawn is built on a foundation of personal attention, cultural sensitivity, and unwavering quality — because your most important moments deserve nothing less.</p>
+      </div>
+      <div class="steps">
+        <div class="step active" data-reveal>
+          <div class="step-no">01</div>
+          <div><h3>Spacious &amp; Versatile Grounds</h3><p>Sprawling lawns that accommodate 500+ guests comfortably, with flexible layouts for ceremonies of every scale and tradition.</p></div>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step-no">02</div>
+          <div><h3>Modern Amenities, Traditional Values</h3><p>State-of-the-art sound, lighting, and power backup paired with warm, culturally-rooted hospitality that makes every guest feel at home.</p></div>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step-no">03</div>
+          <div><h3>Prime Location</h3><p>Conveniently situated on the Akbarpur Road near Masdha Bazar, Barahi — easily accessible from across Ambedkar Nagar district and neighbouring areas.</p></div>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step-no">04</div>
+          <div><h3>Transparent &amp; Fair Pricing</h3><p>No hidden costs. Clear, upfront packages tailored to your budget — from intimate family gatherings to grand community celebrations.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ GALLERY ═══════ -->
+  <section class="gallery-section" id="gallery">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div><div class="eyebrow">Visual Stories</div><h2>Moments we've<br><span class="serif">had the honour to host.</span></h2></div>
+        <p>Explore the authentic spaces of Maa Sharda Utsav Lawn — from our expansive private driveway to the covered grand banquet.</p>
+      </div>
+      <div class="gallery-grid venue-6" data-reveal>
+        <div class="gallery-card">
+          <img src="images/venue/venue-exterior-1.jpg" alt="Grand entrance gate with illuminated signboard at dusk" loading="lazy">
+          <div class="gallery-caption">Grand Entrance · Dusk</div>
+        </div>
+        <div class="gallery-card">
+          <img src="images/venue/venue-exterior-2.jpg" alt="Daytime facade with welcome arch and lush landscaped garden" loading="lazy">
+          <div class="gallery-caption">Daytime View</div>
+        </div>
+        <div class="gallery-card">
+          <img src="images/venue/venue-exterior-3.jpg" alt="Expansive private driveway and spacious open-air grounds" loading="lazy">
+          <div class="gallery-caption">Spacious Grounds &amp; Driveway</div>
+        </div>
+        <div class="gallery-card">
+          <img src="images/venue/venue-event-space-1.jpg" alt="Outdoor lawn with chandeliers and decorated mandap setup" loading="lazy">
+          <div class="gallery-caption">Open-Air Mandap Setup</div>
+        </div>
+        <div class="gallery-card">
+          <img src="images/venue/venue-event-space-2.jpg" alt="Buffet counter with lighting tower and event decorations" loading="lazy">
+          <div class="gallery-caption">Buffet &amp; Event Lighting</div>
+        </div>
+        <div class="gallery-card">
+          <img src="images/venue/venue-night-video-thumb-1.jpg" alt="Indoor banquet hall with ceiling chandeliers and ceremonial stage" loading="lazy">
+          <div class="gallery-caption">Covered Banquet Celebration</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ TESTIMONIALS ═══════ -->
+  <section class="testimonials" id="testimonials">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div><div class="eyebrow">What families say</div><h2>Words from<br><span class="serif">those who celebrated here.</span></h2></div>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card" data-reveal>
+          <blockquote>The lawn was beautifully maintained and the staff went above and beyond for our daughter's wedding. Every guest complimented the venue and the food was exceptional. We couldn't have asked for more.</blockquote>
+          <div class="testi-author"><strong>Rajesh Verma</strong><span>Father of the Bride · Wedding, 2024</span></div>
+        </div>
+        <div class="testi-card" data-reveal>
+          <blockquote>From the initial visit to the final farewell, the team at Maa Sharda made us feel like family. The decoration was stunning, the arrangements were flawless. Truly a premium venue in our area.</blockquote>
+          <div class="testi-author"><strong>Priya &amp; Amit Sharma</strong><span>Reception · Ring Ceremony, 2025</span></div>
+        </div>
+        <div class="testi-card" data-reveal>
+          <blockquote>We hosted a 400-person community event and the coordination was impeccable. The spacious lawn, proper lighting, and backup power ensured everything ran smoothly without a single hitch.</blockquote>
+          <div class="testi-author"><strong>Dr. Suresh Pandey</strong><span>Community Celebration, 2024</span></div>
+        </div>
+        <div class="testi-card" data-reveal>
+          <blockquote>The best decision we made was choosing Maa Sharda Utsav Lawn for our son's wedding. The ambience at night with the lights was magical. Truly world-class hospitality right here in Ambedkar Nagar.</blockquote>
+          <div class="testi-author"><strong>Meena Devi &amp; Family</strong><span>Grand Wedding, 2025</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ LOCATION ═══════ -->
+  <section class="location-section" id="location">
+    <div class="wrap loc-grid">
+      <div class="map-card" data-reveal>
+        <div class="map-grid-lines"></div>
+        <div class="pin pin-1"><span>Maa Sharda · Main Venue</span></div>
+        <div class="map-caption">
+          <strong>Heart of Ambedkar Nagar.</strong>
+          <p>Perfectly positioned for families across the district and beyond.</p>
+        </div>
+      </div>
+      <div class="loc-copy" data-reveal>
+        <div class="eyebrow">Find Us</div>
+        <h2>Rooted in<br><span class="serif">tradition.</span><br>Built for grandeur.</h2>
+        <p>Conveniently located on the Akbarpur Road, Maa Sharda Utsav Lawn is easily accessible from across Ambedkar Nagar, Sultanpur, Faizabad, and neighbouring districts — making it the preferred destination for celebrations across eastern UP.</p>
+        <div class="detail-list">
+          <div class="detail-row"><strong>Address</strong><span>Masdha Bazar, Barahi, Bela Parsa,<br>Akbarpur Road, Ambedkar Nagar, UP</span></div>
+          <div class="detail-row"><strong>Established</strong><span>January 2023</span></div>
+          <div class="detail-row"><strong>Capacity</strong><span>500+ Guests</span></div>
+          <div class="detail-row"><strong>Venue Type</strong><span>Open-Air Lawn &amp; Indoor Hall</span></div>
+          <div class="detail-row"><strong>Availability</strong><span>All Seasons · Year-Round</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CTA ═══════ -->
+  <section class="final-cta" id="contact">
+    <div class="wrap">
+      <div class="cta-box" data-reveal>
+        <div class="eyebrow">Begin your celebration</div>
+        <h2>Your moment.<br><span class="faded serif">Our honour to host it.</span></h2>
+        <p>Tell us about your celebration — the date, the size, the vision — and we'll craft a proposal that honours your traditions and exceeds your expectations.</p>
+        <div class="cta-actions">
+          <a href="tel:+91XXXXXXXXXX" class="btn gold">Call to Reserve ↗</a>
+          <a href="#location" class="btn ghost">Visit Our Venue</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="brand">
+          <span class="brand-icon" style="border-color:var(--plaster);background:rgba(255,255,255,.06)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--plaster)">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </span>
+          <span class="brand-text"><strong style="color:var(--plaster)">Maa Sharda</strong><span>Utsav Lawn</span></span>
+        </a>
+        <p class="foot-desc">A premium celebration destination rooted in tradition, built on trust, and designed to turn your most important moments into timeless memories.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#about">About Us</a>
+        <a href="#services">Venues &amp; Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Reviews</a>
+      </div>
+      <div class="foot-col">
+        <h4>Celebrations</h4>
+        <a href="#services">Weddings</a>
+        <a href="#services">Receptions</a>
+        <a href="#services">Ring Ceremonies</a>
+        <a href="#services">Corporate Events</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a>
+        <a href="#contact">Book a date ↗</a>
+        <a href="#location">Get Directions</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Maa Sharda Utsav Lawn. All rights reserved.</span>
+      <span>Masdha Bazar, Barahi, Bela Parsa · Akbarpur Road · Ambedkar Nagar, UP</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── 1. Lenis Smooth Scroll Engine (High-end buttery scrolling) ──
+  let lenis;
+  if (typeof Lenis !== 'undefined') {
+    lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 0.9,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
+
+  // ── 2. GSAP & ScrollTrigger Animations ──
+  if (typeof gsap !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero visual entrance
+    gsap.from(".hero h1", {
+      opacity: 0,
+      y: 40,
+      duration: 1.2,
+      ease: "power3.out",
+      delay: 0.2
+    });
+
+    gsap.from(".hero-copy, .hero-actions, .hero-proof", {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      stagger: 0.15,
+      ease: "power3.out",
+      delay: 0.4
+    });
+
+    gsap.from(".arch-frame", {
+      opacity: 0,
+      scale: 0.94,
+      y: 50,
+      duration: 1.4,
+      ease: "power3.out",
+      delay: 0.3
+    });
+
+    gsap.from(".floating-badge", {
+      opacity: 0,
+      y: 20,
+      stagger: 0.2,
+      duration: 0.9,
+      ease: "back.out(1.7)",
+      delay: 0.8
+    });
+
+    // Parallax effect on arch frame while scrolling
+    gsap.to(".arch-frame img", {
+      yPercent: 12,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+  }
+
+  // ── 3. Cursor Glow follower ──
+  const cursorGlow = document.getElementById('cursorGlow');
+  if (cursorGlow && matchMedia('(pointer:fine)').matches) {
+    window.addEventListener('pointermove', (e) => {
+      cursorGlow.style.left = e.clientX + 'px';
+      cursorGlow.style.top = e.clientY + 'px';
+    }, { passive: true });
+  } else if (cursorGlow) {
+    cursorGlow.style.display = 'none';
+  }
+
+  // ── 4. Interactive 3D Tilt on Service Cards ──
+  const tiltCards = document.querySelectorAll('.service, .gallery-card, .cta-box');
+  if (matchMedia('(pointer:fine)').matches) {
+    tiltCards.forEach(card => {
+      card.addEventListener('pointermove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(800px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateY(-4px)`;
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // ── 5. Booking Modal Logic ──
+  const modal = document.getElementById('inquiryModal');
+  const closeBtn = document.getElementById('closeModalBtn');
+  
+  function openBookingModal() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeBookingModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Connect all "Book" buttons to the modal
+  document.querySelectorAll('a[href="#contact"]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openBookingModal();
+    });
+  });
+
+  closeBtn?.addEventListener('click', closeBookingModal);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeBookingModal();
+  });
+
+  // Handle Form Submission -> WhatsApp redirect or Confirmation
+  function handleInquirySubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById('inqName').value;
+    const phone = document.getElementById('inqPhone').value;
+    const eventType = document.getElementById('inqEvent').value;
+    const guests = document.getElementById('inqGuests').value;
+    const date = document.getElementById('inqDate').value;
+    const notes = document.getElementById('inqNotes').value;
+
+    const msg = encodeURIComponent(`*New Booking Inquiry - Maa Sharda Utsav Lawn*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Event:* ${eventType}\n*Guests:* ${guests}\n*Date:* ${date}\n*Notes:* ${notes || 'None'}`);
+    
+    // Redirect to WhatsApp
+    window.open(`https://wa.me/91XXXXXXXXXX?text=${msg}`, '_blank');
+    closeBookingModal();
+  }
+
+  // ── 6. Fallback Scroll reveal ──
+  const revealEls = [...document.querySelectorAll('[data-reveal]')];
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * .05 + 's';
+    obs.observe(el);
+  });
+
+  // ── 7. Counter animation ──
+  const counters = document.querySelectorAll('.counter');
+  const countObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target, target = Number(el.dataset.target), start = performance.now(), duration = 1400;
+      const tick = (t) => {
+        const p = Math.min(1, (t - start) / duration), eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased).toLocaleString('en-IN') + '+';
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick); countObs.unobserve(el);
+    });
+  }, { threshold: .7 });
+  counters.forEach(c => countObs.observe(c));
+
+  // ── 8. Step hover interaction ──
+  document.querySelectorAll('.step').forEach(step => step.addEventListener('mouseenter', () => {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    step.classList.add('active');
+  }));
+
+  // ── 9. Sticky nav shadow ──
+  const nav = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20 ? '0 10px 30px rgba(44,24,16,.06)' : 'none';
+  }, { passive: true });
+
+  // ── 10. Mobile menu ──
+  const menu = document.querySelector('.menu');
+  menu?.addEventListener('click', () => {
+    const links = document.querySelector('.nav-links');
+    const open = links.dataset.open === '1';
+    links.dataset.open = open ? '0' : '1';
+    links.style.cssText = open ? '' : 'display:flex;position:absolute;top:66px;left:14px;right:14px;padding:18px;border-radius:16px;background:var(--cream-warm);border:1px solid var(--line);box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;gap:14px;z-index:90;';
+  });
+</script>
+</body>
+</html>
