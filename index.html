@@ -455,7 +455,7 @@
       pointer-events: none;
     }
     .cinema-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 40px;
     }
     .cinema-card {
       position: relative; border-radius: var(--radius); overflow: hidden;
@@ -548,7 +548,7 @@
 
     /* Full Films Spotlight Cards */
     .films-spotlight {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 40px;
     }
     .film-spotlight-card {
       background: #1d0f09; border: 1px solid rgba(184,151,106,.25); border-radius: 22px;
@@ -1458,6 +1458,40 @@
       </div>
 
       <div class="cinema-grid" data-reveal>
+        <!-- Clip 0A: Gateway Highlight with BGM -->
+        <article class="cinema-card" id="cardClip0A">
+          <div class="cinema-video-wrap">
+            <video src="videos/uploads/illuminated-entrance-highlight.mp4" poster="videos/posters/poster-entrance-highlight.jpg" autoplay loop muted playsinline preload="metadata" id="videoClip0A"></video>
+          </div>
+          <span class="cinema-top-badge">✨ 5s HIGHLIGHT</span>
+          <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClip0A', this)">🔇</button>
+          <div class="cinema-caption">
+            <h3 class="cinema-title">Illuminated Grand Gateway</h3>
+            <p class="cinema-desc">Spectacular entrance arch with celebratory instrumental background score.</p>
+            <div class="cinema-action-row">
+              <button type="button" class="cinema-watch-btn" onclick="openTheater(18)">Watch Fullscreen ↗</button>
+              <span style="font-size:11px;color:var(--gold);font-weight:600">Grand Entry</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Clip 0B: Banquet Highlight with BGM -->
+        <article class="cinema-card" id="cardClip0B">
+          <div class="cinema-video-wrap">
+            <video src="videos/uploads/illuminated-banquet-highlight.mp4" poster="videos/posters/poster-banquet-highlight.jpg" autoplay loop muted playsinline preload="metadata" id="videoClip0B"></video>
+          </div>
+          <span class="cinema-top-badge">✨ 4s HIGHLIGHT</span>
+          <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClip0B', this)">🔇</button>
+          <div class="cinema-caption">
+            <h3 class="cinema-title">Crystal Banquet Walkway</h3>
+            <p class="cinema-desc">Covered grand banquet hall walkthrough under suspended crystal chandeliers.</p>
+            <div class="cinema-action-row">
+              <button type="button" class="cinema-watch-btn" onclick="openTheater(19)">Watch Fullscreen ↗</button>
+              <span style="font-size:11px;color:var(--gold);font-weight:600">Banquet Hall</span>
+            </div>
+          </div>
+        </article>
+
         <!-- Clip 1: Chandeliers & Aisle -->
         <article class="cinema-card" id="cardClip1">
           <div class="cinema-video-wrap">
@@ -1622,6 +1656,29 @@
             </div>
             <div class="film-card-actions">
               <button type="button" class="film-btn-theater" onclick="openTheater(1)">⛶ Fullscreen Cinema Mode</button>
+              <a href="#contact" class="btn" style="padding:9px 16px;font-size:12px;background:rgba(232,224,216,.08);color:var(--plaster);border:1px solid rgba(184,151,106,.3)">Inquire for Your Date ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Full Film 3: Live Celebration Walkthrough -->
+        <article class="film-spotlight-card">
+          <div class="film-player-wrap">
+            <video src="videos/uploads/full-celebration-video-2.mp4" poster="videos/posters/poster-full-celebration-2.jpg" controls preload="metadata"></video>
+            <span class="film-badge">🎬 FULL FILM · 35 SEC</span>
+          </div>
+          <div class="film-card-info">
+            <div>
+              <div class="film-meta-row">
+                <span>✦ Authentic Live Celebration</span>
+                <span>•</span>
+                <span>Original Audio</span>
+              </div>
+              <h3 class="film-card-title">Live Celebration &amp; Mandap Walkthrough</h3>
+              <p class="film-card-desc">Complete untouched original live wedding capture preserving authentic ambient audio, guest arrival, glowing entrance gateway, and vibrant celebration grounds.</p>
+            </div>
+            <div class="film-card-actions">
+              <button type="button" class="film-btn-theater" onclick="openTheater(17)">⛶ Fullscreen Cinema Mode</button>
               <a href="#contact" class="btn" style="padding:9px 16px;font-size:12px;background:rgba(232,224,216,.08);color:var(--plaster);border:1px solid rgba(184,151,106,.3)">Inquire for Your Date ↗</a>
             </div>
           </div>
