@@ -338,12 +338,11 @@
     <!-- Filter Buttons -->
     <div class="filter-bar-wrap">
       <div class="filters-list">
-        <button type="button" class="filter-btn active" onclick="filterGallery('all', this)">✦ All Media (24)</button>
+        <button type="button" class="filter-btn active" onclick="filterGallery('all', this)">✦ All Media (14)</button>
         <button type="button" class="filter-btn" onclick="filterGallery('films', this)">🎬 Full Cinematic Films (4)</button>
-        <button type="button" class="filter-btn" onclick="filterGallery('clips', this)">✨ Motion Clips (7)</button>
-        <button type="button" class="filter-btn" onclick="filterGallery('exterior', this)">🏛️ Facade &amp; Grounds (6)</button>
-        <button type="button" class="filter-btn" onclick="filterGallery('banquet', this)">👑 Royal Banquet &amp; Mandap (4)</button>
-        <button type="button" class="filter-btn" onclick="filterGallery('ceremonies', this)">🕯️ Celebrations &amp; Rituals (3)</button>
+        <button type="button" class="filter-btn" onclick="filterGallery('exterior', this)">🏛️ Facade &amp; Lawns (3)</button>
+        <button type="button" class="filter-btn" onclick="filterGallery('banquet', this)">🍽️ Dining &amp; Mandap (4)</button>
+        <button type="button" class="filter-btn" onclick="filterGallery('ceremonies', this)">👑 Rituals &amp; Insignia (3)</button>
       </div>
     </div>
 
@@ -375,8 +374,21 @@
         </div>
         <div class="film-details">
           <h3>Covered Banquet Hall &amp; Night Grounds Tour</h3>
-          <p>Complete walk-through of the air-cooled grand hall, crystal chandeliers, floral aisle arches, and outdoor DJ lawn.</p>
+          <p>Set to the iconic Mirzapur instrumental soundtrack. Complete walk-through of the grand banquet hall, crystal chandeliers, floral aisle arches, and outdoor DJ lawn.</p>
           <button type="button" class="film-btn-theater" onclick="openTheater(1)">⛶ Open in Cinema Lightbox</button>
+        </div>
+      </article>
+
+      <!-- Full Film 3 -->
+      <article class="film-card">
+        <div class="film-video-box">
+          <video src="videos/uploads/full-celebration-video-2.mp4" poster="videos/posters/poster-full-celebration-2.jpg" controls preload="metadata"></video>
+          <span class="film-tag">🎬 FULL FILM · 35 SEC</span>
+        </div>
+        <div class="film-details">
+          <h3>Live Celebration &amp; Mandap Walkthrough</h3>
+          <p>Complete untouched authentic celebration capture preserving live wedding audio, grand guest entrance, illuminated floral pathway, and active party grounds.</p>
+          <button type="button" class="film-btn-theater" onclick="openTheater(2)">⛶ Open in Cinema Lightbox</button>
         </div>
       </article>
     </div>
@@ -384,7 +396,7 @@
     <!-- Media Vault Grid -->
     <div class="section-title-bar">
       <h2>Curated Media Vault</h2>
-      <span>14 Photographs &amp; Motion Captures</span>
+      <span>14 Distinct High-Resolution Photographs &amp; Films</span>
     </div>
 
     <div class="media-grid" id="galleryMediaGrid">
@@ -401,140 +413,93 @@
         <img src="videos/posters/poster-venue-tour.jpg" alt="Covered Banquet Hall &amp; Night Grounds Tour" loading="lazy">
         <span class="card-badge">🎬 FULL FILM</span>
         <div class="card-play-btn">▶</div>
-        <div class="card-caption">Covered Banquet &amp; Grounds Tour<small>1:11 Min · Chandeliers, Archwalk &amp; Lawn</small></div>
+        <div class="card-caption">Covered Banquet &amp; Grounds Tour<small>1:11 Min · Mirzapur Theme Soundtrack</small></div>
       </div>
 
-      <!-- Item 2: Clip 1 -->
-      <div class="media-card" data-category="clips" onclick="openTheater(2)">
-        <img src="videos/posters/poster-clip-chandeliers.jpg" alt="Grand Banquet &amp; Chandelier Aisle" loading="lazy">
-        <span class="card-badge">✨ MOTION CLIP</span>
+      <!-- Item 2: Full Film 3 -->
+      <div class="media-card" data-category="films" onclick="openTheater(2)">
+        <img src="videos/posters/poster-full-celebration-2.jpg" alt="Live Celebration &amp; Mandap Walkthrough" loading="lazy">
+        <span class="card-badge">🎬 FULL FILM</span>
         <div class="card-play-btn">▶</div>
-        <div class="card-caption">Grand Chandelier Walkway<small>12s Clip · Covered Banquet Hall</small></div>
+        <div class="card-caption">Live Celebration Walkthrough<small>35s Film · Authentic Live Wedding Capture</small></div>
       </div>
 
-      <!-- Item 3: Clip 2 -->
-      <div class="media-card" data-category="clips" onclick="openTheater(3)">
-        <img src="videos/posters/poster-clip-aarti.jpg" alt="Priests Aarti Blessing on Stage" loading="lazy">
-        <span class="card-badge">✨ MOTION CLIP</span>
-        <div class="card-play-btn">▶</div>
-        <div class="card-caption">Sacred Ganga Aarti Blessing<small>12s Clip · Live Ceremony Ritual</small></div>
-      </div>
-
-      <!-- Item 4: Clip 3 -->
-      <div class="media-card" data-category="clips" onclick="openTheater(4)">
-        <img src="videos/posters/poster-clip-archway.jpg" alt="Illuminated Circular Floral Walkway" loading="lazy">
-        <span class="card-badge">✨ MOTION CLIP</span>
-        <div class="card-play-btn">▶</div>
-        <div class="card-caption">Illuminated Circular Archwalk<small>12s Clip · Procession Pathway</small></div>
-      </div>
-
-      <!-- Item 5: Clip 4 -->
-      <div class="media-card" data-category="clips" onclick="openTheater(5)">
-        <img src="videos/posters/poster-clip-lawn.jpg" alt="Open-Air Lawn Night DJ &amp; Star Illumination" loading="lazy">
-        <span class="card-badge">✨ MOTION CLIP</span>
-        <div class="card-play-btn">▶</div>
-        <div class="card-caption">Night Celebration Lawn &amp; DJ<small>12s Clip · Open Grounds &amp; Lighting</small></div>
-      </div>
-
-      <!-- Item 6: Photo Grand Entrance -->
-      <div class="media-card" data-category="exterior" onclick="openTheater(6)">
-        <img src="images/venue/venue-grand-entrance-clean.jpg" alt="Grand Entrance Gate &amp; Hindi Signboard" loading="lazy">
-        <span class="card-badge">🏛️ EXTERIOR</span>
-        <div class="card-caption">Grand Entrance &amp; Signboard<small>Maa Sharda Utsav Lawn Facade</small></div>
-      </div>
-
-      <!-- Item 7: Photo Daytime Facade -->
-      <div class="media-card" data-category="exterior" onclick="openTheater(7)">
-        <img src="images/venue/venue-grand-entrance-evening.jpg" alt="Grand Illuminated Entrance &amp; Celebration Walkway" loading="lazy">
-        <span class="card-badge">🏛️ EXTERIOR</span>
-        <div class="card-caption">Illuminated Entrance &amp; Walkway<small>Architectural Front Elevation</small></div>
-      </div>
-
-      <!-- Item 8: Photo Night Driveway -->
-      <div class="media-card" data-category="exterior" onclick="openTheater(8)">
-        <img src="images/venue/venue-driveway-night.jpg" alt="Illuminated Star Night Gate &amp; Private Driveway" loading="lazy">
-        <span class="card-badge">🏛️ GROUNDS</span>
-        <div class="card-caption">Spacious Grounds &amp; Driveway<small>Illuminated Star Arch &amp; Driveway</small></div>
-      </div>
-
-      <!-- Item 12: Photo Mandap Setup -->
-      <div class="media-card" data-category="banquet" onclick="openTheater(9)">
-        <img src="images/venue/venue-event-space-1.jpg" alt="Open-Air Mandap &amp; Stage Setup" loading="lazy">
-        <span class="card-badge">👑 MANDAP</span>
-        <div class="card-caption">Open-Air Mandap Setup<small>Royal Floral Canopy &amp; Seating</small></div>
-      </div>
-
-      <!-- Item 13: Photo Buffet & Lighting -->
-      <div class="media-card" data-category="banquet" onclick="openTheater(10)">
-        <img src="images/venue/venue-event-space-2.jpg" alt="Buffet Counter &amp; Event Lighting Tower" loading="lazy">
-        <span class="card-badge">👑 DINING</span>
-        <div class="card-caption">Buffet &amp; Event Lighting<small>Multi-Cuisine Service Layout</small></div>
-      </div>
-
-      <!-- Item 14: Photo Welcome Gate -->
-      <div class="media-card" data-category="banquet" onclick="openTheater(11)">
-        <img src="images/venue/venue-exterior-2.jpg" alt="Festive Welcome Canopy &amp; Draping" loading="lazy">
-        <span class="card-badge">👑 ENTRANCE</span>
-        <div class="card-caption">Festive Welcome Arch<small>Colorful Celebration Drapes</small></div>
-      </div>
-
-      <!-- Item 15: Photo Stage Aarti Ritual -->
-      <div class="media-card" data-category="ceremonies" onclick="openTheater(12)">
-        <img src="videos/posters/poster-sacred-aarti.jpg" alt="Traditional Wedding Stage Aarti" loading="lazy">
-        <span class="card-badge">🕯️ RITUAL</span>
-        <div class="card-caption">Vedic Aarti Ceremony<small>Holy Blessings &amp; Deepaks</small></div>
-      </div>
-
-      <!-- Item 16: Photo Aisle Ring Arches -->
-      <div class="media-card" data-category="ceremonies" onclick="openTheater(13)">
-        <img src="videos/posters/poster-clip-archway.jpg" alt="Aisle of Rings Floral Entry" loading="lazy">
-        <span class="card-badge">🕯️ PROCESSION</span>
-        <div class="card-caption">Aisle of Lighted Rings<small>Bridal &amp; Groom Grand Entry</small></div>
-      </div>
-
-      <!-- Item 18: 3rd Video Clip - Star Lawn Night -->
-      <div class="media-card" data-category="clips" onclick="openTheater(14)">
-        <img src="videos/posters/poster-star-lawn.jpg" alt="Starry Night Celebration Grounds &amp; Palms" loading="lazy">
-        <span class="card-badge">✨ MOTION CLIP</span>
-        <div class="card-play-btn">▶</div>
-        <div class="card-caption">Starry Night Grounds &amp; Palms<small>19s Clip · Open Lawn DJ &amp; Lights</small></div>
-      </div>
-
-      <!-- Item 19: Photo Authentic Glowing Neon Emblem -->
-      <div class="media-card" data-category="exterior" onclick="openTheater(15)">
-        <img src="images/venue/venue-buffet-celebration-setup.jpg" alt="Grand Buffet &amp; Celebration Setup" loading="lazy">
-        <span class="card-badge">🕉️ SACRED EMBLEM</span>
-        <div class="card-caption">Grand Buffet &amp; Celebration Setup<small>Banquet Dining &amp; Celebration Decor</small></div>
-      </div>
-      <!-- Item 20: Cinematic Wedding Invitation Card Opening Film -->
-      <div class="media-card" data-category="films" onclick="openTheater(20)">
-        <img src="videos/posters/poster-wedding-invitation.jpg" alt="Shubh Vivah Gatefold Invitation Film" loading="lazy">
+      <!-- Item 3: Full Film 4 - Royal Wedding Invitation Card Film -->
+      <div class="media-card" data-category="films" onclick="openTheater(3)">
+        <img src="videos/posters/poster-wedding-invitation.jpg" alt="Royal Shubh Vivah Gatefold Invitation Film" loading="lazy">
         <span class="card-badge">🎬 FULL FILM</span>
         <div class="card-play-btn">▶</div>
         <div class="card-caption">Royal Shubh Vivah Invitation<small>10s Cinematic · Gatefold Opening &amp; Namaste</small></div>
       </div>
-      <!-- Item 21: Full Celebration Film 2 -->
-      <div class="media-card" data-category="films" onclick="openTheater(21)">
-        <img src="videos/posters/poster-full-celebration-2.jpg" alt="Untouched Live Celebration &amp; Mandap Walkthrough" loading="lazy">
-        <span class="card-badge">🎬 FULL FILM</span>
-        <div class="card-play-btn">▶</div>
-        <div class="card-caption">Live Celebration Walkthrough<small>35s Film · Untouched Original Audio</small></div>
+
+      <!-- Item 4: Photo Illuminated Red Carpet Walkway & Banquet Hall (NEW) -->
+      <div class="media-card" data-category="exterior" onclick="openTheater(4)">
+        <img src="images/venue/venue-carpet-aisle-facade.jpg" alt="Illuminated Red Carpet Walkway &amp; Modern Banquet Hall" loading="lazy">
+        <span class="card-badge">🏛️ VENUE &amp; AISLE</span>
+        <div class="card-caption">Illuminated Red Carpet Walkway<small>Celebration Entrance &amp; Modern Hall</small></div>
       </div>
 
-      <!-- Item 22: Illuminated Entrance Highlight -->
-      <div class="media-card" data-category="clips" onclick="openTheater(22)">
-        <img src="videos/posters/poster-entrance-highlight.jpg" alt="Illuminated Grand Entrance &amp; Gateway" loading="lazy">
-        <span class="card-badge">✨ MOTION CLIP</span>
-        <div class="card-play-btn">▶</div>
-        <div class="card-caption">Illuminated Gateway Highlight<small>5s Clip · Instrumental Celebration BGM</small></div>
+      <!-- Item 5: Photo Open-Air Lawn Night Buffet & Catering Setup (NEW) -->
+      <div class="media-card" data-category="banquet" onclick="openTheater(5)">
+        <img src="images/venue/venue-lawn-buffet-setup.jpg" alt="Open-Air Lawn Night Buffet &amp; Catering Spread" loading="lazy">
+        <span class="card-badge">🍽️ LAWN BUFFET</span>
+        <div class="card-caption">Open-Air Lawn Night Buffet<small>Chafing Spread &amp; Draped Canopies</small></div>
       </div>
 
-      <!-- Item 23: Illuminated Banquet Highlight -->
-      <div class="media-card" data-category="clips" onclick="openTheater(23)">
-        <img src="videos/posters/poster-banquet-highlight.jpg" alt="Crystal Chandelier Banquet Walkthrough" loading="lazy">
-        <span class="card-badge">✨ MOTION CLIP</span>
-        <div class="card-play-btn">▶</div>
-        <div class="card-caption">Crystal Banquet Highlight<small>4s Clip · Chandelier Aisle with Music</small></div>
+      <!-- Item 6: Photo Grand Decorated Entrance Gate & Hindi Signboard -->
+      <div class="media-card" data-category="exterior" onclick="openTheater(6)">
+        <img src="images/venue/venue-grand-entrance-clean.jpg" alt="Grand Entrance Gate &amp; Hindi Signboard" loading="lazy">
+        <span class="card-badge">🏛️ GRAND ENTRANCE</span>
+        <div class="card-caption">Grand Entrance &amp; Signboard<small>Maa Sharda Utsav Lawn Landmark Gate</small></div>
+      </div>
+
+      <!-- Item 7: Photo Spacious Grounds & Private Driveway -->
+      <div class="media-card" data-category="exterior" onclick="openTheater(7)">
+        <img src="images/venue/venue-driveway-night.jpg" alt="Illuminated Star Gate &amp; Private Driveway" loading="lazy">
+        <span class="card-badge">🏛️ DRIVEWAY &amp; GROUNDS</span>
+        <div class="card-caption">Spacious Grounds &amp; Driveway<small>Illuminated Star Arch &amp; VIP Paved Approach</small></div>
+      </div>
+
+      <!-- Item 8: Photo Royal Wedding Mandap & Stage Setup -->
+      <div class="media-card" data-category="banquet" onclick="openTheater(8)">
+        <img src="images/venue/venue-event-space-1.jpg" alt="Royal Wedding Mandap &amp; Stage Setup" loading="lazy">
+        <span class="card-badge">👑 MANDAP &amp; STAGE</span>
+        <div class="card-caption">Royal Mandap &amp; Varmala Stage<small>Regal Drapery &amp; Ceremonial Seating</small></div>
+      </div>
+
+      <!-- Item 9: Photo Banquet Celebration & Dining Setup -->
+      <div class="media-card" data-category="banquet" onclick="openTheater(9)">
+        <img src="images/venue/venue-buffet-celebration-setup.jpg" alt="Banquet Celebration &amp; Dining Setup" loading="lazy">
+        <span class="card-badge">🍽️ BANQUET DINING</span>
+        <div class="card-caption">Banquet Dining &amp; Catering Setup<small>Multi-Tier Counters &amp; High Illumination</small></div>
+      </div>
+
+      <!-- Item 10: Photo Festive Welcome Canopy & Draping -->
+      <div class="media-card" data-category="banquet" onclick="openTheater(10)">
+        <img src="images/venue/venue-exterior-2.jpg" alt="Festive Welcome Canopy &amp; Celebration Drapes" loading="lazy">
+        <span class="card-badge">👑 WELCOME CANOPY</span>
+        <div class="card-caption">Festive Welcome Canopy<small>Traditional Colorful Reception Drapes</small></div>
+      </div>
+
+      <!-- Item 11: Photo Traditional Wedding Stage Aarti Ritual -->
+      <div class="media-card" data-category="ceremonies" onclick="openTheater(11)">
+        <img src="videos/posters/poster-sacred-aarti.jpg" alt="Traditional Wedding Stage Aarti Ritual" loading="lazy">
+        <span class="card-badge">🕯️ VEDIC RITUAL</span>
+        <div class="card-caption">Vedic Aarti Ceremony<small>Auspicious Brass Deepaks &amp; Mantras</small></div>
+      </div>
+
+      <!-- Item 12: Photo Aisle of Rings Floral Entry -->
+      <div class="media-card" data-category="ceremonies" onclick="openTheater(12)">
+        <img src="videos/posters/poster-clip-archway.jpg" alt="Aisle of Rings Floral Procession Entry" loading="lazy">
+        <span class="card-badge">🕯️ GRAND ENTRY</span>
+        <div class="card-caption">Aisle of Lighted Rings<small>Luminous Circular Procession Arches</small></div>
+      </div>
+
+      <!-- Item 13: Photo Handcrafted Neon Board & Durga Medallion -->
+      <div class="media-card" data-category="ceremonies" onclick="openTheater(13)">
+        <img src="images/brand/logo-neon-mark.jpg" alt="Authentic Glowing Neon Board &amp; Durga Medallion" loading="lazy">
+        <span class="card-badge">🕉️ SACRED EMBLEM</span>
+        <div class="card-caption">Illuminated Neon Insignia<small>Sacred Trishul &amp; Maa Durga Medallion</small></div>
       </div>
     </div>
   </main>
@@ -567,6 +532,7 @@
 
   <script>
     const mediaItems = [
+      // 0: Full Film 1
       {
         type: 'video',
         src: 'videos/full/sacred-aarti-ceremony.mp4',
@@ -574,8 +540,9 @@
         category: 'films',
         badge: '🎬 Full HD Film (1:12 Min)',
         title: 'Sacred Stage Aarti & Traditional Rituals',
-        desc: 'Ceremonial Ganga Aarti on the royal wedding stage with lit brass diyas, traditional priests, and floral mandap backdrop.'
+        desc: 'Ceremonial Ganga Aarti on the royal wedding stage with lit brass diyas, traditional Vedic chants, and floral mandap backdrop.'
       },
+      // 1: Full Film 2
       {
         type: 'video',
         src: 'videos/full/venue-grand-tour.mp4',
@@ -583,199 +550,138 @@
         category: 'films',
         badge: '🎬 Full HD Film (1:11 Min)',
         title: 'Covered Banquet Hall & Night Grounds Tour',
-        desc: 'Comprehensive walkthrough of the covered grand banquet hall, ceiling crystal chandeliers, illuminated flower tunnel, and outdoor celebration DJ lawn.'
+        desc: 'Featuring the iconic Mirzapur theme background score. Comprehensive walkthrough of the covered banquet hall, crystal chandeliers, illuminated flower tunnel, and outdoor DJ lawn.'
       },
+      // 2: Full Film 3
       {
         type: 'video',
-        src: 'videos/clips/clip-chandeliers-aisle.mp4',
-        poster: 'videos/posters/poster-clip-chandeliers.jpg',
-        category: 'clips',
-        badge: '✨ 12s Ambient Clip',
-        title: 'Grand Banquet & Chandelier Aisle',
-        desc: 'Cascading golden chandeliers over the carpeted royal ceremonial walkway.'
+        src: 'videos/uploads/full-celebration-video-2.mp4',
+        poster: 'videos/posters/poster-full-celebration-2.jpg',
+        category: 'films',
+        badge: '🎬 Full Celebration Film (35s)',
+        title: 'Live Celebration & Mandap Walkthrough',
+        desc: 'Complete untouched authentic celebration capture preserving live wedding audio, grand guest entrance, illuminated floral pathway, and active party grounds.'
       },
+      // 3: Full Film 4 - Royal Wedding Invitation Card Film
       {
         type: 'video',
-        src: 'videos/clips/clip-sacred-aarti.mp4',
-        poster: 'videos/posters/poster-clip-aarti.jpg',
-        category: 'clips',
-        badge: '✨ 12s Sacred Blessing',
-        title: 'Priests Aarti Blessing on Stage',
-        desc: 'Authentic ceremonial flame offering during wedding reception.'
+        src: 'videos/wedding-invitation-cinematic.mp4',
+        poster: 'videos/posters/poster-wedding-invitation.jpg',
+        category: 'films',
+        badge: '🎬 Royal Gatefold Film (10s)',
+        title: 'Royal Shubh Vivah Gatefold Invitation Film',
+        desc: 'Cinematic royal wedding invitation card opening with falling petals to reveal the traditional bridal Namaste greeting in the palace arch.'
       },
+      // 4: Photo Illuminated Red Carpet Walkway & Banquet Hall (NEW)
       {
-        type: 'video',
-        src: 'videos/clips/clip-floral-archway.mp4',
-        poster: 'videos/posters/poster-clip-archway.jpg',
-        category: 'clips',
-        badge: '✨ 12s Walkway Motion',
-        title: 'Illuminated Circular Floral Walkway',
-        desc: 'Grand glowing ring arches leading to the royal mandap stage.'
+        type: 'image',
+        src: 'images/venue/venue-carpet-aisle-facade.jpg',
+        category: 'exterior',
+        badge: '🏛️ Venue Exterior & Aisle',
+        title: 'Illuminated Red Carpet Walkway & Banquet Hall',
+        desc: 'Authentic celebration evening photograph showing the red-and-gold carpeted aisle, illuminated shrubbery, coffee stall, and modern glass-fronted banquet hall.'
       },
+      // 5: Photo Open-Air Lawn Night Buffet & Catering Setup (NEW)
       {
-        type: 'video',
-        src: 'videos/clips/clip-night-lawn.mp4',
-        poster: 'videos/posters/poster-clip-lawn.jpg',
-        category: 'clips',
-        badge: '✨ 12s Night Grounds',
-        title: 'Open-Air Lawn Night DJ & Star Illumination',
-        desc: 'Celebration lighting towers, sound stage, and glowing palm trees.'
+        type: 'image',
+        src: 'images/venue/venue-lawn-buffet-setup.jpg',
+        category: 'banquet',
+        badge: '🍽️ Royal Lawn Buffet',
+        title: 'Open-Air Lawn Night Buffet & Catering Setup',
+        desc: 'Authentic evening photograph of the expansive buffet counter spread with golden chafing dishes and decorative pink and gold canopies under the twilight sky.'
       },
+      // 6: Photo Grand Decorated Entrance Gate & Hindi Signboard
       {
         type: 'image',
         src: 'images/venue/venue-grand-entrance-clean.jpg',
         category: 'exterior',
-        badge: '🏛️ Venue Exterior',
-        title: 'Grand Entrance Gate & Hindi Signboard',
-        desc: 'Evening view of the decorated entrance, illuminated walkway and landscaped venue.'
+        badge: '🏛️ Grand Entrance Gate',
+        title: 'Grand Decorated Entrance Gate & Hindi Signboard',
+        desc: 'Authentic evening view of the illuminated entry gateway, draped archways, and landmark Maa Sharda Utsav Lawn Hindi signage.'
       },
-      {
-        type: 'image',
-        src: 'images/venue/venue-grand-entrance-evening.jpg',
-        category: 'exterior',
-        badge: '🏛️ Daytime Facade',
-        title: 'Grand Illuminated Entrance & Celebration Walkway',
-        desc: 'Authentic evening photograph of the venue entrance and patterned celebration walkway.'
-      },
+      // 7: Photo Illuminated Night Gate & Private Driveway
       {
         type: 'image',
         src: 'images/venue/venue-driveway-night.jpg',
         category: 'exterior',
-        badge: '🏛️ Night Grounds',
-        title: 'Illuminated Night Gate & Private Driveway',
-        desc: 'Grand neon star archway and wide paved driveway leading to the banquet lawn.'
+        badge: '🏛️ Grounds & Driveway',
+        title: 'Illuminated Star Gate & Private Driveway',
+        desc: 'Grand neon star archway and wide paved driveway providing seamless VIP vehicle and guest procession access.'
       },
-      {
-        type: 'image',
-        src: 'images/venue/venue-exterior-1.jpg',
-        category: 'exterior',
-        badge: '🏛️ Dusk View',
-        title: 'Grand Entrance Gate at Twilight',
-        desc: 'Warm evening illumination at the main venue threshold.'
-      },
-      {
-        type: 'image',
-        src: 'images/venue/venue-exterior-3.jpg',
-        category: 'exterior',
-        badge: '🏛️ Sprawling Grounds',
-        title: 'Expansive Private Lawns & Driveway',
-        desc: 'Spacious open grounds capable of hosting 500+ guests with valet parking.'
-      },
-      {
-        type: 'image',
-        src: 'images/venue/venue-night-video-thumb-1.jpg',
-        category: 'banquet',
-        badge: '👑 Royal Banquet',
-        title: 'Indoor Banquet Hall & Crystal Chandeliers',
-        desc: 'Fully covered hall with draped ceiling, crystal fixtures, and stage.'
-      },
+      // 8: Photo Royal Wedding Mandap & Stage Setup
       {
         type: 'image',
         src: 'images/venue/venue-event-space-1.jpg',
         category: 'banquet',
         badge: '👑 Mandap & Stage',
-        title: 'Open-Air Mandap & Stage Setup',
-        desc: 'Curated royal wedding mandap with traditional drapery and floral design.'
+        title: 'Royal Wedding Mandap & Stage Setup',
+        desc: 'Curated royal wedding mandap with traditional drapery, majestic throne chairs, and auspicious floral accents.'
       },
+      // 9: Photo Banquet Celebration & Dining Setup
       {
         type: 'image',
-        src: 'images/venue/venue-event-space-2.jpg',
+        src: 'images/venue/venue-buffet-celebration-setup.jpg',
         category: 'banquet',
-        badge: '👑 Dining & Catering',
-        title: 'Buffet Counter & Event Lighting Tower',
-        desc: 'Expansive catering spread layout with dedicated service corridors.'
+        badge: '🍽️ Dining & Lighting',
+        title: 'Banquet Celebration & Dining Setup',
+        desc: 'High-capacity guest dining layout with multi-tier buffet stations and overhead illumination towers.'
       },
+      // 10: Photo Festive Welcome Canopy & Draping
       {
         type: 'image',
         src: 'images/venue/venue-exterior-2.jpg',
         category: 'banquet',
-        badge: '👑 Welcome Gate',
+        badge: '👑 Welcome Canopy',
         title: 'Festive Welcome Canopy & Draping',
-        desc: 'Multi-color fabric entrance canopy welcoming arriving guests.'
+        desc: 'Traditional multicolored fabric welcome canopy greeting arriving family and wedding attendees.'
       },
+      // 11: Photo Traditional Wedding Stage Aarti Ritual
       {
         type: 'image',
         src: 'videos/posters/poster-sacred-aarti.jpg',
         category: 'ceremonies',
-        badge: '🕯️ Sacred Ritual',
-        title: 'Traditional Wedding Stage Aarti',
-        desc: 'Sacred ceremonial blessing with tiered brass lamps and auspicious prayers.'
+        badge: '🕯️ Vedic Ritual',
+        title: 'Traditional Wedding Stage Aarti Ceremony',
+        desc: 'Auspicious ceremonial blessing with tiered brass oil lamps, Vedic recitations, and holy fire offerings.'
       },
+      // 12: Photo Aisle of Rings Floral Entry
       {
         type: 'image',
         src: 'videos/posters/poster-clip-archway.jpg',
         category: 'ceremonies',
         badge: '🕯️ Grand Varmala',
         title: 'Aisle of Rings Floral Entry',
-        desc: 'Bridal and groom procession pathway with circular light arches.'
+        desc: 'Luminous circular light arches creating an unforgettable walking path for bride and groom entries.'
       },
+      // 13: Photo Handcrafted Glowing Neon Board & Maa Durga Medallion
       {
         type: 'image',
-        src: 'images/venue/venue-night-video-thumb-2.jpg',
+        src: 'images/brand/logo-neon-mark.jpg',
         category: 'ceremonies',
-        badge: '🕯️ Night Celebration',
-        title: 'Evening Celebration Grounds & DJ Truss',
-        desc: 'Vibrant party atmosphere under the stars with concert-grade lighting.'
+        badge: '🕉️ Sacred Emblem',
+        title: 'Handcrafted Neon Board & Durga Medallion',
+        desc: 'Illuminated insignia of Maa Sharda Utsav Lawn featuring the divine Trishul and Goddess Durga medallion.'
       },
+      // 14: Highlight 1
       {
         type: 'video',
-        src: 'videos/clips/clip-star-lawn-night.mp4',
-        poster: 'videos/posters/poster-star-lawn.jpg',
-        category: 'clips',
-        badge: '✨ 19s Starry Grounds',
-        title: 'Starry Night Celebration Grounds & Palms',
-        desc: 'Mesmerizing open lawn night atmosphere under the stars with lit palm trees, sound stage, and vibrant celebration lighting.'
+        src: 'videos/uploads/illuminated-entrance-highlight.mp4',
+        poster: 'videos/posters/poster-entrance-highlight.jpg',
+        category: 'highlight',
+        badge: '✨ Entrance Highlight',
+        title: 'Illuminated Grand Gateway',
+        desc: 'Spectacular entrance arch with celebratory instrumental background score.'
       },
+      // 15: Highlight 2
       {
-        type: 'image',
-        src: 'images/venue/venue-buffet-celebration-setup.jpg',
-        category: 'exterior',
-        badge: '🕉️ Banquet Celebration Setup',
-        title: 'Grand Buffet & Celebration Setup',
-        desc: 'Authentic venue photograph showing the decorated buffet counters and celebration setup.'
-      },
-    // 20: Cinematic Wedding Invitation Card Opening Film
-    {
-      type: 'video',
-      src: 'videos/wedding-invitation-cinematic.mp4',
-      poster: 'videos/posters/poster-wedding-invitation.jpg',
-      category: 'films',
-      badge: '🎬 Royal Gatefold Film',
-      title: 'Royal Shubh Vivah Gatefold Invitation Film',
-      desc: 'Cinematic royal wedding invitation card opening with falling petals to reveal the traditional bridal Namaste greeting in the palace arch.'
-    },
-    // 21: Full Celebration Video 2 (Untouched Original)
-    {
-      type: 'video',
-      src: 'videos/uploads/full-celebration-video-2.mp4',
-      poster: 'videos/posters/poster-full-celebration-2.jpg',
-      category: 'films',
-      badge: '🎬 Full Celebration Film (35s)',
-      title: 'Untouched Live Celebration & Mandap Walkthrough',
-      desc: 'Complete authentic celebration capture preserving original live wedding audio, grand guest entrance, illuminated floral pathway, and active party grounds.'
-    },
-    // 22: Illuminated Entrance Highlight
-    {
-      type: 'video',
-      src: 'videos/uploads/illuminated-entrance-highlight.mp4',
-      poster: 'videos/posters/poster-entrance-highlight.jpg',
-      category: 'clips',
-      badge: '✨ Entrance Highlight',
-      title: 'Illuminated Grand Entrance & Gateway',
-      desc: 'High-energy celebration entrance highlight featuring vibrant light displays and melodic instrumental background score.'
-    },
-    // 23: Illuminated Banquet Highlight
-    {
-      type: 'video',
-      src: 'videos/uploads/illuminated-banquet-highlight.mp4',
-      poster: 'videos/posters/poster-banquet-highlight.jpg',
-      category: 'clips',
-      badge: '✨ Banquet Highlight',
-      title: 'Crystal Chandelier Banquet Walkthrough',
-      desc: 'Dazzling covered hall highlight under suspended crystal chandeliers with celebratory instrumental music.'
-    }
-
-
+        type: 'video',
+        src: 'videos/uploads/illuminated-banquet-highlight.mp4',
+        poster: 'videos/posters/poster-banquet-highlight.jpg',
+        category: 'highlight',
+        badge: '✨ Banquet Highlight',
+        title: 'Crystal Banquet Walkway',
+        desc: 'Covered grand banquet hall walkthrough under suspended crystal chandeliers.'
+      }
     ];
 
     let currentTheaterIndex = 0;
