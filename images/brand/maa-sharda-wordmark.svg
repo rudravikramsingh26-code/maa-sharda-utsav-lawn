@@ -1,16 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 300" role="img" aria-labelledby="title desc">
-<title id="title">माँ शारदा उत्सव लॉन</title><desc id="desc">Maa Sharda Utsav Lawn red Devanagari wordmark with a trident-inspired symbol.</desc>
-<rect width="1400" height="300" fill="#fff" fill-opacity="0"/>
-<g fill="none" stroke="#F15A24" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Clear, balanced trishul: three distinct prongs and one continuous handle -->
-  <path d="M160 262V105"/>
-  <path d="M160 105C139 88 132 66 143 39C150 22 160 10 160 10C160 10 171 25 178 43C188 69 180 90 160 105Z" fill="#F15A24" stroke="none"/>
-  <path d="M143 99C116 105 91 91 82 68C75 49 82 29 95 15C96 41 108 54 126 63"/>
-  <path d="M177 99C204 105 229 91 238 68C245 49 238 29 225 15C224 41 212 54 194 63"/>
-  <path d="M111 132H209" stroke-width="10"/>
+<title id="title">माँ शारदा उत्सव लॉन</title>
+<desc id="desc">Maa Sharda Utsav Lawn wordmark with the distinctive three-flame, circular and twin-stroke emblem from the supplied reference.</desc>
+<rect width="1400" height="300" fill="none"/>
+<!-- Reference-matched emblem: three separate flame leaves, circular curl, crossbar and twin legs -->
+<g fill="#F15A24" stroke="#F15A24" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M91 19 C119 38 143 69 137 100 C134 119 119 132 103 124 C87 116 85 98 91 79 C97 59 99 39 91 19Z"/>
+  <path d="M157 15 C180 38 198 72 192 104 C188 124 174 137 159 127 C145 118 144 98 150 79 C156 58 160 35 157 15Z"/>
+  <path d="M219 30 C245 54 262 83 253 111 C247 130 232 139 217 127 C203 116 204 98 213 79 C222 60 225 43 219 30Z"/>
+  <path d="M275 91 C298 78 326 83 341 101 C357 121 347 148 324 159 C302 170 276 159 267 140 C258 122 263 103 275 91Z" stroke="none"/>
+  <path d="M296 111 C308 101 323 105 328 117 C334 131 322 142 309 137" fill="none" stroke="#6D1718" stroke-width="10"/>
+  <path d="M58 164 H355" stroke-width="22"/>
+  <path d="M139 164 L115 288 H157 L178 164Z" stroke="none"/>
+  <path d="M228 164 L215 288 H256 L266 164Z" stroke="none"/>
 </g>
 <g fill="#F15A24" font-family="'Noto Sans Devanagari','Mangal',sans-serif" font-weight="800" font-size="155">
-<text x="330" y="218" textLength="990" lengthAdjust="spacingAndGlyphs">शारदा उत्सव लॉन</text>
+  <text x="390" y="218" textLength="930" lengthAdjust="spacingAndGlyphs">शारदा उत्सव लॉन</text>
 </g>
-<path d="M333 232H1320" stroke="#E2B04A" stroke-width="8" stroke-linecap="round"/>
+<path d="M392 239 H1320" stroke="#E2B04A" stroke-width="8" stroke-linecap="round"/>
 </svg>
