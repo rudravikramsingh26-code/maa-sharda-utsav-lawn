@@ -8,7 +8,7 @@
   <meta name="description" content="Premium marriage & celebration venue in Ambedkar Nagar, Uttar Pradesh. Luxurious lawns, impeccable hospitality, timeless memories since 2023." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Lenis Smooth Scroll -->
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
   <!-- GSAP & ScrollTrigger Animation Engine -->
@@ -593,6 +593,380 @@
       .foot-bottom { display: block } .foot-bottom span { display: block; margin-top: 6px }
       .hero-proof { flex-wrap: wrap; gap: 20px }
     }
+
+    /* ═══════════ ROYAL WEDDING INVITATION CARD SHOWCASE ═══════════ */
+    .wedding-card-section {
+      position: relative;
+      background: radial-gradient(circle at 50% 35%, #420a15 0%, #24050b 60%, #150206 100%);
+      color: #e2b04a;
+      padding: 44px 0 54px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(226, 176, 74, 0.25);
+    }
+    .wedding-card-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.07;
+      background: radial-gradient(circle, #e2b04a 1.4px, transparent 1.6px) 0 0/26px 26px;
+      pointer-events: none;
+    }
+    .wedding-card-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 48px;
+      position: relative;
+      z-index: 2;
+    }
+    .card-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(226, 176, 74, 0.12);
+      border: 1px solid rgba(226, 176, 74, 0.35);
+      border-radius: 999px;
+      color: #f6e7c1;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-family: 'Cinzel', serif;
+    }
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4.2vw, 50px);
+      line-height: 1.12;
+      color: #f6e7c1;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+    .card-gold {
+      color: #e2b04a;
+      font-style: italic;
+    }
+    .card-desc {
+      font-family: var(--font-sans);
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: rgba(246, 231, 193, 0.82);
+      margin-bottom: 26px;
+      max-width: 520px;
+      font-weight: 300;
+    }
+    .card-features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    .card-feat-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(58, 8, 19, 0.45);
+      border: 1px solid rgba(226, 176, 74, 0.2);
+      border-radius: 12px;
+      padding: 12px 18px;
+    }
+    .card-feat-item .feat-icon {
+      font-size: 20px;
+      line-height: 1;
+    }
+    .card-feat-item strong {
+      display: block;
+      font-size: 14px;
+      color: #f6e7c1;
+      font-family: var(--font-sans);
+      font-weight: 600;
+    }
+    .card-feat-item small {
+      display: block;
+      font-size: 12.5px;
+      color: rgba(246, 231, 193, 0.65);
+      font-family: var(--font-sans);
+    }
+    .card-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    .btn-royal {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .btn-royal.primary {
+      background: linear-gradient(135deg, #e2b04a 0%, #b8852a 100%);
+      color: #2a060e;
+      box-shadow: 0 4px 16px rgba(226, 176, 74, 0.25);
+    }
+    .btn-royal.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(226, 176, 74, 0.35);
+    }
+    .btn-royal.outline {
+      background: transparent;
+      color: #f6e7c1;
+      border: 1px solid rgba(226, 176, 74, 0.4);
+    }
+    .btn-royal.outline:hover {
+      background: rgba(226, 176, 74, 0.1);
+      border-color: #e2b04a;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Podium and Card 3D elements */
+    .stage-podium {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 460px;
+    }
+    .stage-glow {
+      position: absolute;
+      width: 340px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(226, 176, 74, 0.2) 0%, rgba(90, 15, 30, 0) 70%);
+      filter: blur(35px);
+      pointer-events: none;
+    }
+    .wedding-card-section .stage {
+      position: relative;
+      width: 360px;
+      height: 510px;
+      display: grid;
+      place-items: center;
+      animation: stageLoop 7s linear infinite;
+      z-index: 1;
+    }
+    .wedding-card-section .card {
+      position: relative;
+      width: 260px;
+      height: 340px;
+      perspective: 1200px;
+      transform-style: preserve-3d;
+      margin-top: -60px;
+    }
+    .wedding-card-section .inner {
+      position: absolute;
+      inset: 0;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.65), 0 0 0 2px #e2b04a;
+      background: #3a0813;
+    }
+    .wedding-card-section .inner svg,
+    .wedding-card-section .face svg {
+      position: absolute;
+      inset: 0;
+      width: 260px;
+      height: 340px;
+    }
+    .wedding-card-section .door {
+      position: absolute;
+      top: 0;
+      width: 130px;
+      height: 340px;
+      transform-style: preserve-3d;
+    }
+    .wedding-card-section .l {
+      left: 0;
+      transform-origin: left center;
+      animation: dl 7s ease-in-out infinite;
+    }
+    .wedding-card-section .r {
+      right: 0;
+      transform-origin: right center;
+      animation: dr 7s ease-in-out infinite;
+    }
+    .wedding-card-section .face {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      backface-visibility: hidden;
+    }
+    .wedding-card-section .r .face svg {
+      left: -130px;
+    }
+    .wedding-card-section .back {
+      transform: rotateY(180deg);
+      background: #f6e7c1;
+      box-shadow: inset 0 0 0 3px #e2b04a, inset 0 0 0 8px #f6e7c1, inset 0 0 0 9px #e2b04a;
+    }
+    .wedding-card-section .cap {
+      position: absolute;
+      bottom: 18px;
+      text-align: center;
+      opacity: 0;
+      animation: cap 7s ease-out infinite;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+    }
+    .wedding-card-section .cap b {
+      display: block;
+      font-size: 34px;
+      font-weight: 400;
+      font-family: 'Tiro Devanagari Hindi', Georgia, serif;
+    }
+    .wedding-card-section .cap i {
+      font: normal 500 11px Cinzel, Georgia, serif;
+      letter-spacing: 0.28em;
+      color: #f6e7c1;
+    }
+    .wedding-card-section .side {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 160px;
+      height: 100%;
+      pointer-events: none;
+      -webkit-mask-image: linear-gradient(90deg, #000 60%, transparent);
+      mask-image: linear-gradient(90deg, #000 60%, transparent);
+      opacity: 0.55;
+      z-index: 1;
+    }
+    .wedding-card-section .side.l { left: 0; }
+    .wedding-card-section .side.r { right: 0; transform: scaleX(-1); }
+    .wedding-card-section .spin { animation: spin 50s linear infinite; }
+    .wedding-card-section .pivot { transform-box: view-box; }
+    .wedding-card-section .upper { transform-origin: 100px 178px; animation: bow 7s ease-in-out infinite; }
+    .wedding-card-section .ual { transform-origin: 80px 100px; animation: ual 7s ease-in-out infinite; }
+    .wedding-card-section .far { transform-origin: 80px 130px; animation: fal 7s ease-in-out infinite; }
+    .wedding-card-section .uar { transform-origin: 120px 100px; animation: uar 7s ease-in-out infinite; }
+    .wedding-card-section .fal { transform-origin: 120px 130px; animation: far 7s ease-in-out infinite; }
+    .wedding-card-section .head { transform-origin: 100px 80px; animation: head 7s ease-in-out infinite; }
+    .wedding-card-section .palms { opacity: 0; animation: palms 7s linear infinite; }
+    .wedding-card-section .flame { transform-box: fill-box; transform-origin: 50% 100%; animation: fl .5s ease-in-out infinite alternate; }
+
+    /* Falling Petals inside section */
+    .wedding-card-section .pt {
+      position: absolute;
+      top: -20px;
+      width: 9px;
+      height: 13px;
+      border-radius: 60% 0 60% 0;
+      opacity: 0.85;
+      pointer-events: none;
+      animation: ptFall linear infinite;
+      z-index: 1;
+    }
+
+    .card-intro-col {
+      position: relative;
+      z-index: 5;
+    }
+
+    /* Interactive state: when .keep-open is applied to stage */
+    .wedding-card-section .stage.keep-open { animation: none !important; opacity: 1 !important; }
+    .wedding-card-section .stage.keep-open .door.l { animation: none !important; transform: rotateY(-125deg) !important; }
+    .wedding-card-section .stage.keep-open .door.r { animation: none !important; transform: rotateY(125deg) !important; }
+    .wedding-card-section .stage.keep-open .upper { animation: none !important; }
+    .wedding-card-section .stage.keep-open .head { animation: none !important; }
+    .wedding-card-section .stage.keep-open .ual { animation: none !important; transform: rotate(15deg) !important; }
+    .wedding-card-section .stage.keep-open .uar { animation: none !important; transform: rotate(-15deg) !important; }
+    .wedding-card-section .stage.keep-open .fal { animation: none !important; transform: rotate(136deg) !important; }
+    .wedding-card-section .stage.keep-open .far { animation: none !important; transform: rotate(-136deg) !important; }
+    .wedding-card-section .stage.keep-open .palms { animation: none !important; opacity: 1 !important; }
+    .wedding-card-section .stage.keep-open .cap { animation: none !important; opacity: 1 !important; transform: none !important; }
+
+    .card-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 8px;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: 70px;
+      z-index: 10;
+      position: relative;
+    }
+    .btn-control {
+      background: rgba(58, 8, 19, 0.65);
+      border: 1px solid rgba(226, 176, 74, 0.35);
+      color: #f6e7c1;
+      font-size: 12px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-sans);
+    }
+    .btn-control:hover {
+      border-color: #e2b04a;
+      background: rgba(90, 15, 30, 0.85);
+      color: #fff;
+    }
+    .btn-control.active {
+      background: #e2b04a;
+      color: #2a060e;
+      border-color: #e2b04a;
+      font-weight: 600;
+    }
+
+    /* Keyframe Animations */
+    @keyframes ptFall { to { transform: translate(40px, 640px) rotate(540deg); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fl { to { transform: scale(0.8, 1.15); } }
+    @keyframes stageLoop { 0% { opacity: 0; } 4%, 93% { opacity: 1; } 100% { opacity: 0; } }
+    @keyframes dl { 0%, 4% { transform: rotateY(0); } 24%, 100% { transform: rotateY(-125deg); } }
+    @keyframes dr { 0%, 4% { transform: rotateY(0); } 24%, 100% { transform: rotateY(125deg); } }
+    @keyframes ual { 0%, 30% { transform: rotate(0); } 44%, 100% { transform: rotate(15deg); } }
+    @keyframes uar { 0%, 30% { transform: rotate(0); } 44%, 100% { transform: rotate(-15deg); } }
+    @keyframes fal { 0%, 30% { transform: rotate(0); } 44%, 100% { transform: rotate(-136deg); } }
+    @keyframes far { 0%, 30% { transform: rotate(0); } 44%, 100% { transform: rotate(136deg); } }
+    @keyframes palms { 0%, 42% { opacity: 0; } 45%, 100% { opacity: 1; } }
+    @keyframes bow { 0%, 46% { transform: none; } 58%, 66% { transform: translateY(12px) scaleY(0.9); } 76%, 100% { transform: none; } }
+    @keyframes head { 0%, 46% { transform: none; } 58%, 66% { transform: translateY(8px); } 76%, 100% { transform: none; } }
+    @keyframes cap { 0%, 50% { opacity: 0; transform: translateY(8px); } 62%, 100% { opacity: 1; transform: none; } }
+
+    @media (max-width: 900px) {
+      .wedding-card-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .card-intro-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+      }
+      .card-features { max-width: 440px; width: 100%; text-align: left; }
+      .card-cta-group { justify-content: center; }
+      .card-controls { margin-right: auto; }
+      .wedding-card-section .side { display: none; }
+      .wedding-card-section .pt { opacity: 0.25; }
+    }
+    @media (max-width: 440px) {
+      .wedding-card-section .stage { transform: scale(0.85); transform-origin: center top; }
+      .stage-podium { min-height: 460px; }
+    }
+    @media (max-width: 375px) {
+      .wedding-card-section .stage { transform: scale(0.75); transform-origin: center top; }
+      .stage-podium { min-height: 410px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wedding-card-section * { animation: none !important; }
+      .wedding-card-section .pt { display: none; }
+      .wedding-card-section .l { transform: rotateY(-125deg); }
+      .wedding-card-section .r { transform: rotateY(125deg); }
+      .wedding-card-section .ual { transform: rotate(15deg); }
+      .wedding-card-section .uar { transform: rotate(-15deg); }
+      .wedding-card-section .far { transform: rotate(-136deg); }
+      .wedding-card-section .fal { transform: rotate(136deg); }
+      .wedding-card-section .palms, .wedding-card-section .cap { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -655,89 +1029,6 @@
   </div>
 </div>
 
-<!-- ═══════ FLOATING WHATSAPP BUTTON ═══════ -->
-<a href="https://wa.me/919876543210?text=Hello%20Maa%20Sharda%20Utsav%20Lawn%2C%20I%20would%20like%20to%20inquire%20about%20booking%20dates." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
-  <svg class="whatsapp-icon" viewBox="0 0 24 24">
-    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.13.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/>
-  </svg>
-  <span>Inquire via WhatsApp</span>
-</a>
-
-<div class="cursor-glow" id="cursorGlow"></div>
-<div class="noise"></div>
-
-<!-- Interactive Date Inquiry Modal -->
-<div class="modal-backdrop" id="bookingModal" aria-hidden="true">
-  <div class="modal-card">
-    <button class="modal-close" type="button" id="closeModal" aria-label="Close dialog">✕</button>
-    <div class="eyebrow">Direct Venue Reservation</div>
-    <h3 class="modal-title">Check Date Availability</h3>
-    <p class="modal-desc">Share your celebration details and our events director will respond with hall availability and custom package options within 2 hours.</p>
-    <form class="inquiry-form" id="inquiryForm" onsubmit="handleInquirySubmit(event)">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="clientName">Full Name</label>
-          <input type="text" id="clientName" placeholder="e.g. Ramesh Verma" required>
-        </div>
-        <div class="form-group">
-          <label for="clientPhone">Phone Number</label>
-          <input type="tel" id="clientPhone" placeholder="+91 98765 43210" required>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="eventDate">Expected Event Date</label>
-          <input type="date" id="eventDate" required>
-        </div>
-        <div class="form-group">
-          <label for="eventType">Occasion / Ceremony</label>
-          <select id="eventType">
-            <option value="Wedding">Grand Wedding Ceremony</option>
-            <option value="Reception">Evening Reception</option>
-            <option value="Ring Ceremony / Engagement">Ring Ceremony / Engagement</option>
-            <option value="Haldi / Sangeet / Mehendi">Haldi / Sangeet / Mehendi</option>
-            <option value="Birthday / Anniversary">Birthday / Anniversary Gala</option>
-            <option value="Corporate / Community">Corporate / Community Gathering</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="guestCount">Estimated Guest Count</label>
-          <select id="guestCount">
-            <option value="150 - 250 Guests">150 – 250 Guests</option>
-            <option value="250 - 400 Guests">250 – 400 Guests</option>
-            <option value="400 - 600 Guests" selected>400 – 600 Guests</option>
-            <option value="600+ Guests">600+ Grand Gathering</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="cateringPreference">Catering Requirement</label>
-          <select id="cateringPreference">
-            <option value="In-house Catering Required">In-House Royal Catering</option>
-            <option value="Own / External Caterer">External Caterer with Hall Kitchen</option>
-            <option value="Need Consultation">Need Guidance</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="specialRequests">Notes or Special Requirements</label>
-        <textarea id="specialRequests" rows="2" placeholder="Mandap style, bridal room, guest stay, specific dates..."></textarea>
-      </div>
-      <button type="submit" class="submit-btn">
-        <span>Send Inquiry via WhatsApp</span>
-        <span>↗</span>
-      </button>
-    </form>
-  </div>
-</div>
-
-<!-- Floating Quick WhatsApp Button -->
-<a href="https://wa.me/919876543210?text=Hello%20Maa%20Sharda%20Utsav%20Lawn%2C%20I%20would%20like%20to%20inquire%20about%20booking%20dates%20and%20rates." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
-  <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-  <span>Inquire via WhatsApp</span>
-</a>
-
 <!-- ═══════ TOP BAR ═══════ -->
 <div class="topbar">
   <div class="wrap">
@@ -762,6 +1053,7 @@
         </span>
       </a>
       <div class="nav-links">
+        <a href="#invitation" style="color:var(--gold);font-weight:600">✦ Royal Invitation</a>
         <a href="#about">About</a>
         <a href="#services">Venues</a>
         <a href="#gallery">Gallery</a>
@@ -778,6 +1070,287 @@
 </header>
 
 <main>
+  <!-- ═══════ ROYAL WEDDING INVITATION CARD (SHUBH VIVAH) ═══════ -->
+  <!-- Shared SVG Definitions for Royal Invitation -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <radialGradient id="bg" cx=".5" cy=".35" r=".8"><stop offset="0" stop-color="#7a1230"/><stop offset="1" stop-color="#34070f"/></radialGradient>
+      <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd978" stop-opacity=".6"/><stop offset="1" stop-color="#ffd978" stop-opacity="0"/></radialGradient>
+      <linearGradient id="arch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a1b3c"/><stop offset="1" stop-color="#3d0a18"/></linearGradient>
+      <path id="pt" d="M0 -22 Q9 -34 0 -50 Q-9 -34 0 -22Z" fill="none" stroke="#e2b04a" stroke-width="1.3"/>
+      <path id="cn" d="M0 0H34A34 34 0 0 1 0 34Z M0 0H20A20 20 0 0 1 0 20Z" fill="none" stroke="#e2b04a" stroke-width="1.2"/>
+      <pattern id="vine" width="200" height="190" patternUnits="userSpaceOnUse">
+        <path d="M34 0V190M168 0V190" stroke="#f59e0b" stroke-width="7" stroke-dasharray="0 9" stroke-linecap="round"/>
+        <path d="M34 0V190M168 0V190" stroke="#e2531f" stroke-width="4" stroke-dasharray="0 9" stroke-dashoffset="4.5" stroke-linecap="round"/>
+        <use href="#bl" transform="translate(34 188) scale(1.4)"/><use href="#bl" transform="translate(168 188) scale(1.4)"/>
+        <use href="#lt" transform="translate(100 64) scale(1.5)"/>
+        <use href="#pz" transform="translate(66 140) rotate(-20) scale(1.5)"/>
+        <use href="#pz" transform="translate(134 140) rotate(20) scale(-1.5 1.5)"/>
+        <use href="#sp" transform="translate(100 118) scale(1.2)"/><use href="#sp" transform="translate(70 24)"/><use href="#sp" transform="translate(130 24)"/><use href="#sp" transform="translate(100 176) scale(.8)"/>
+      </pattern>
+      <g id="pz"><path d="M0 11C-10 4-9-11 0-18C9-11 10 4 0 11Z" fill="#e2b04a" stroke="#b9852a" stroke-width=".7"/><path d="M0 7C-5 3-5-6 0-11C5-6 5 3 0 7Z" fill="none" stroke="#7a1230" stroke-width="1"/><circle cy="-2" r="2.4" fill="#c8102e"/></g>
+      <g id="lt"><g fill="#e2531f" stroke="#ffd978" stroke-width=".8"><path d="M0 0Q-7-9 0-19Q7-9 0 0Z" transform="rotate(-62)"/><path d="M0 0Q-7-9 0-19Q7-9 0 0Z" transform="rotate(62)"/><path d="M0 0Q-7-9 0-19Q7-9 0 0Z" transform="rotate(-31)"/><path d="M0 0Q-7-9 0-19Q7-9 0 0Z" transform="rotate(31)"/><path d="M0 0Q-7-9 0-21Q7-9 0 0Z" fill="#f59e0b"/></g><circle r="2.6" fill="#ffd978"/></g>
+      <g id="bl"><path d="M-4 0Q-4-7 0-8Q4-7 4 0Z" fill="#e2b04a" stroke="#b9852a" stroke-width=".6"/><circle cy="1.6" r="1.7" fill="#b9852a"/></g>
+      <path id="sp" d="M0-5L1.3-1.3 5 0 1.3 1.3 0 5-1.3 1.3-5 0-1.3-1.3Z" fill="#ffe9a8"/>
+      <pattern id="dm" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M9 3l6 6-6 6-6-6z" fill="none" stroke="#e2b04a" stroke-width="1"/><circle cx="9" cy="9" r="1.2" fill="#e2b04a"/></pattern>
+      <g id="logo">
+        <circle r="20" fill="#d7141a" stroke="#ff7a45" stroke-width="1"/>
+        <path d="M-14 -9Q0 -21 14 -9" fill="none" stroke="#fff" stroke-width="1"/>
+        <path d="M0 -15Q-2.4 -11.5 0 -8.5Q2.4 -11.5 0 -15Z" fill="#ffe9a8"/>
+        <path d="M-12 -7Q-7 -11 -2 -7M2 -7Q7 -11 12 -7" fill="none" stroke="#fff" stroke-width="1.2"/>
+        <path d="M-11.5 -3.5Q-6.7 -8 -2 -3.5Q-6.7 -1 -11.5 -3.5ZM11.5 -3.5Q6.7 -8 2 -3.5Q6.7 -1 11.5 -3.5Z" fill="#fff"/>
+        <circle cx="-6.7" cy="-3.8" r="1.5" fill="#7a0a10"/><circle cx="6.7" cy="-3.8" r="1.5" fill="#7a0a10"/>
+        <path d="M0 -2V4.5M-2.2 5.5Q0 7 2.2 5.5" fill="none" stroke="#fff" stroke-width="1"/>
+        <path d="M-5 10Q0 8 5 10Q0 14 -5 10Z" fill="none" stroke="#fff" stroke-width="1"/>
+        <path d="M-10 4Q-9 14 0 17Q9 14 10 4" fill="none" stroke="#fff" stroke-width=".9"/>
+      </g>
+      <g id="face">
+        <rect width="260" height="340" fill="url(#bg)"/>
+        <rect x="7" y="7" width="246" height="326" fill="none" stroke="#e2b04a" stroke-width="3"/>
+        <rect x="13" y="13" width="234" height="314" fill="none" stroke="#e2b04a" stroke-width="2" stroke-dasharray="0 5" stroke-linecap="round"/>
+        <rect x="19" y="19" width="222" height="302" fill="none" stroke="#e2b04a" stroke-width="1"/>
+        <use href="#cn" x="19" y="19"/><use href="#cn" transform="translate(241 19) scale(-1 1)"/>
+        <use href="#cn" transform="translate(19 321) scale(1 -1)"/><use href="#cn" transform="translate(241 321) scale(-1 -1)"/>
+        <text x="130" y="48" text-anchor="middle" font-size="12" fill="#f6e7c1">॥ श्री गणेशाय नमः ॥</text>
+        <g transform="translate(130 122)">
+          <circle r="58" fill="none" stroke="#e2b04a" stroke-width="2" stroke-dasharray="0 6" stroke-linecap="round"/>
+          <circle r="52" fill="#e2b04a" fill-opacity=".08" stroke="#e2b04a" stroke-width="1.2"/>
+          <g id="mand"></g>
+          <circle r="23.5" fill="#e2b04a"/><use href="#logo"/>
+        </g>
+        <text x="130" y="206" text-anchor="middle" font-size="29" fill="#e2b04a">शुभ विवाह</text>
+        <text x="130" y="222" text-anchor="middle" font-size="9.5" fill="#f6e7c1" font-family="Cinzel,Georgia,serif" letter-spacing="3">WEDDING INVITATION</text>
+        <path d="M62 234H118M142 234H198" stroke="#e2b04a"/><path d="M130 229l5 5-5 5-5-5z" fill="#e2b04a"/>
+        <rect x="24" y="248" width="212" height="46" rx="4" fill="#f2b705" stroke="#b9852a" stroke-width="2"/>
+        <rect x="28" y="252" width="204" height="38" rx="2" fill="none" stroke="#d98e00"/>
+        <text x="70" y="277" text-anchor="middle" font-size="17" fill="#e8401c">माँ शारदा</text>
+        <use href="#logo" transform="translate(130 271) scale(.88)"/>
+        <text x="190" y="277" text-anchor="middle" font-size="17" fill="#e8401c">उत्सव लॉन</text>
+        <text x="130" y="311" text-anchor="middle" font-size="8.5" fill="#f6e7c1" font-family="Cinzel,Georgia,serif" letter-spacing="2.4">MAA SHARDA UTSAV LAWN</text>
+      </g>
+    </defs>
+  </svg>
+
+  <section class="wedding-card-section" id="invitation">
+    <!-- Side decorative vine panels -->
+    <svg class="side l" aria-hidden="true">
+      <rect width="100%" height="100%" fill="url(#vine)"/>
+      <rect x="5" width="4" height="100%" fill="#e2b04a"/><rect x="12" width="1.5" height="100%" fill="#e2b04a" opacity=".7"/>
+      <svg y="50%" width="200" height="1" overflow="visible"><g transform="translate(100 0)">
+        <circle r="76" fill="#3a0813" stroke="#e2b04a" stroke-width="3"/>
+        <g class="spin"><circle r="68" fill="none" stroke="#e2b04a" stroke-width="3" stroke-dasharray="0 6" stroke-linecap="round"/><g class="m2"></g><circle r="30" fill="none" stroke="#e2b04a" stroke-width="1.5"/></g>
+        <circle r="26" fill="#e2b04a"/><use href="#logo" transform="scale(1.14)"/>
+      </g></svg>
+    </svg>
+    <svg class="side r" aria-hidden="true">
+      <rect width="100%" height="100%" fill="url(#vine)"/>
+      <rect x="5" width="4" height="100%" fill="#e2b04a"/><rect x="12" width="1.5" height="100%" fill="#e2b04a" opacity=".7"/>
+      <svg y="50%" width="200" height="1" overflow="visible"><g transform="translate(100 0)">
+        <circle r="76" fill="#3a0813" stroke="#e2b04a" stroke-width="3"/>
+        <g class="spin"><circle r="68" fill="none" stroke="#e2b04a" stroke-width="3" stroke-dasharray="0 6" stroke-linecap="round"/><g class="m2"></g><circle r="30" fill="none" stroke="#e2b04a" stroke-width="1.5"/></g>
+        <circle r="26" fill="#e2b04a"/><use href="#logo" transform="scale(1.14)"/>
+      </g></svg>
+    </svg>
+
+    <div class="wrap wedding-card-grid">
+      <!-- Left Column: Royal Welcome Invitation Content -->
+      <div class="card-intro-col" data-reveal>
+        <div class="card-pill">✦ ॥ श्री गणेशाय नमः ॥ · SHUBH VIVAH ✦</div>
+        <h2 class="card-title">An Auspicious Invitation <span class="card-gold">to Your Royal Beginning</span></h2>
+        <p class="card-desc">Every celebration at <strong>Maa Sharda Utsav Lawn</strong> unfolds with sacred blessings, royal splendour, and heartfelt Indian hospitality. We welcome you to experience Ambedkar Nagar's most distinguished venue for memorable weddings, grand receptions, and family milestones.</p>
+        
+        <div class="card-features">
+          <div class="card-feat-item">
+            <span class="feat-icon">🏛️</span>
+            <div><strong>Spacious Open-Air Grounds &amp; Banquet</strong><small>Accommodates 500+ guests with private paved driveway</small></div>
+          </div>
+          <div class="card-feat-item">
+            <span class="feat-icon">✨</span>
+            <div><strong>Authentic Wedding Traditions &amp; Décor</strong><small>Vibrant mandap setups, royal lighting &amp; seamless catering</small></div>
+          </div>
+          <div class="card-feat-item">
+            <span class="feat-icon">🕊️</span>
+            <div><strong>Warm Hospitality in Akbarpur</strong><small>Masdha Bazar, Bela Parsa Road · Established January 2023</small></div>
+          </div>
+        </div>
+
+        <div class="card-cta-group">
+          <a href="#contact" class="btn-royal primary">Book Your Wedding Date ↗</a>
+          <a href="#gallery" class="btn-royal outline">View Venue Photos ↓</a>
+        </div>
+      </div>
+
+      <!-- Right Column: Animated 3D Gatefold Card Stage -->
+      <div class="card-stage-col" data-reveal>
+        <div class="stage-podium">
+          <div class="stage-glow"></div>
+          <div class="stage" id="stage">
+            <div class="card">
+              <div class="inner">
+                <svg viewBox="0 0 260 340" aria-label="Rajput bride greeting with namaste">
+                  <rect width="260" height="340" fill="#f6e7c1"/>
+                  <rect x="3" y="3" width="254" height="334" fill="none" stroke="#e2b04a" stroke-width="1.6" stroke-dasharray="0 5" stroke-linecap="round"/>
+                  <g id="edge"><use href="#lt" transform="translate(28 40) scale(.85)"/><g fill="#b9852a"><use href="#pz" transform="translate(12 96) scale(.55)"/><use href="#pz" transform="translate(12 150) scale(.55)"/><use href="#pz" transform="translate(12 204) scale(.55)"/><use href="#pz" transform="translate(12 258) scale(.55)"/></g>
+                    <path d="M12 118V132M12 172V186M12 226V240" stroke="#e2b04a" stroke-width="2" stroke-dasharray="0 5" stroke-linecap="round"/>
+                  </g>
+                  <use href="#edge" transform="translate(260 0) scale(-1 1)"/>
+                  
+                  <path d="M24 340V126A106 106 0 0 1 236 126V340Z" fill="url(#arch)" stroke="#e2b04a" stroke-width="4"/>
+                  <path d="M34 340V126A96 96 0 0 1 226 126V340" fill="none" stroke="#e2b04a" stroke-width="1.4" stroke-dasharray="3 4"/>
+                  <circle cx="130" cy="175" r="105" fill="url(#glow)"/>
+                  <path d="M32 126A98 98 0 0 1 228 126" fill="none" stroke="#f59e0b" stroke-width="8" stroke-dasharray="0 10" stroke-linecap="round"/>
+                  <path d="M40 126A90 90 0 0 1 220 126" fill="none" stroke="#e2531f" stroke-width="6" stroke-dasharray="0 10" stroke-linecap="round" stroke-dashoffset="5"/>
+                  
+                  <g id="sideInner">
+                    <path d="M44 84V192" stroke="#f59e0b" stroke-width="6" stroke-dasharray="0 8" stroke-linecap="round"/>
+                    <path d="M44 88V190" stroke="#e2531f" stroke-width="3.6" stroke-dasharray="0 8" stroke-linecap="round" stroke-dashoffset="4"/>
+                    <use href="#bl" transform="translate(44 202)"/>
+                    <path d="M60 70V146" stroke="#f59e0b" stroke-width="6" stroke-dasharray="0 8" stroke-linecap="round"/>
+                    <path d="M60 74V144" stroke="#c2185b" stroke-width="3.6" stroke-dasharray="0 8" stroke-linecap="round" stroke-dashoffset="4"/>
+                    <use href="#bl" transform="translate(60 156)"/>
+                    <use href="#pz" transform="translate(78 212) rotate(-18) scale(1.35)"/>
+                    <use href="#pz" transform="translate(52 236) rotate(12) scale(.9)"/>
+                    <use href="#lt" transform="translate(82 276) scale(.62)"/>
+                    <use href="#sp" transform="translate(82 104)"/><use href="#sp" transform="translate(76 140) scale(.7)"/><use href="#sp" transform="translate(88 172) scale(.9)"/><use href="#sp" transform="translate(98 70) scale(.8)"/>
+                    <circle cx="70" cy="190" r="1.6" fill="#ffe9a8"/><circle cx="92" cy="130" r="1.4" fill="#ffe9a8"/><circle cx="68" cy="112" r="1.4" fill="#ffe9a8"/>
+                  </g>
+                  <use href="#sideInner" transform="translate(260 0) scale(-1 1)"/>
+                  <circle cx="130" cy="64" r="29" fill="#ffd978" opacity=".28" stroke="#e2b04a" stroke-width="1"/>
+                  <svg x="102" y="38" width="56" height="52" viewBox="0 0 60 56" aria-label="Shree Ganesh">
+                    <ellipse cx="14" cy="25" rx="9" ry="12" fill="#f08a24" stroke="#b9852a" stroke-width=".8"/><ellipse cx="14" cy="25" rx="5" ry="8" fill="#f7b868"/>
+                    <ellipse cx="46" cy="25" rx="9" ry="12" fill="#f08a24" stroke="#b9852a" stroke-width=".8"/><ellipse cx="46" cy="25" rx="5" ry="8" fill="#f7b868"/>
+                    <path d="M16 56Q16 40 30 40Q44 40 44 56Z" fill="#f39a2f"/>
+                    <path d="M15 56Q15 50 30 51Q45 50 45 56Z" fill="#d4101f" stroke="#e2b04a" stroke-width=".8"/>
+                    <ellipse cx="30" cy="24" rx="13" ry="14" fill="#f39a2f"/>
+                    <path d="M19 15L21 4 26 10 30 1 34 10 39 4 41 15Z" fill="#e2b04a" stroke="#b9852a" stroke-width=".7"/>
+                    <circle cx="30" cy="8.5" r="2" fill="#c8102e"/>
+                    <path d="M26 16Q30 21 34 16M30 15V20" fill="none" stroke="#c8102e" stroke-width="1.2" stroke-linecap="round"/>
+                    <circle cx="25" cy="22" r="1.5" fill="#2a120c"/><circle cx="35" cy="22" r="1.5" fill="#2a120c"/>
+                    <path d="M30 25Q31 35 27 41Q24 46 29 48" fill="none" stroke="#f39a2f" stroke-width="6.5" stroke-linecap="round"/>
+                    <path d="M30 27Q31 35 28 41" fill="none" stroke="#f7b868" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M37 29Q41 34 38 39" fill="none" stroke="#fff6e0" stroke-width="2.4" stroke-linecap="round"/>
+                    <path d="M23 30Q21.5 33 22.5 35" fill="none" stroke="#fff6e0" stroke-width="2.2" stroke-linecap="round"/>
+                    <ellipse cx="47" cy="45" rx="4" ry="3.4" fill="#ffd978"/>
+                  </svg>
+                  <rect y="300" width="260" height="40" fill="#8c1c2f"/><rect y="300" width="260" height="4" fill="#e2b04a"/><rect y="306" width="260" height="34" fill="url(#dm)" opacity=".7"/>
+                  <g>
+                    <ellipse cx="44" cy="296" rx="12" ry="4" fill="#e2b04a"/><path class="flame" d="M44 274Q50 286 44 292Q38 286 44 274Z" fill="#ffb400"/>
+                    <ellipse cx="216" cy="296" rx="12" ry="4" fill="#e2b04a"/><path class="flame" d="M216 274Q222 286 216 292Q210 286 216 274Z" fill="#ffb400"/>
+                  </g>
+                  <svg x="65.5" y="96" width="129" height="206" viewBox="0 0 200 320">
+                    <defs>
+                      <linearGradient id="rd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0182d"/><stop offset="1" stop-color="#8e0b1b"/></linearGradient>
+                      <linearGradient id="rv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f02a3c"/><stop offset="1" stop-color="#b30f24"/></linearGradient>
+                    </defs>
+                    <!-- lehenga -->
+                    <path d="M84 172 Q72 242 38 312 L162 312 Q128 242 116 172Z" fill="url(#rd)"/>
+                    <path d="M92 176 L76 312M100 176 L100 312M108 176 L124 312M88 176 L58 312M112 176 L142 312" stroke="#7a0916" stroke-width="1.2" fill="none" opacity=".7"/>
+                    <path d="M62 236 Q100 244 138 236" stroke="#f2c14e" stroke-width="3" fill="none"/>
+                    <g fill="#f2c14e"><path d="M70 262l3 4-3 4-3-4zM90 270l3 4-3 4-3-4zM110 270l3 4-3 4-3-4zM130 262l3 4-3 4-3-4zM100 252l3 4-3 4-3-4zM80 288l3 4-3 4-3-4zM120 288l3 4-3 4-3-4z"/></g>
+                    <path d="M42 288 L158 288 L162 312 L38 312Z" fill="#f2c14e"/>
+                    <path d="M41 296 L159 296" stroke="#b30f24" stroke-width="4"/>
+                    <g fill="#8e0b1b"><path d="M52 304l3 4-3 4-3-4zM70 304l3 4-3 4-3-4zM88 304l3 4-3 4-3-4zM106 304l3 4-3 4-3-4zM124 304l3 4-3 4-3-4zM142 304l3 4-3 4-3-4z"/></g>
+                    <g class="pivot upper">
+                      <!-- veil (odhani) behind -->
+                      <path d="M100 26 C64 26 54 84 52 152 L148 152 C146 84 136 26 100 26Z" fill="url(#rv)" stroke="#f2c14e" stroke-width="3"/>
+                      <path d="M100 32 C70 32 61 86 60 148 M100 32 C130 32 139 86 140 148" fill="none" stroke="#f2c14e" stroke-width="1" stroke-dasharray="2 3"/>
+                      <!-- body -->
+                      <path d="M80 94 L120 94 Q116 140 114 172 L86 172 Q84 140 80 94Z" fill="#dfa57e"/>
+                      <path d="M77 95 Q100 85 123 95 L120 127 Q100 135 80 127Z" fill="#d4101f" stroke="#f2c14e" stroke-width="2"/>
+                      <path d="M89 93 Q100 112 111 93Z" fill="#dfa57e"/>
+                      <path d="M88 93 Q100 113 112 93" fill="none" stroke="#f2c14e" stroke-width="2"/>
+                      <path d="M82 118 Q100 126 118 118" fill="none" stroke="#f2c14e" stroke-width="1.4" stroke-dasharray="2 2"/>
+                      <path d="M84 166 L116 166 L117 175 L83 175Z" fill="#f2c14e" stroke="#b9852a" stroke-width=".8"/>
+                      <g fill="#c8102e"><circle cx="91" cy="170.5" r="2"/><circle cx="100" cy="170.5" r="2.6"/><circle cx="109" cy="170.5" r="2"/></g>
+                      <rect x="94" y="76" width="12" height="20" rx="5" fill="#d79c74"/>
+                      <!-- necklaces -->
+                      <path d="M90 90 Q100 98 110 90" fill="none" stroke="#f2c14e" stroke-width="3.4" stroke-linecap="round"/>
+                      <path d="M90 90 Q100 98 110 90" fill="none" stroke="#c8102e" stroke-width="1.2" stroke-dasharray="1.5 3.5" stroke-linecap="round"/>
+                      <path d="M86 92 Q100 122 114 92" fill="none" stroke="#f2c14e" stroke-width="2.4" stroke-linecap="round"/>
+                      <path d="M86 92 Q100 122 114 92" fill="none" stroke="#0e9a7a" stroke-width="1.2" stroke-dasharray="1.2 4" stroke-linecap="round"/>
+                      <path d="M100 111 Q95 118 100 123 Q105 118 100 111Z" fill="#c8102e" stroke="#f2c14e" stroke-width="1.2"/>
+                      <g class="pivot head">
+                        <path d="M82 62 Q80 38 100 37 Q120 38 118 62 L117 76 Q100 66 83 76Z" fill="#1c0a08"/>
+                        <path d="M84 60 Q84 44 100 44 Q116 44 116 60 Q116 72 108 80 Q100 87 92 80 Q84 72 84 60Z" fill="#e3aa83"/>
+                        <path d="M83 56 Q100 40 117 56 Q100 46 83 56Z" fill="#1c0a08"/>
+                        <path d="M86 44 Q77 66 80 92 L86 92 Q85 66 92 47Z" fill="#e0182d" stroke="#f2c14e" stroke-width="1.6"/>
+                        <path d="M114 44 Q123 66 120 92 L114 92 Q115 66 108 47Z" fill="#e0182d" stroke="#f2c14e" stroke-width="1.6"/>
+                        <circle cx="90" cy="70" r="4.2" fill="#f08a8a" opacity=".35"/><circle cx="110" cy="70" r="4.2" fill="#f08a8a" opacity=".35"/>
+                        <path d="M89.5 61.5 Q94 58 98.5 61.5 Q94 64.5 89.5 61.5Z M101.5 61.5 Q106 58 110.5 61.5 Q106 64.5 101.5 61.5Z" fill="#fff"/>
+                        <circle cx="94" cy="61.4" r="1.8" fill="#2a120c"/><circle cx="106" cy="61.4" r="1.8" fill="#2a120c"/>
+                        <path d="M88 62 Q94 56.5 99 61.5M101 61.5 Q106 56.5 112 62" stroke="#120604" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <path d="M89 55.5 Q94 52 99 54.5M101 54.5 Q106 52 111 55.5" stroke="#1c0a08" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+                        <path d="M100 63 Q98.6 68.5 100 70" stroke="#c98560" stroke-width="1" fill="none"/>
+                        <circle cx="96.8" cy="70.6" r="2.8" fill="none" stroke="#f2c14e" stroke-width="1.1"/><circle cx="96.8" cy="73.6" r="1" fill="#fff"/>
+                        <path d="M94 70 Q88 67 84.5 67" stroke="#f2c14e" stroke-width=".9" fill="none"/>
+                        <path d="M95 75.5 Q97.5 74 100 75 Q102.5 74 105 75.5 Q100 80.5 95 75.5Z" fill="#c4162e"/>
+                        <circle cx="100" cy="54.4" r="1.4" fill="#c8102e"/>
+                        <path d="M100 43 L100 47" stroke="#f2c14e" stroke-width="1.2"/>
+                        <path d="M100 46.5 Q96.8 49 100 51.6 Q103.2 49 100 46.5Z" fill="#c8102e" stroke="#f2c14e" stroke-width="1"/>
+                        <circle cx="84" cy="69" r="2.2" fill="#f2c14e"/><path d="M81.5 71 L86.5 71 L85.5 77 L82.5 77Z" fill="#f2c14e"/><circle cx="84" cy="78.4" r="1.4" fill="#fff"/>
+                        <circle cx="116" cy="69" r="2.2" fill="#f2c14e"/><path d="M113.5 71 L118.5 71 L117.5 77 L114.5 77Z" fill="#f2c14e"/><circle cx="116" cy="78.4" r="1.4" fill="#fff"/>
+                        <!-- tiara -->
+                        <path d="M85 46 Q100 29 115 46" fill="none" stroke="#f2c14e" stroke-width="3.4" stroke-linecap="round"/>
+                        <path d="M85 46 Q100 29 115 46" fill="none" stroke="#fff" stroke-width="1.4" stroke-dasharray="0 4.4" stroke-linecap="round"/>
+                        <path d="M93 37 L100 19 L107 37 Q100 33 93 37Z" fill="#f2c14e" stroke="#b9852a" stroke-width=".8"/>
+                        <circle cx="100" cy="31" r="2.6" fill="#c8102e" stroke="#fff3c9" stroke-width=".8"/>
+                        <g fill="#fff"><circle cx="100" cy="18.5" r="1.8"/><circle cx="90" cy="35" r="1.5"/><circle cx="110" cy="35" r="1.5"/></g>
+                      </g>
+                      <!-- arms -->
+                      <g class="pivot ual">
+                        <line x1="80" y1="100" x2="80" y2="130" stroke="#dfa57e" stroke-width="7.5" stroke-linecap="round"/>
+                        <line x1="80" y1="99" x2="80" y2="110" stroke="#d4101f" stroke-width="11" stroke-linecap="round"/>
+                        <line x1="80" y1="109" x2="80" y2="112" stroke="#f2c14e" stroke-width="11"/>
+                        <rect x="76" y="119" width="8" height="3" rx="1.5" fill="#f2c14e"/>
+                        <g class="pivot far">
+                          <line x1="80" y1="130" x2="80" y2="156" stroke="#dfa57e" stroke-width="6.6" stroke-linecap="round"/>
+                          <line x1="80" y1="140" x2="80" y2="156" stroke="#d4101f" stroke-width="8.4" stroke-dasharray="1.6 1.6"/>
+                          <line x1="80" y1="141.6" x2="80" y2="156" stroke="#fff6e0" stroke-width="8.4" stroke-dasharray="1.6 1.6"/>
+                          <rect x="75.6" y="138" width="8.8" height="2" fill="#f2c14e"/>
+                          <circle cx="80" cy="160" r="4.5" fill="#dfa57e"/>
+                        </g>
+                      </g>
+                      <g class="pivot uar">
+                        <line x1="120" y1="100" x2="120" y2="130" stroke="#dfa57e" stroke-width="7.5" stroke-linecap="round"/>
+                        <line x1="120" y1="99" x2="120" y2="110" stroke="#d4101f" stroke-width="11" stroke-linecap="round"/>
+                        <line x1="120" y1="109" x2="120" y2="112" stroke="#f2c14e" stroke-width="11"/>
+                        <rect x="116" y="119" width="8" height="3" rx="1.5" fill="#f2c14e"/>
+                        <g class="pivot fal">
+                          <line x1="120" y1="130" x2="120" y2="156" stroke="#dfa57e" stroke-width="6.6" stroke-linecap="round"/>
+                          <line x1="120" y1="140" x2="120" y2="156" stroke="#d4101f" stroke-width="8.4" stroke-dasharray="1.6 1.6"/>
+                          <line x1="120" y1="141.6" x2="120" y2="156" stroke="#fff6e0" stroke-width="8.4" stroke-dasharray="1.6 1.6"/>
+                          <rect x="115.6" y="138" width="8.8" height="2" fill="#f2c14e"/>
+                          <circle cx="120" cy="160" r="4.5" fill="#dfa57e"/>
+                        </g>
+                      </g>
+                      <!-- joined palms with mehndi -->
+                      <g class="palms">
+                        <path d="M100 98 Q107 111 100 125 Q93 111 100 98Z" fill="#dfa57e" stroke="#b97d57" stroke-width="1"/>
+                        <g fill="#8a3418"><circle cx="100" cy="106" r="1"/><circle cx="100" cy="111" r="1.2"/><circle cx="100" cy="116" r="1"/><circle cx="97.6" cy="112" r=".7"/><circle cx="102.4" cy="112" r=".7"/></g>
+                      </g>
+                    </g>
+                  </svg>
+                </svg>
+              </div>
+              <div class="door l"><div class="face"><svg viewBox="0 0 260 340"><use href="#face"/></svg></div><div class="face back"></div></div>
+              <div class="door r"><div class="face"><svg viewBox="0 0 260 340"><use href="#face"/></svg></div><div class="face back"></div></div>
+            </div>
+            <div class="cap">
+              <svg width="34" height="34" viewBox="-21 -21 42 42" style="display:block;margin:0 auto 2px"><use href="#logo"/></svg>
+              <b>नमस्ते</b>
+              <i>MAA SHARDA UTSAV LAWN</i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Stage Controls -->
+        <div class="card-controls">
+          <button type="button" class="btn-control active" id="btnAutoPlay" onclick="setCardMode('auto')">▶ Auto Play</button>
+          <button type="button" class="btn-control" id="btnKeepOpen" onclick="setCardMode('open')">✦ Keep Card Open</button>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- ═══════ HERO ═══════ -->
   <section class="hero">
     <div class="hero-bg"></div>
@@ -1071,6 +1644,12 @@
   </div>
 </footer>
 
+<!-- ═══════ FLOATING WHATSAPP BUTTON ═══════ -->
+<a href="https://wa.me/919876543210?text=Hello%20Maa%20Sharda%20Utsav%20Lawn%2C%20I%20would%20like%20to%20inquire%20about%20booking%20dates%20and%20rates." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.13.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+  <span>Inquire via WhatsApp</span>
+</a>
+
 <script>
   // ── 1. Lenis Smooth Scroll Engine (High-end buttery scrolling) ──
   let lenis;
@@ -1263,6 +1842,62 @@
     links.dataset.open = open ? '0' : '1';
     links.style.cssText = open ? '' : 'display:flex;position:absolute;top:66px;left:14px;right:14px;padding:18px;border-radius:16px;background:var(--cream-warm);border:1px solid var(--line);box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;gap:14px;z-index:90;';
   });
+
+  // ── 11. Royal Wedding Invitation Card Logic ──
+  (function initWeddingCard() {
+    const ns = "http://www.w3.org/2000/svg";
+    const m = document.getElementById("mand");
+    if (m && !m.hasChildNodes()) {
+      for (let i = 0; i < 16; i++) {
+        const u = document.createElementNS(ns, "use");
+        u.setAttribute("href", "#pt");
+        u.setAttribute("transform", `rotate(${i * 22.5})`);
+        m.appendChild(u);
+      }
+    }
+    const ms = document.querySelectorAll(".wedding-card-section .m2");
+    ms.forEach(mk => {
+      if (!mk.hasChildNodes()) {
+        for (let i = 0; i < 16; i++) {
+          const q = document.createElementNS(ns, "use");
+          q.setAttribute("href", "#pt");
+          q.setAttribute("transform", `rotate(${i * 22.5}) scale(1.25)`);
+          mk.appendChild(q);
+        }
+      }
+    });
+
+    // Petals inside the invitation showcase - focused around the card stage
+    const cardSection = document.getElementById("invitation");
+    if (cardSection) {
+      const colors = ["#f59e0b", "#e2531f", "#ffb400", "#c2185b"];
+      for (let j = 0; j < 16; j++) {
+        const p = document.createElement("span");
+        p.className = "pt";
+        // Float predominantly around the card stage on the right, keeping left text crystal clear
+        const leftPos = 48 + Math.random() * 48;
+        p.style.cssText = `left:${leftPos}%;background:${colors[j % 4]};animation-duration:${6 + Math.random() * 6}s;animation-delay:-${Math.random() * 10}s;`;
+        cardSection.appendChild(p);
+      }
+    }
+  })();
+
+  // Card interactive toggle
+  window.setCardMode = function(mode) {
+    const stage = document.getElementById("stage");
+    const btnAuto = document.getElementById("btnAutoPlay");
+    const btnOpen = document.getElementById("btnKeepOpen");
+    if (!stage) return;
+    if (mode === 'open') {
+      stage.classList.add('keep-open');
+      btnOpen?.classList.add('active');
+      btnAuto?.classList.remove('active');
+    } else {
+      stage.classList.remove('keep-open');
+      btnAuto?.classList.add('active');
+      btnOpen?.classList.remove('active');
+    }
+  };
 </script>
 </body>
 </html>
