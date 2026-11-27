@@ -1313,6 +1313,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 </style>
+  <link rel="stylesheet" href="assets/css/premium-responsive.css?v=20261128">
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow"></div>
@@ -1408,7 +1409,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         </span>
       </a>
       <div class="nav-links">
-        <a href="#invitation" style="color:var(--gold);font-weight:600">✦ Royal Card</a>
+        <a href="gallery.html">Gallery</a>
         <a href="3d-venue.html" target="_blank" style="color:#d97706;font-weight:700">🏛️ Explore 3D Banquet ↗</a>
         <a href="#about">About</a>
         <a href="#services">Venues</a>
@@ -1427,61 +1428,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 </header>
 
 <main>
-  <!-- ═══════ ROYAL WEDDING INVITATION CARD (CINEMATIC SHUBH VIVAH) ═══════ -->
-  <section class="wedding-card-section" id="invitation">
-    <div class="wrap wedding-card-center">
-      <!-- Animated Maa Sharda single-line brand wordmark -->
-      <div class="maa-wordmark-wrap" data-reveal>
-        <img class="maa-wordmark" src="images/brand/maa-sharda-wordmark.svg" alt="माँ शारदा उत्सव लॉन" loading="eager" decoding="async">
-      </div>
-
-      <!-- Center Cinematic Video Card Podium -->
-      <div class="cinematic-card-podium" data-reveal>
-        <div class="card-ornate-frame">
-          <div class="corner-filigree top-left"></div>
-          <div class="corner-filigree top-right"></div>
-          <div class="corner-filigree bottom-left"></div>
-          <div class="corner-filigree bottom-right"></div>
-
-          <video 
-            id="invitationVideo" 
-            src="videos/wedding-invitation-cinematic.mp4" 
-            poster="videos/posters/poster-wedding-invitation.jpg" 
-            autoplay 
-            loop 
-            muted 
-            playsinline 
-            preload="auto"
-            aria-label="Maa Sharda Utsav Lawn Royal Wedding Invitation Card Opening Video"
-          ></video>
-
-          <div class="card-video-overlay">
-            <button type="button" class="video-overlay-btn" id="btnInviteSound" onclick="toggleInviteSound()" aria-label="Toggle Invitation Audio">
-              <span id="inviteSoundIcon">🔇</span> <span id="inviteSoundLabel">Sound On</span>
-            </button>
-            <button type="button" class="video-overlay-btn" id="btnInviteReplay" onclick="replayInviteVideo()" aria-label="Replay Invitation Video">
-              <span>🔄</span> <span>Replay</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Interactive Action Bar -->
-        <div class="card-controls">
-          <button type="button" class="btn-control active" id="btnInviteSoundBar" onclick="toggleInviteSound()">
-            <span id="barSoundIcon">🔊</span> Enable Wedding Music
-          </button>
-          <a href="3d-venue.html" target="_blank" class="btn-control" style="text-decoration:none">
-            🏛️ 3D Virtual Tour ↗
-          </a>
-        </div>
-
-        <a href="#hero" class="card-scroll-prompt">
-          <span>✦ Explore Maa Sharda Utsav Lawn ↓ ✦</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- ═══════ HERO ═══════ -->
   <section class="hero" id="hero">
     <div class="hero-bg"></div>
