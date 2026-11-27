@@ -1220,7 +1220,7 @@
         <p class="theater-desc" id="theaterDesc">Description...</p>
       </div>
       <div class="theater-nav-actions">
-        <span class="theater-counter" id="theaterCounter">1 / 21</span>
+        <span class="theater-counter" id="theaterCounter">1 / 24</span>
         <button class="theater-btn" id="theaterPrevBtn" type="button" aria-label="Previous media" onclick="prevTheaterItem()">← Prev</button>
         <button class="theater-btn" id="theaterNextBtn" type="button" aria-label="Next media" onclick="nextTheaterItem()">Next →</button>
       </div>
@@ -1571,9 +1571,9 @@
 
       <!-- Filter Navigation Tabs -->
       <div class="media-filters" data-reveal>
-        <button type="button" class="media-filter-btn active" onclick="filterMedia('all', this)">✦ All Media (21)</button>
-        <button type="button" class="media-filter-btn" onclick="filterMedia('films', this)">🎬 Full Cinematic Films (3)</button>
-        <button type="button" class="media-filter-btn" onclick="filterMedia('clips', this)">✨ Motion Clips (5)</button>
+        <button type="button" class="media-filter-btn active" onclick="filterMedia('all', this)">✦ All Media (24)</button>
+        <button type="button" class="media-filter-btn" onclick="filterMedia('films', this)">🎬 Full Cinematic Films (4)</button>
+        <button type="button" class="media-filter-btn" onclick="filterMedia('clips', this)">✨ Motion Clips (7)</button>
         <button type="button" class="media-filter-btn" onclick="filterMedia('exterior', this)">🏛️ Facade &amp; Grounds (6)</button>
         <button type="button" class="media-filter-btn" onclick="filterMedia('banquet', this)">👑 Royal Banquet &amp; Mandap (4)</button>
         <button type="button" class="media-filter-btn" onclick="filterMedia('ceremonies', this)">🕯️ Celebrations &amp; Rituals (3)</button>
@@ -1805,6 +1805,38 @@
           <div class="vault-card-caption">
             Royal Shubh Vivah Invitation
             <small>10s Cinematic · Gatefold Opening &amp; Namaste</small>
+          </div>
+        </div>
+        <!-- Item 21: Full Celebration Film 2 -->
+        <div class="vault-card" data-category="films" onclick="openTheater(21)">
+          <img src="videos/posters/poster-full-celebration-2.jpg" alt="Untouched Live Celebration &amp; Mandap Walkthrough" loading="lazy">
+          <span class="vault-card-badge">🎬 FULL FILM</span>
+          <div class="vault-play-icon">▶</div>
+          <div class="vault-card-caption">
+            Live Celebration Walkthrough
+            <small>35s Film · Untouched Original Audio</small>
+          </div>
+        </div>
+
+        <!-- Item 22: Illuminated Entrance Highlight -->
+        <div class="vault-card" data-category="clips" onclick="openTheater(22)">
+          <img src="videos/posters/poster-entrance-highlight.jpg" alt="Illuminated Grand Entrance &amp; Gateway" loading="lazy">
+          <span class="vault-card-badge">✨ MOTION CLIP</span>
+          <div class="vault-play-icon">▶</div>
+          <div class="vault-card-caption">
+            Illuminated Gateway Highlight
+            <small>5s Clip · Instrumental Celebration BGM</small>
+          </div>
+        </div>
+
+        <!-- Item 23: Illuminated Banquet Highlight -->
+        <div class="vault-card" data-category="clips" onclick="openTheater(23)">
+          <img src="videos/posters/poster-banquet-highlight.jpg" alt="Crystal Chandelier Banquet Walkthrough" loading="lazy">
+          <span class="vault-card-badge">✨ MOTION CLIP</span>
+          <div class="vault-play-icon">▶</div>
+          <div class="vault-card-caption">
+            Crystal Banquet Highlight
+            <small>4s Clip · Chandelier Aisle with Music</small>
           </div>
         </div>
       </div>
@@ -2370,7 +2402,38 @@
       badge: '🎬 Royal Gatefold Film',
       title: 'Royal Shubh Vivah Gatefold Invitation Film',
       desc: 'Cinematic royal wedding invitation card opening with falling petals to reveal the traditional bridal Namaste greeting in the palace arch.'
+    },
+    // 21: Full Celebration Video 2 (Untouched Original)
+    {
+      type: 'video',
+      src: 'videos/uploads/full-celebration-video-2.mp4',
+      poster: 'videos/posters/poster-full-celebration-2.jpg',
+      category: 'films',
+      badge: '🎬 Full Celebration Film (35s)',
+      title: 'Untouched Live Celebration & Mandap Walkthrough',
+      desc: 'Complete authentic celebration capture preserving original live wedding audio, grand guest entrance, illuminated floral pathway, and active party grounds.'
+    },
+    // 22: Illuminated Entrance Highlight
+    {
+      type: 'video',
+      src: 'videos/uploads/illuminated-entrance-highlight.mp4',
+      poster: 'videos/posters/poster-entrance-highlight.jpg',
+      category: 'clips',
+      badge: '✨ Entrance Highlight',
+      title: 'Illuminated Grand Entrance & Gateway',
+      desc: 'High-energy celebration entrance highlight featuring vibrant light displays and melodic instrumental background score.'
+    },
+    // 23: Illuminated Banquet Highlight
+    {
+      type: 'video',
+      src: 'videos/uploads/illuminated-banquet-highlight.mp4',
+      poster: 'videos/posters/poster-banquet-highlight.jpg',
+      category: 'clips',
+      badge: '✨ Banquet Highlight',
+      title: 'Crystal Chandelier Banquet Walkthrough',
+      desc: 'Dazzling covered hall highlight under suspended crystal chandeliers with celebratory instrumental music.'
     }
+
 
 
   ];
