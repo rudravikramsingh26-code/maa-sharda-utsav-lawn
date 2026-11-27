@@ -310,18 +310,15 @@
     <div class="wrap">
       <nav>
         <a href="index.html" class="brand" aria-label="Maa Sharda Utsav Lawn home">
-          <span class="brand-icon">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-            </svg>
-          </span>
+          <img src="images/brand/durga-circle-logo.png" alt="Maa Sharda Utsav Lawn" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 4px 12px rgba(215,20,26,.35);">
           <span class="brand-text">
-            <strong>Maa Sharda</strong>
-            <span>Utsav Lawn</span>
+            <strong>माँ शारदा</strong>
+            <span>उत्सव लॉन</span>
           </span>
         </a>
 
         <div class="nav-actions">
+          <a href="3d-venue.html" class="btn" style="border-color:var(--gold);color:var(--gold);font-weight:600">🏛️ 3D Virtual Tour ↗</a>
           <a href="index.html" class="btn">← Back to Website</a>
           <a href="tel:07947134176" class="btn">📞 07947134176</a>
           <a href="index.html#contact" class="btn primary">Book Your Date ↗</a>
@@ -341,10 +338,10 @@
     <!-- Filter Buttons -->
     <div class="filter-bar-wrap">
       <div class="filters-list">
-        <button type="button" class="filter-btn active" onclick="filterGallery('all', this)">✦ All Media (18)</button>
+        <button type="button" class="filter-btn active" onclick="filterGallery('all', this)">✦ All Media (20)</button>
         <button type="button" class="filter-btn" onclick="filterGallery('films', this)">🎬 Full Cinematic Films (2)</button>
-        <button type="button" class="filter-btn" onclick="filterGallery('clips', this)">✨ Motion Clips (4)</button>
-        <button type="button" class="filter-btn" onclick="filterGallery('exterior', this)">🏛️ Facade &amp; Grounds (5)</button>
+        <button type="button" class="filter-btn" onclick="filterGallery('clips', this)">✨ Motion Clips (5)</button>
+        <button type="button" class="filter-btn" onclick="filterGallery('exterior', this)">🏛️ Facade &amp; Grounds (6)</button>
         <button type="button" class="filter-btn" onclick="filterGallery('banquet', this)">👑 Royal Banquet &amp; Mandap (4)</button>
         <button type="button" class="filter-btn" onclick="filterGallery('ceremonies', this)">🕯️ Celebrations &amp; Rituals (3)</button>
       </div>
@@ -522,6 +519,20 @@
         <span class="card-badge">🕯️ CELEBRATION</span>
         <div class="card-caption">Evening Party &amp; DJ Truss<small>Music &amp; Lighting Atmosphere</small></div>
       </div>
+      <!-- Item 18: 3rd Video Clip - Star Lawn Night -->
+      <div class="media-card" data-category="clips" onclick="openTheater(18)">
+        <img src="videos/posters/poster-star-lawn.jpg" alt="Starry Night Celebration Grounds &amp; Palms" loading="lazy">
+        <span class="card-badge">✨ MOTION CLIP</span>
+        <div class="card-play-btn">▶</div>
+        <div class="card-caption">Starry Night Grounds &amp; Palms<small>19s Clip · Open Lawn DJ &amp; Lights</small></div>
+      </div>
+
+      <!-- Item 19: Photo Authentic Glowing Neon Emblem -->
+      <div class="media-card" data-category="exterior" onclick="openTheater(19)">
+        <img src="images/brand/logo-neon-mark.jpg" alt="Authentic Glowing Neon Board &amp; Durga Medallion" loading="lazy">
+        <span class="card-badge">🕉️ SACRED EMBLEM</span>
+        <div class="card-caption">Illuminated Neon Insignia<small>Sacred Trishul &amp; Maa Durga Medallion</small></div>
+      </div>
     </div>
   </main>
 
@@ -537,7 +548,7 @@
           <p class="theater-desc" id="theaterDesc">Description...</p>
         </div>
         <div class="theater-nav-actions">
-          <span class="theater-counter" id="theaterCounter">1 / 18</span>
+          <span class="theater-counter" id="theaterCounter">1 / 20</span>
           <button class="theater-btn" type="button" onclick="prevTheaterItem()">← Prev</button>
           <button class="theater-btn" type="button" onclick="nextTheaterItem()">Next →</button>
         </div>
@@ -702,6 +713,23 @@
         badge: '🕯️ Night Celebration',
         title: 'Evening Celebration Grounds & DJ Truss',
         desc: 'Vibrant party atmosphere under the stars with concert-grade lighting.'
+      },
+      {
+        type: 'video',
+        src: 'videos/clips/clip-star-lawn-night.mp4',
+        poster: 'videos/posters/poster-star-lawn.jpg',
+        category: 'clips',
+        badge: '✨ 19s Starry Grounds',
+        title: 'Starry Night Celebration Grounds & Palms',
+        desc: 'Mesmerizing open lawn night atmosphere under the stars with lit palm trees, sound stage, and vibrant celebration lighting.'
+      },
+      {
+        type: 'image',
+        src: 'images/brand/logo-neon-mark.jpg',
+        category: 'exterior',
+        badge: '🕉️ Sacred Neon Emblem',
+        title: 'Authentic Glowing Neon Board & Durga Medallion',
+        desc: 'Handcrafted illuminated neon sign of Maa Sharda Utsav Lawn featuring the divine Trishul rising above the auspicious name and Goddess Durga medallion.'
       }
     ];
 
