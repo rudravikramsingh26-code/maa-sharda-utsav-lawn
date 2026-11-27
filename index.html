@@ -1404,7 +1404,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
       </div>
     </div>
   </section>
-
   <!-- ═══════ HERO ═══════ -->
   <section class="hero" id="hero">
     <div class="hero-bg"></div>
@@ -1536,36 +1535,36 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
       </div>
 
       <div class="cinema-grid" data-reveal>
-        <!-- Clip 1: Grand Hall with Mirzapur BGM -->
-        <article class="cinema-card" id="cardClipGH">
+        <!-- Clip 1: Panoramic Aerial Grounds Tour with Devotional BGM -->
+        <article class="cinema-card" id="cardClipAerial">
           <div class="cinema-video-wrap">
-            <video src="videos/clips/grand-hall.mp4" poster="videos/posters/poster-grand-hall.jpg" autoplay loop muted playsinline preload="metadata" id="videoClipGH"></video>
+            <video src="videos/clips/aerial-view.mp4" poster="videos/posters/poster-aerial-view.jpg" autoplay loop muted playsinline preload="metadata" id="videoClipAerial"></video>
           </div>
-          <span class="cinema-top-badge">✨ 7s MIRZAPUR BGM</span>
-          <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClipGH', this)">🔇</button>
+          <span class="cinema-top-badge">✨ 15s DEVOTIONAL BGM</span>
+          <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClipAerial', this)">🔇</button>
           <div class="cinema-caption">
-            <h3 class="cinema-title">Grand Banquet Hall Walkthrough</h3>
-            <p class="cinema-desc">Covered grand banquet hall walkthrough set to the iconic Mirzapur theme music.</p>
+            <h3 class="cinema-title">Panoramic Aerial Drone Tour</h3>
+            <p class="cinema-desc">Continuous high-definition drone flight over Maa Sharda Utsav Lawn, set to the sacred bhajan “Mera Aapki Kripa Se Sab Kaam Ho Raha Hai”.</p>
             <div class="cinema-action-row">
               <button type="button" class="cinema-watch-btn" onclick="openTheater(14)">Watch Fullscreen ↗</button>
-              <span style="font-size:11px;color:var(--gold);font-weight:600">Banquet Hall</span>
+              <span style="font-size:11px;color:var(--gold);font-weight:600">Aerial Drone</span>
             </div>
           </div>
         </article>
 
-        <!-- Clip 2: Night Aerial with Mirzapur BGM -->
-        <article class="cinema-card" id="cardClipNA">
+        <!-- Clip 2: Outdoor Walkthrough with Devotional BGM -->
+        <article class="cinema-card" id="cardClipWalkthrough">
           <div class="cinema-video-wrap">
-            <video src="videos/clips/night-aerial.mp4" poster="videos/posters/poster-night-aerial.jpg" autoplay loop muted playsinline preload="metadata" id="videoClipNA"></video>
+            <video src="videos/clips/outdoor-walkthrough.mp4" poster="videos/posters/poster-outdoor-walkthrough.jpg" autoplay loop muted playsinline preload="metadata" id="videoClipWalkthrough"></video>
           </div>
-          <span class="cinema-top-badge">✨ 5s MIRZAPUR BGM</span>
-          <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClipNA', this)">🔇</button>
+          <span class="cinema-top-badge">✨ 12s DEVOTIONAL BGM</span>
+          <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClipWalkthrough', this)">🔇</button>
           <div class="cinema-caption">
-            <h3 class="cinema-title">Night Aerial Grounds &amp; Palms</h3>
-            <p class="cinema-desc">Sweeping night grounds and illuminated palms with the energetic Mirzapur background score.</p>
+            <h3 class="cinema-title">Grand Garden Walkthrough &amp; Entry</h3>
+            <p class="cinema-desc">Complete entrance approach, lush celebration gardens, and night tents with the complete verse of “Mera Aapki Kripa Se Sab Kaam Ho Raha Hai”.</p>
             <div class="cinema-action-row">
               <button type="button" class="cinema-watch-btn" onclick="openTheater(15)">Watch Fullscreen ↗</button>
-              <span style="font-size:11px;color:var(--gold);font-weight:600">Open Grounds</span>
+              <span style="font-size:11px;color:var(--gold);font-weight:600">Garden Walkway</span>
             </div>
           </div>
         </article>
@@ -2415,25 +2414,25 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
       title: 'Authentic Circular Durga Maa Medallion',
       desc: 'The sacred red circular emblem of Maa Durga featured prominently on the grand entrance signboard of Maa Sharda Utsav Lawn.'
     },
-    // 14: Clip 1 (Grand Hall with Mirzapur BGM)
+    // 14: Clip 1 (Panoramic Aerial Drone Tour with Devotional BGM)
     {
       type: 'video',
-      src: 'videos/clips/grand-hall.mp4',
-      poster: 'videos/posters/poster-grand-hall.jpg',
+      src: 'videos/clips/aerial-view.mp4',
+      poster: 'videos/posters/poster-aerial-view.jpg',
       category: 'highlight',
-      badge: '✨ Mirzapur BGM Clip (7s)',
-      title: 'Grand Banquet Hall Walkthrough',
-      desc: 'Covered grand banquet hall walkthrough set to the iconic Mirzapur theme music.'
+      badge: '✨ Devotional BGM Clip (15s)',
+      title: 'Panoramic Aerial Drone Tour',
+      desc: 'High-definition continuous drone shot sweeping over Maa Sharda Utsav Lawn with the sacred song "Mera Aapki Kripa Se Sab Kaam Ho Raha Hai".'
     },
-    // 15: Clip 2 (Night Aerial with Mirzapur BGM)
+    // 15: Clip 2 (Grand Garden Walkthrough with Devotional BGM)
     {
       type: 'video',
-      src: 'videos/clips/night-aerial.mp4',
-      poster: 'videos/posters/poster-night-aerial.jpg',
+      src: 'videos/clips/outdoor-walkthrough.mp4',
+      poster: 'videos/posters/poster-outdoor-walkthrough.jpg',
       category: 'highlight',
-      badge: '✨ Mirzapur BGM Clip (5s)',
-      title: 'Night Aerial Grounds & Palms',
-      desc: 'Sweeping night grounds and illuminated palms with the energetic Mirzapur background score.'
+      badge: '✨ Devotional BGM Clip (12s)',
+      title: 'Grand Garden Walkthrough & Entry',
+      desc: 'Entrance approach, manicured garden walkway, and illuminated celebration canopies set to the full verse of "Mera Aapki Kripa Se Sab Kaam Ho Raha Hai".'
     },
     // 16: Highlight 1 (Illuminated Gateway)
     {
