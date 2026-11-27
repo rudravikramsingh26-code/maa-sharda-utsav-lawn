@@ -1,0 +1,179 @@
+/* Maa Sharda Utsav Lawn — premium responsive system v2 */
+:root{
+  --ms-ink:#241317;
+  --ms-wine:#421c27;
+  --ms-wine-deep:#2b1119;
+  --ms-paper:#f8f6f2;
+  --ms-white:#fffefa;
+  --ms-stone:#e9e3dc;
+  --ms-muted:#70666a;
+  --ms-accent:#c65a36;
+  --ms-gold:#c4a16a;
+  --ms-line:rgba(36,19,23,.12);
+  --ms-max:1280px;
+  --ms-radius:12px;
+  --ms-shadow:0 22px 60px rgba(36,19,23,.09);
+}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{overflow-x:hidden;background:var(--ms-paper);color:var(--ms-ink);font-family:Inter,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,video{max-width:100%}
+img{height:auto}
+a{color:inherit}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--ms-accent)!important;outline-offset:3px}
+::selection{background:var(--ms-wine);color:white}
+.wrap{width:min(calc(100% - 64px),var(--ms-max));margin-inline:auto}
+
+/* Navigation: quiet, legible, sticky */
+header{position:sticky!important;top:0;z-index:100;background:rgba(255,254,250,.94)!important;border-bottom:1px solid var(--ms-line)!important;box-shadow:0 5px 24px rgba(36,19,23,.045)!important;backdrop-filter:blur(16px)}
+header nav{min-height:76px!important;height:auto!important;gap:24px}
+.brand{gap:12px!important;text-decoration:none}
+.brand-logo-img{width:42px!important;height:42px!important;object-fit:contain!important;border-radius:50%;border:1px solid rgba(196,161,106,.55)}
+.brand-text strong{font-size:17px!important;letter-spacing:.015em;color:var(--ms-wine)!important}
+.brand-text span{font-size:10px!important;letter-spacing:.2em;color:var(--ms-muted)!important}
+.nav-links{gap:clamp(12px,1.7vw,24px)!important}
+.nav-links a{font-size:11px!important;font-weight:600;color:#62575a!important;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--ms-accent)!important}
+.nav-actions{gap:10px}
+.nav-actions .btn,.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;border-radius:6px!important;padding:12px 17px!important;font-size:10px!important;font-weight:700;letter-spacing:.09em;text-transform:uppercase;text-decoration:none}
+.btn.primary{background:var(--ms-wine)!important;border-color:var(--ms-wine)!important;color:#fff!important}
+.btn.primary:hover{background:var(--ms-accent)!important;border-color:var(--ms-accent)!important;transform:translateY(-1px)}
+.menu{width:44px;height:44px;border:1px solid var(--ms-line)!important;border-radius:6px!important;background:var(--ms-white)!important}
+.menu span{background:var(--ms-wine)!important}
+@media(min-width:1001px){.menu{display:none!important}}
+
+/* Remove visual clutter; preserve the real venue photography */
+.wedding-card-section{padding:0!important;min-height:0!important;border:0!important;background:var(--ms-wine-deep)!important}
+.wedding-card-section .maa-wordmark-wrap{display:none!important}
+.wedding-card-section .cinematic-card-podium{display:none!important}
+.wedding-card-section:before{display:none!important}
+.hero{padding:clamp(64px,8vw,112px) 0 clamp(58px,7vw,92px)!important;min-height:0!important;background:var(--ms-paper)!important}
+.hero-bg{background:linear-gradient(115deg,#f8f6f2 0%,#f1ece6 100%)!important}
+.hero-pattern{opacity:.012!important}
+.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)!important;align-items:center;gap:clamp(34px,6vw,84px)!important}
+.hero h1{max-width:720px;font-size:clamp(50px,6.4vw,88px)!important;line-height:.98!important;letter-spacing:-.055em!important;color:var(--ms-ink)!important}
+.hero h1 .soft{color:#8a7776!important}
+.hero h1 .gold-line{color:var(--ms-accent)!important}
+.hero-copy{max-width:510px!important;color:#6d6265!important;font-size:15px!important;line-height:1.85!important}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px!important;margin-top:28px!important}
+.hero-actions .btn:not(.primary){border-color:rgba(36,19,23,.24)!important;color:var(--ms-wine)!important;background:transparent}
+.hero-proof{display:flex;align-items:center;gap:22px!important;margin-top:34px!important;padding-top:22px!important;border-top:1px solid var(--ms-line)}
+.proof-num{font-size:28px!important;color:var(--ms-wine)!important}
+.proof-label{font-size:9px!important;letter-spacing:.12em;text-transform:uppercase;color:var(--ms-muted)!important}
+.hero-art{min-height:500px!important;display:grid;place-items:center}
+.arch-frame{width:min(100%,470px)!important;height:clamp(420px,44vw,570px);border:6px solid var(--ms-white)!important;border-radius:240px 240px 10px 10px!important;overflow:hidden;box-shadow:var(--ms-shadow)!important}
+.arch-frame img{width:100%;height:100%;object-fit:cover;object-position:center!important;filter:none!important}
+.floating-badge{padding:12px 15px!important;border:1px solid rgba(36,19,23,.08)!important;border-radius:7px!important;background:rgba(255,254,250,.96)!important;box-shadow:0 12px 32px rgba(36,19,23,.08)!important}
+.floating-badge strong{color:var(--ms-wine)!important}
+.floating-badge small{color:var(--ms-muted)!important}
+
+/* Page rhythm and typography */
+section:not(.hero):not(.wedding-card-section){padding-block:clamp(60px,7vw,96px)!important}
+.section-head{margin-bottom:34px!important;align-items:end!important;gap:34px!important}
+.section-head h2{font-size:clamp(36px,4.8vw,62px)!important;line-height:1.02!important;letter-spacing:-.045em!important;color:var(--ms-ink)!important}
+.section-head p{max-width:460px!important;font-size:14px!important;line-height:1.8!important;color:var(--ms-muted)!important}
+.eyebrow,.service-tag{color:var(--ms-accent)!important;letter-spacing:.17em!important;font-weight:700}
+.services-section,.testimonials,.contact-section{background:var(--ms-white)!important}
+.cred-bar{background:var(--ms-wine)!important;color:#fff!important}
+.cred-num,.cred-label{color:#fff!important}
+.ticker{background:var(--ms-wine-deep)!important;color:#e8d8c6!important}
+.service-grid{gap:14px!important}
+.service,.testi-card{border:1px solid var(--ms-line)!important;border-radius:var(--ms-radius)!important;background:#fffefa!important;box-shadow:none!important}
+.service{padding:clamp(22px,3vw,34px)!important}
+.service:hover,.testi-card:hover{transform:translateY(-3px)!important;box-shadow:var(--ms-shadow)!important}
+.service h3{color:var(--ms-wine)!important}
+.cover-card{border-radius:var(--ms-radius)!important;overflow:hidden;box-shadow:var(--ms-shadow)!important}
+.cover-img-wrapper{min-height:clamp(300px,38vw,500px)}
+.cover-main-img{width:100%;height:100%;object-fit:cover}
+.cover-glass-caption{max-width:640px}
+.cinema-section,.gallery-section{background:var(--ms-wine-deep)!important;color:#fff!important}
+.cinema-section .section-head h2,.gallery-section .section-head h2{color:#fff!important}
+.cinema-section .section-head p,.gallery-section .section-head p{color:rgba(255,255,255,.7)!important}
+.cinema-card,.gallery-card{border-radius:9px!important;overflow:hidden;border:1px solid rgba(255,255,255,.14)!important;box-shadow:none!important}
+.cinema-card img,.gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.cinema-card:hover img,.gallery-card:hover img{transform:scale(1.035)}
+.location-section{background:#eee8e1!important}
+footer{background:#1e1015!important}
+input,select,textarea{min-height:46px;border:1px solid rgba(36,19,23,.2)!important;border-radius:6px!important;background:#fffefa!important;color:var(--ms-ink)!important}
+textarea{min-height:110px}
+button,.btn{touch-action:manipulation}
+button:active,.btn:active{transform:translateY(1px)}
+
+/* Gallery and cinema vault */
+.gallery-page,.gallery-main{background:var(--ms-paper)!important}
+.media-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important}
+.media-card{min-width:0;border:1px solid var(--ms-line)!important;border-radius:9px!important;overflow:hidden;background:var(--ms-white)!important;box-shadow:none!important;transition:transform .25s,box-shadow .25s}
+.media-card:hover{transform:translateY(-3px);box-shadow:var(--ms-shadow)!important}
+.media-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.card-caption{color:var(--ms-ink)!important}
+.card-caption small{color:var(--ms-muted)!important}
+.films-grid,.films-grid>*{min-width:0}
+.filter-btn,.theater-btn{min-height:42px;border-radius:5px!important}
+.theater-container{width:min(1100px,calc(100% - 28px))!important;border-radius:10px!important;overflow:hidden}
+.theater-media-wrap img,.theater-media-wrap video{max-width:100%;max-height:72vh;object-fit:contain}
+
+/* 3D venue page: consistent frame, no horizontal overflow */
+canvas{max-width:100%}
+#app,.app,.venue-app{max-width:100%;overflow:hidden}
+@media(max-width:1000px){
+ .wrap{width:min(calc(100% - 40px),var(--ms-max))}
+ header nav{min-height:68px!important}
+ .nav-links{display:none!important}
+ .nav-links[data-open="1"]{display:flex!important;position:absolute!important;top:68px!important;left:16px!important;right:16px!important;z-index:120!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:8px!important;background:var(--ms-white)!important;border:1px solid var(--ms-line)!important;border-radius:8px!important;box-shadow:var(--ms-shadow)!important}
+ .nav-links[data-open="1"] a{padding:13px 12px!important;border-bottom:1px solid var(--ms-line);font-size:13px!important}
+ .nav-links[data-open="1"] a:last-child{border:0}
+ .nav-actions .btn{display:none!important}
+ .menu{display:flex!important;align-items:center;justify-content:center}
+ .hero-grid{grid-template-columns:1fr!important;gap:30px!important}
+ .hero{padding:54px 0 56px!important}
+ .hero h1{font-size:clamp(48px,9vw,76px)!important;max-width:720px}
+ .hero-art{min-height:0!important}
+ .arch-frame{height:clamp(360px,70vw,540px);width:min(78%,500px)!important}
+ .section-head{display:block!important}
+ .section-head p{margin-top:14px}
+ .media-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:640px){
+ .wrap{width:min(calc(100% - 32px),var(--ms-max))}
+ header nav{min-height:62px!important}
+ .brand-logo-img{width:36px!important;height:36px!important}
+ .brand-text strong{font-size:15px!important}
+ .brand-text span{font-size:9px!important}
+ .nav-links[data-open="1"]{top:62px!important;left:12px!important;right:12px!important}
+ .hero{padding:42px 0 44px!important}
+ .hero h1{font-size:clamp(42px,12vw,58px)!important;line-height:1.01!important}
+ .hero-copy{font-size:14px!important;line-height:1.75!important}
+ .hero-actions{display:grid!important;grid-template-columns:1fr!important}
+ .hero-actions .btn{width:100%;min-height:48px}
+ .hero-proof{gap:8px!important;justify-content:space-between!important;flex-wrap:nowrap}
+ .proof-num{font-size:22px!important}
+ .proof-label{font-size:8px!important;letter-spacing:.07em!important}
+ .proof-divider{height:28px!important}
+ .arch-frame{width:88%!important;height:390px!important;border-width:5px!important}
+ .floating-badge{font-size:10px!important;padding:9px 10px!important}
+ .floating-badge small{font-size:8px!important}
+ section:not(.hero):not(.wedding-card-section){padding-block:54px!important}
+ .section-head h2{font-size:clamp(34px,9vw,44px)!important}
+ .section-head p{font-size:13px!important}
+ .cred-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .service-grid{grid-template-columns:1fr!important}
+ .service.s1,.service.s2,.service.s3,.service.s4,.service.s5{grid-column:1/-1!important}
+ .gallery-grid{grid-template-columns:1fr 1fr!important;grid-auto-rows:minmax(160px,auto)!important}
+ .gallery-card{min-height:160px!important}
+ .media-grid{grid-template-columns:1fr!important;gap:12px!important}
+ .media-card img{aspect-ratio:16/10}
+ .theater-controls-bar{gap:14px!important;padding:16px!important}
+ .theater-nav-actions{display:flex!important;flex-wrap:wrap;gap:8px!important}
+ .theater-btn{flex:1;min-width:90px}
+ .cinema-grid{grid-template-columns:1fr!important}
+ .card-controls{flex-wrap:wrap;justify-content:center}
+ .card-controls>*{min-height:44px}
+ .cover-img-wrapper{min-height:330px}
+ .cover-heading{font-size:clamp(26px,8vw,40px)!important}
+ .form-row{grid-template-columns:1fr!important}
+ footer .wrap{padding-block:28px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
