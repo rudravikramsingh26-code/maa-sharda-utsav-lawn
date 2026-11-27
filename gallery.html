@@ -301,7 +301,15 @@
       .theater-controls-bar { flex-direction: column; align-items: flex-start }
       .theater-nav-actions { width: 100%; justify-content: space-between }
     }
-  </style>
+  
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    img { height: auto; }
+    .media-card img { aspect-ratio: 4 / 3; object-fit: cover; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+</style>
 <style id="maa-premium-gallery-2026">
 :root{--espresso:#28151a;--espresso-soft:#43242b;--cream:#f7f3ee;--cream-warm:#fffdf9;--gold:#b18a55;--gold-light:#dfc39a;--line:#e5ddd4;--muted:#786d68;--radius:12px}
 body{background:#28151a!important;color:#f7f3ee!important;font-family:Inter,Arial,sans-serif}
@@ -341,7 +349,7 @@ header,.nav-wrap{background:rgba(255,253,249,.96)!important;backdrop-filter:blur
     <div class="wrap">
       <nav>
         <a href="index.html" class="brand" aria-label="Maa Sharda Utsav Lawn home">
-          <img src="images/brand/durga-circle-logo.png" alt="Maa Sharda Utsav Lawn" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 4px 12px rgba(215,20,26,.35);">
+          <img src="images/brand/durga-circle-logo.png" alt="Maa Sharda Utsav Lawn" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 4px 12px rgba(215,20,26,.35);" decoding="async">
           <span class="brand-text">
             <strong>माँ शारदा</strong>
             <span>उत्सव लॉन</span>
@@ -387,7 +395,7 @@ header,.nav-wrap{background:rgba(255,253,249,.96)!important;backdrop-filter:blur
       <!-- Full Film 1: Full Celebration Showcase -->
       <article class="film-card">
         <div class="film-video-box">
-          <video src="videos/full/full-celebration-film.mp4" poster="videos/posters/poster-full-celebration-film.jpg" controls preload="metadata"></video>
+          <video src="videos/full/full-celebration-film.mp4" poster="videos/posters/poster-full-celebration-film.jpg" controls preload="none"></video>
           <span class="film-tag">🎬 FULL FILM · 1:50 MIN</span>
         </div>
         <div class="film-details">
@@ -400,7 +408,7 @@ header,.nav-wrap{background:rgba(255,253,249,.96)!important;backdrop-filter:blur
       <!-- Full Film 2: Sacred Stage Aarti Ceremony -->
       <article class="film-card">
         <div class="film-video-box">
-          <video src="videos/full/sacred-aarti-ceremony.mp4" poster="videos/posters/poster-sacred-aarti.jpg" controls preload="metadata"></video>
+          <video src="videos/full/sacred-aarti-ceremony.mp4" poster="videos/posters/poster-sacred-aarti.jpg" controls preload="none"></video>
           <span class="film-tag">🎬 FULL FILM · 1:12 MIN</span>
         </div>
         <div class="film-details">
@@ -413,7 +421,7 @@ header,.nav-wrap{background:rgba(255,253,249,.96)!important;backdrop-filter:blur
       <!-- Full Film 3: Covered Banquet Hall Tour -->
       <article class="film-card">
         <div class="film-video-box">
-          <video src="videos/full/venue-grand-tour.mp4" poster="videos/posters/poster-venue-tour.jpg" controls preload="metadata"></video>
+          <video src="videos/full/venue-grand-tour.mp4" poster="videos/posters/poster-venue-tour.jpg" controls preload="none"></video>
           <span class="film-tag">🎬 FULL FILM · 1:11 MIN</span>
         </div>
         <div class="film-details">
@@ -426,7 +434,7 @@ header,.nav-wrap{background:rgba(255,253,249,.96)!important;backdrop-filter:blur
       <!-- Full Film 4: Live Celebration Walkthrough -->
       <article class="film-card">
         <div class="film-video-box">
-          <video src="videos/uploads/full-celebration-video-2.mp4" poster="videos/posters/poster-full-celebration-2.jpg" controls preload="metadata"></video>
+          <video src="videos/uploads/full-celebration-video-2.mp4" poster="videos/posters/poster-full-celebration-2.jpg" controls preload="none"></video>
           <span class="film-tag">🎬 FULL FILM · 35 SEC</span>
         </div>
         <div class="film-details">
@@ -446,7 +454,7 @@ header,.nav-wrap{background:rgba(255,253,249,.96)!important;backdrop-filter:blur
     <div class="media-grid" id="galleryMediaGrid">
       <!-- Item 0: Full Film 1 -->
       <div class="media-card" data-category="films" onclick="openTheater(0)">
-        <img src="videos/posters/poster-full-celebration-film.jpg" alt="Full-Length Celebration Showcase" loading="lazy">
+        <img src="videos/posters/poster-full-celebration-film.jpg" alt="Full-Length Celebration Showcase" loading="lazy" decoding="async">
         <span class="card-badge">🎬 FULL FILM</span>
         <div class="card-play-btn">▶</div>
         <div class="card-caption">Full Celebration Showcase<small>1:50 Min · Untouched Original Audio</small></div>
@@ -454,7 +462,7 @@ header,.nav-wrap{background:rgba(255,253,249,.96)!important;backdrop-filter:blur
 
       <!-- Item 1: Full Film 2 -->
       <div class="media-card" data-category="films" onclick="openTheater(1)">
-        <img src="videos/posters/poster-sacred-aarti.jpg" alt="Sacred Stage Aarti &amp; Traditional Rituals" loading="lazy">
+        <img src="videos/posters/poster-sacred-aarti.jpg" alt="Sacred Stage Aarti &amp; Traditional Rituals" loading="lazy" decoding="async">
         <span class="card-badge">🎬 FULL FILM</span>
         <div class="card-play-btn">▶</div>
         <div class="card-caption">Sacred Stage Aarti Ceremony<small>1:12 Min · Traditional Vedic Blessing</small></div>
@@ -462,7 +470,7 @@ header,.nav-wrap{background:rgba(255,253,249,.96)!important;backdrop-filter:blur
 
       <!-- Item 2: Full Film 3 -->
       <div class="media-card" data-category="films" onclick="openTheater(2)">
-        <img src="videos/posters/poster-venue-tour.jpg" alt="Covered Banquet Hall &amp; Night Grounds Tour" loading="lazy">
+        <img src="videos/posters/poster-venue-tour.jpg" alt="Covered Banquet Hall &amp; Night Grounds Tour" loading="lazy" decoding="async">
         <span class="card-badge">🎬 FULL FILM</span>
         <div class="card-play-btn">▶</div>
         <div class="card-caption">Covered Banquet &amp; Grounds Tour<small>1:11 Min · Mirzapur Theme Soundtrack</small></div>
@@ -470,7 +478,7 @@ header,.nav-wrap{background:rgba(255,253,249,.96)!important;backdrop-filter:blur
 
       <!-- Item 3: Full Film 4 -->
       <div class="media-card" data-category="films" onclick="openTheater(3)">
-        <img src="videos/posters/poster-full-celebration-2.jpg" alt="Live Celebration &amp; Mandap Walkthrough" loading="lazy">
+        <img src="videos/posters/poster-full-celebration-2.jpg" alt="Live Celebration &amp; Mandap Walkthrough" loading="lazy" decoding="async">
         <span class="card-badge">🎬 FULL FILM</span>
         <div class="card-play-btn">▶</div>
         <div class="card-caption">Live Celebration Walkthrough<small>35s Film · Authentic Live Wedding Capture</small></div>
@@ -478,70 +486,70 @@ header,.nav-wrap{background:rgba(255,253,249,.96)!important;backdrop-filter:blur
 
       <!-- Item 4: Photo Illuminated Red Carpet Walkway & Banquet Hall (NEW) -->
       <div class="media-card" data-category="exterior" onclick="openTheater(4)">
-        <img src="images/venue/venue-carpet-aisle-facade.jpg" alt="Illuminated Red Carpet Walkway &amp; Modern Banquet Hall" loading="lazy">
+        <img src="images/venue/venue-carpet-aisle-facade.jpg" alt="Illuminated Red Carpet Walkway &amp; Modern Banquet Hall" loading="lazy" decoding="async">
         <span class="card-badge">🏛️ VENUE &amp; AISLE</span>
         <div class="card-caption">Illuminated Red Carpet Walkway<small>Celebration Entrance &amp; Modern Hall</small></div>
       </div>
 
       <!-- Item 5: Photo Open-Air Lawn Night Buffet & Catering Setup (NEW) -->
       <div class="media-card" data-category="banquet" onclick="openTheater(5)">
-        <img src="images/venue/venue-lawn-buffet-setup.jpg" alt="Open-Air Lawn Night Buffet &amp; Catering Spread" loading="lazy">
+        <img src="images/venue/venue-lawn-buffet-setup.jpg" alt="Open-Air Lawn Night Buffet &amp; Catering Spread" loading="lazy" decoding="async">
         <span class="card-badge">🍽️ LAWN BUFFET</span>
         <div class="card-caption">Open-Air Lawn Night Buffet<small>Chafing Spread &amp; Draped Canopies</small></div>
       </div>
 
       <!-- Item 6: Photo Grand Decorated Entrance Gate & Hindi Signboard -->
       <div class="media-card" data-category="exterior" onclick="openTheater(6)">
-        <img src="images/venue/venue-grand-entrance-clean.jpg" alt="Grand Entrance Gate &amp; Hindi Signboard" loading="lazy">
+        <img src="images/venue/venue-grand-entrance-clean.jpg" alt="Grand Entrance Gate &amp; Hindi Signboard" loading="lazy" decoding="async">
         <span class="card-badge">🏛️ GRAND ENTRANCE</span>
         <div class="card-caption">Grand Entrance &amp; Signboard<small>Maa Sharda Utsav Lawn Landmark Gate</small></div>
       </div>
 
       <!-- Item 7: Photo Spacious Grounds & Private Driveway -->
       <div class="media-card" data-category="exterior" onclick="openTheater(7)">
-        <img src="images/venue/venue-driveway-night.jpg" alt="Illuminated Star Gate &amp; Private Driveway" loading="lazy">
+        <img src="images/venue/venue-driveway-night.jpg" alt="Illuminated Star Gate &amp; Private Driveway" loading="lazy" decoding="async">
         <span class="card-badge">🏛️ DRIVEWAY &amp; GROUNDS</span>
         <div class="card-caption">Spacious Grounds &amp; Driveway<small>Illuminated Star Arch &amp; VIP Paved Approach</small></div>
       </div>
 
       <!-- Item 8: Photo Royal Wedding Mandap & Stage Setup -->
       <div class="media-card" data-category="banquet" onclick="openTheater(8)">
-        <img src="images/venue/venue-event-space-1.jpg" alt="Royal Wedding Mandap &amp; Stage Setup" loading="lazy">
+        <img src="images/venue/venue-event-space-1.jpg" alt="Royal Wedding Mandap &amp; Stage Setup" loading="lazy" decoding="async">
         <span class="card-badge">👑 MANDAP &amp; STAGE</span>
         <div class="card-caption">Royal Mandap &amp; Varmala Stage<small>Regal Drapery &amp; Ceremonial Seating</small></div>
       </div>
 
       <!-- Item 9: Photo Banquet Celebration & Dining Setup -->
       <div class="media-card" data-category="banquet" onclick="openTheater(9)">
-        <img src="images/venue/venue-buffet-celebration-setup.jpg" alt="Banquet Celebration &amp; Dining Setup" loading="lazy">
+        <img src="images/venue/venue-buffet-celebration-setup.jpg" alt="Banquet Celebration &amp; Dining Setup" loading="lazy" decoding="async">
         <span class="card-badge">🍽️ BANQUET DINING</span>
         <div class="card-caption">Banquet Dining &amp; Catering Setup<small>Multi-Tier Counters &amp; High Illumination</small></div>
       </div>
 
       <!-- Item 10: Photo Festive Welcome Canopy & Draping -->
       <div class="media-card" data-category="banquet" onclick="openTheater(10)">
-        <img src="images/venue/venue-exterior-2.jpg" alt="Festive Welcome Canopy &amp; Celebration Drapes" loading="lazy">
+        <img src="images/venue/venue-exterior-2.jpg" alt="Festive Welcome Canopy &amp; Celebration Drapes" loading="lazy" decoding="async">
         <span class="card-badge">👑 WELCOME CANOPY</span>
         <div class="card-caption">Festive Welcome Canopy<small>Traditional Colorful Reception Drapes</small></div>
       </div>
 
       <!-- Item 11: Photo Traditional Wedding Stage Aarti Ritual -->
       <div class="media-card" data-category="ceremonies" onclick="openTheater(11)">
-        <img src="videos/posters/poster-sacred-aarti.jpg" alt="Traditional Wedding Stage Aarti Ritual" loading="lazy">
+        <img src="videos/posters/poster-sacred-aarti.jpg" alt="Traditional Wedding Stage Aarti Ritual" loading="lazy" decoding="async">
         <span class="card-badge">🕯️ VEDIC RITUAL</span>
         <div class="card-caption">Vedic Aarti Ceremony<small>Auspicious Brass Deepaks &amp; Mantras</small></div>
       </div>
 
       <!-- Item 12: Photo Aisle of Rings Floral Entry -->
       <div class="media-card" data-category="ceremonies" onclick="openTheater(12)">
-        <img src="videos/posters/poster-clip-archway.jpg" alt="Aisle of Rings Floral Procession Entry" loading="lazy">
+        <img src="videos/posters/poster-clip-archway.jpg" alt="Aisle of Rings Floral Procession Entry" loading="lazy" decoding="async">
         <span class="card-badge">🕯️ GRAND ENTRY</span>
         <div class="card-caption">Aisle of Lighted Rings<small>Luminous Circular Procession Arches</small></div>
       </div>
 
       <!-- Item 13: Photo Authentic Circular Durga Maa Medallion -->
       <div class="media-card" data-category="ceremonies" onclick="openTheater(13)">
-        <img src="images/brand/durga-circle-logo.jpg" alt="Authentic Circular Durga Maa Medallion" loading="lazy">
+        <img src="images/brand/durga-circle-logo.jpg" alt="Authentic Circular Durga Maa Medallion" loading="lazy" decoding="async">
         <span class="card-badge">🕉️ SACRED EMBLEM</span>
         <div class="card-caption">Authentic Maa Durga Medallion<small>Sacred Circular Logo &amp; Signboard Insignia</small></div>
       </div>
