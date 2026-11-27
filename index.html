@@ -10,14 +10,8 @@
   <link rel="apple-touch-icon" href="images/brand/durga-circle-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Lenis Smooth Scroll -->
-  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
-  <!-- GSAP & ScrollTrigger Animation Engine -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-  <style>
+  <link rel="preload" as="image" href="videos/posters/poster-wedding-invitation.jpg" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>
     /* ═══════════════════════════════════════════════════════
        EDITORIAL PLASTER & ESPRESSO — 3 Colour Palette
        ═══════════════════════════════════════════════════════
@@ -59,8 +53,8 @@
 
     /* ── Ambient Interactive Cursor Glow ── */
     .cursor-glow {
-      position: fixed; width: 440px; height: 440px; border-radius: 50%;
-      pointer-events: none; z-index: 1; transform: translate(-50%, -50%);
+      position: fixed; left: 0; top: 0; width: 440px; height: 440px; border-radius: 50%;
+      pointer-events: none; z-index: 1; transform: translate3d(-50%, -50%, 0); will-change: transform;
       background: radial-gradient(circle, rgba(184,151,106,.14), rgba(44,24,16,.04) 50%, transparent 70%);
       mix-blend-mode: multiply; opacity: .85; transition: opacity .3s ease;
     }
@@ -846,8 +840,10 @@
     }
 
     /* ═══════════ SCROLL REVEALS ═══════════ */
-    [data-reveal] { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1) }
-    [data-reveal].visible { opacity: 1; transform: none }
+    [data-reveal] { opacity: 1; transform: none; transition: opacity .62s ease, transform .62s cubic-bezier(.2,.8,.2,1) }
+    html.motion-ready [data-reveal]:not(.visible) { opacity: 0; transform: translateY(20px) }
+    html.motion-ready [data-reveal].visible { opacity: 1; transform: none }
+    header.scrolled { box-shadow: 0 10px 30px rgba(44,24,16,.06) !important }
 
     /* ═══════════ RESPONSIVE ═══════════ */
     @media (max-width: 1000px) {
@@ -1344,7 +1340,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
   <div class="wrap">
     <nav>
       <a href="#top" class="brand" aria-label="Maa Sharda Utsav Lawn home">
-        <img src="images/brand/durga-circle-logo.png" alt="Maa Sharda Utsav Lawn Logo" class="brand-logo-img">
+        <img src="images/brand/durga-circle-logo.png" alt="Maa Sharda Utsav Lawn Logo" class="brand-logo-img" width="48" height="48" loading="eager" decoding="async">
         <span class="brand-text">
           <strong>माँ शारदा</strong>
           <span>उत्सव लॉन</span>
@@ -1374,7 +1370,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
     <div class="wrap invitation-grid">
       <div class="invitation-copy" data-reveal>
         <div class="invitation-eyebrow">MAA SHARDA UTSAV LAWN <span>·</span> AN INVITATION</div>
-        <img class="invitation-wordmark" src="images/brand/maa-sharda-wordmark.svg" alt="माँ शारदा उत्सव लॉन" width="1400" height="300" fetchpriority="high">
+        <img class="invitation-wordmark" src="images/brand/maa-sharda-wordmark.svg" alt="माँ शारदा उत्सव लॉन" width="1400" height="300" loading="eager" decoding="async" fetchpriority="high">
         <h1 id="invitationHeading">A gracious beginning<br><em>to every celebration.</em></h1>
         <p>Rooted in tradition and made for unforgettable gatherings, Maa Sharda Utsav Lawn welcomes you to celebrate life’s most meaningful moments.</p>
         <a class="invitation-tour-btn" href="3d-venue.html" target="_blank" rel="noopener">Explore 3D Banquet <span aria-hidden="true">↗</span></a>
@@ -1385,19 +1381,21 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <div class="invitation-film-frame">
           <video
             id="invitationVideo"
-            src="videos/wedding-invitation-cinematic.mp4"
+            data-src="videos/wedding-invitation-cinematic.mp4"
             poster="videos/posters/poster-wedding-invitation.jpg"
-            autoplay
             loop
             muted
             playsinline
-            preload="metadata"
+            preload="none"
             aria-label="Maa Sharda Utsav Lawn wedding invitation film"
           ></video>
         </div>
         <div class="invitation-film-controls" aria-label="Invitation film controls">
+          <button type="button" id="btnInvitePlay" onclick="toggleInvitePlayback()" aria-label="Play invitation film">
+            <span id="invitePlayIcon" aria-hidden="true">▶</span> <span id="invitePlayText">Play invitation</span>
+          </button>
           <button type="button" id="btnInviteSoundBar" onclick="toggleInviteSound()" aria-label="Enable or mute invitation music">
-            <span id="barSoundIcon" aria-hidden="true">🔊</span> <span id="inviteMusicText">Enable music</span>
+            <span id="barSoundIcon" aria-hidden="true">🔇</span> <span id="inviteMusicText">Enable music</span>
           </button>
           <button type="button" onclick="replayInviteVideo()" aria-label="Replay invitation film">↻ <span>Replay</span></button>
         </div>
@@ -1411,7 +1409,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
     <div class="wrap hero-grid">
       <div data-reveal>
         <div class="eyebrow" style="display:inline-flex;align-items:center;gap:8px;">
-          <img src="images/brand/durga-circle-logo.png" alt="" style="width:24px;height:24px;border-radius:50%;vertical-align:middle;box-shadow:0 0 10px rgba(215,20,26,.4);">
+          <img src="images/brand/durga-circle-logo.png" alt="" style="width:24px;height:24px;border-radius:50%;vertical-align:middle;box-shadow:0 0 10px rgba(215,20,26,.4);" loading="lazy" decoding="async">
           <span>॥ माँ शारदा उत्सव लॉन ॥ &bull; Ambedkar Nagar</span>
         </div>
         <h1>Where every<br><span class="soft">celebration becomes</span><br><span class="gold-line">a legacy.</span></h1>
@@ -1443,7 +1441,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
           <div><strong>Premium</strong><small>Hospitality Standards</small></div>
         </div>
         <div class="arch-frame">
-          <img src="images/venue/venue-grand-entrance-clean.jpg" alt="Maa Sharda Utsav Lawn grand entrance gate with illuminated signboard" loading="lazy">
+          <img src="images/venue/venue-grand-entrance-clean.jpg" alt="Maa Sharda Utsav Lawn grand entrance gate with illuminated signboard" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -1454,7 +1452,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
     <div class="wrap">
       <div class="cover-card" data-reveal>
         <div class="cover-img-wrapper">
-          <img src="images/venue/venue-grand-entrance-evening.jpg" alt="Maa Sharda Utsav Lawn daytime facade with welcome arch and signboard" class="cover-main-img">
+          <img src="images/venue/venue-grand-entrance-evening.jpg" alt="Maa Sharda Utsav Lawn daytime facade with welcome arch and signboard" class="cover-main-img" loading="lazy" decoding="async">
           <div class="cover-overlay"></div>
           <div class="cover-glass-caption">
             <div class="cover-badge">✦ Signature Landmark</div>
@@ -1538,7 +1536,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <!-- Clip 1: Panoramic Aerial Grounds Tour with Devotional BGM -->
         <article class="cinema-card" id="cardClipAerial">
           <div class="cinema-video-wrap">
-            <video src="videos/clips/aerial-view.mp4" poster="videos/posters/poster-aerial-view.jpg" autoplay loop muted playsinline preload="metadata" id="videoClipAerial"></video>
+            <video data-src="videos/clips/aerial-view.mp4" poster="videos/posters/poster-aerial-view.jpg" loop muted playsinline preload="none" id="videoClipAerial"></video>
           </div>
           <span class="cinema-top-badge">✨ 15s DEVOTIONAL BGM</span>
           <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClipAerial', this)">🔇</button>
@@ -1555,7 +1553,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <!-- Clip 2: Outdoor Walkthrough with Devotional BGM -->
         <article class="cinema-card" id="cardClipWalkthrough">
           <div class="cinema-video-wrap">
-            <video src="videos/clips/outdoor-walkthrough.mp4" poster="videos/posters/poster-outdoor-walkthrough.jpg" autoplay loop muted playsinline preload="metadata" id="videoClipWalkthrough"></video>
+            <video data-src="videos/clips/outdoor-walkthrough.mp4" poster="videos/posters/poster-outdoor-walkthrough.jpg" loop muted playsinline preload="none" id="videoClipWalkthrough"></video>
           </div>
           <span class="cinema-top-badge">✨ 12s DEVOTIONAL BGM</span>
           <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClipWalkthrough', this)">🔇</button>
@@ -1572,7 +1570,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <!-- Clip 0A: Gateway Highlight with BGM -->
         <article class="cinema-card" id="cardClip0A">
           <div class="cinema-video-wrap">
-            <video src="videos/uploads/illuminated-entrance-highlight.mp4" poster="videos/posters/poster-entrance-highlight.jpg" autoplay loop muted playsinline preload="metadata" id="videoClip0A"></video>
+            <video data-src="videos/uploads/illuminated-entrance-highlight.mp4" poster="videos/posters/poster-entrance-highlight.jpg" loop muted playsinline preload="none" id="videoClip0A"></video>
           </div>
           <span class="cinema-top-badge">✨ 5s HIGHLIGHT</span>
           <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClip0A', this)">🔇</button>
@@ -1589,7 +1587,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <!-- Clip 0B: Banquet Highlight with BGM -->
         <article class="cinema-card" id="cardClip0B">
           <div class="cinema-video-wrap">
-            <video src="videos/uploads/illuminated-banquet-highlight.mp4" poster="videos/posters/poster-banquet-highlight.jpg" autoplay loop muted playsinline preload="metadata" id="videoClip0B"></video>
+            <video data-src="videos/uploads/illuminated-banquet-highlight.mp4" poster="videos/posters/poster-banquet-highlight.jpg" loop muted playsinline preload="none" id="videoClip0B"></video>
           </div>
           <span class="cinema-top-badge">✨ 4s HIGHLIGHT</span>
           <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClip0B', this)">🔇</button>
@@ -1606,7 +1604,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <!-- Clip 2: Sacred Aarti Stage Blessing -->
         <article class="cinema-card" id="cardClip2">
           <div class="cinema-video-wrap">
-            <video src="videos/clips/clip-sacred-aarti.mp4" poster="videos/posters/poster-clip-aarti.jpg" autoplay loop muted playsinline preload="metadata" id="videoClip2"></video>
+            <video data-src="videos/clips/clip-sacred-aarti.mp4" poster="videos/posters/poster-clip-aarti.jpg" loop muted playsinline preload="none" id="videoClip2"></video>
           </div>
           <span class="cinema-top-badge">✨ 12s BLESSING</span>
           <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClip2', this)">🔇</button>
@@ -1623,7 +1621,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <!-- Clip 4: Night Lawn & DJ Lighting -->
         <article class="cinema-card" id="cardClip4">
           <div class="cinema-video-wrap">
-            <video src="videos/clips/clip-night-lawn.mp4" poster="videos/posters/poster-clip-lawn.jpg" autoplay loop muted playsinline preload="metadata" id="videoClip4"></video>
+            <video data-src="videos/clips/clip-night-lawn.mp4" poster="videos/posters/poster-clip-lawn.jpg" loop muted playsinline preload="none" id="videoClip4"></video>
           </div>
           <span class="cinema-top-badge">✨ 12s NIGHT GROUNDS</span>
           <button class="cinema-mute-btn" type="button" aria-label="Toggle sound" onclick="toggleClipSound('videoClip4', this)">🔇</button>
@@ -1694,7 +1692,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <!-- Full Film 1: Full-Length Celebration Showcase -->
         <article class="film-spotlight-card">
           <div class="film-player-wrap">
-            <video src="videos/full/full-celebration-film.mp4" poster="videos/posters/poster-full-celebration-film.jpg" controls preload="metadata"></video>
+            <video src="videos/full/full-celebration-film.mp4" poster="videos/posters/poster-full-celebration-film.jpg" controls preload="none"></video>
             <span class="film-badge">🎬 FULL FILM · 1:50 MIN</span>
           </div>
           <div class="film-card-info">
@@ -1717,7 +1715,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <!-- Full Film 2: Sacred Stage Aarti Ceremony -->
         <article class="film-spotlight-card">
           <div class="film-player-wrap">
-            <video src="videos/full/sacred-aarti-ceremony.mp4" poster="videos/posters/poster-sacred-aarti.jpg" controls preload="metadata"></video>
+            <video src="videos/full/sacred-aarti-ceremony.mp4" poster="videos/posters/poster-sacred-aarti.jpg" controls preload="none"></video>
             <span class="film-badge">🎬 FULL FILM · 1:12 MIN</span>
           </div>
           <div class="film-card-info">
@@ -1740,7 +1738,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <!-- Full Film 3: Covered Banquet Hall Tour -->
         <article class="film-spotlight-card">
           <div class="film-player-wrap">
-            <video src="videos/full/venue-grand-tour.mp4" poster="videos/posters/poster-venue-tour.jpg" controls preload="metadata"></video>
+            <video src="videos/full/venue-grand-tour.mp4" poster="videos/posters/poster-venue-tour.jpg" controls preload="none"></video>
             <span class="film-badge">🎬 FULL FILM · 1:11 MIN</span>
           </div>
           <div class="film-card-info">
@@ -1763,7 +1761,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
         <!-- Full Film 4: Live Celebration Walkthrough -->
         <article class="film-spotlight-card">
           <div class="film-player-wrap">
-            <video src="videos/uploads/full-celebration-video-2.mp4" poster="videos/posters/poster-full-celebration-2.jpg" controls preload="metadata"></video>
+            <video src="videos/uploads/full-celebration-video-2.mp4" poster="videos/posters/poster-full-celebration-2.jpg" controls preload="none"></video>
             <span class="film-badge">🎬 FULL FILM · 35 SEC</span>
           </div>
           <div class="film-card-info">
@@ -1788,7 +1786,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
       <div class="media-vault-grid" id="mediaVaultGrid" data-reveal>
         <!-- Item 0: Full Film 1 -->
         <div class="vault-card" data-category="films" onclick="openTheater(0)">
-          <img src="videos/posters/poster-full-celebration-film.jpg" alt="Full-Length Celebration Showcase" loading="lazy">
+          <img src="videos/posters/poster-full-celebration-film.jpg" alt="Full-Length Celebration Showcase" loading="lazy" decoding="async">
           <span class="vault-card-badge">🎬 FULL FILM</span>
           <div class="vault-play-icon">▶</div>
           <div class="vault-card-caption">
@@ -1799,7 +1797,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 1: Full Film 2 -->
         <div class="vault-card" data-category="films" onclick="openTheater(1)">
-          <img src="videos/posters/poster-sacred-aarti.jpg" alt="Sacred Stage Aarti &amp; Traditional Rituals" loading="lazy">
+          <img src="videos/posters/poster-sacred-aarti.jpg" alt="Sacred Stage Aarti &amp; Traditional Rituals" loading="lazy" decoding="async">
           <span class="vault-card-badge">🎬 FULL FILM</span>
           <div class="vault-play-icon">▶</div>
           <div class="vault-card-caption">
@@ -1810,7 +1808,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 2: Full Film 3 -->
         <div class="vault-card" data-category="films" onclick="openTheater(2)">
-          <img src="videos/posters/poster-venue-tour.jpg" alt="Covered Banquet Hall &amp; Night Grounds Tour" loading="lazy">
+          <img src="videos/posters/poster-venue-tour.jpg" alt="Covered Banquet Hall &amp; Night Grounds Tour" loading="lazy" decoding="async">
           <span class="vault-card-badge">🎬 FULL FILM</span>
           <div class="vault-play-icon">▶</div>
           <div class="vault-card-caption">
@@ -1821,7 +1819,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 3: Full Film 4 -->
         <div class="vault-card" data-category="films" onclick="openTheater(3)">
-          <img src="videos/posters/poster-full-celebration-2.jpg" alt="Live Celebration &amp; Mandap Walkthrough" loading="lazy">
+          <img src="videos/posters/poster-full-celebration-2.jpg" alt="Live Celebration &amp; Mandap Walkthrough" loading="lazy" decoding="async">
           <span class="vault-card-badge">🎬 FULL FILM</span>
           <div class="vault-play-icon">▶</div>
           <div class="vault-card-caption">
@@ -1832,7 +1830,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 4: Photo Illuminated Red Carpet Walkway & Banquet Hall (NEW) -->
         <div class="vault-card" data-category="exterior" onclick="openTheater(4)">
-          <img src="images/venue/venue-carpet-aisle-facade.jpg" alt="Illuminated Red Carpet Walkway &amp; Modern Banquet Hall" loading="lazy">
+          <img src="images/venue/venue-carpet-aisle-facade.jpg" alt="Illuminated Red Carpet Walkway &amp; Modern Banquet Hall" loading="lazy" decoding="async">
           <span class="vault-card-badge">🏛️ VENUE &amp; AISLE</span>
           <div class="vault-card-caption">
             Illuminated Red Carpet Walkway
@@ -1842,7 +1840,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 5: Photo Open-Air Lawn Night Buffet & Catering Setup (NEW) -->
         <div class="vault-card" data-category="banquet" onclick="openTheater(5)">
-          <img src="images/venue/venue-lawn-buffet-setup.jpg" alt="Open-Air Lawn Night Buffet &amp; Catering Spread" loading="lazy">
+          <img src="images/venue/venue-lawn-buffet-setup.jpg" alt="Open-Air Lawn Night Buffet &amp; Catering Spread" loading="lazy" decoding="async">
           <span class="vault-card-badge">🍽️ LAWN BUFFET</span>
           <div class="vault-card-caption">
             Open-Air Lawn Night Buffet
@@ -1852,7 +1850,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 6: Photo Grand Decorated Entrance Gate & Hindi Signboard -->
         <div class="vault-card" data-category="exterior" onclick="openTheater(6)">
-          <img src="images/venue/venue-grand-entrance-clean.jpg" alt="Grand Entrance Gate &amp; Hindi Signboard" loading="lazy">
+          <img src="images/venue/venue-grand-entrance-clean.jpg" alt="Grand Entrance Gate &amp; Hindi Signboard" loading="lazy" decoding="async">
           <span class="vault-card-badge">🏛️ GRAND ENTRANCE</span>
           <div class="vault-card-caption">
             Grand Entrance &amp; Signboard
@@ -1862,7 +1860,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 7: Photo Spacious Grounds & Private Driveway -->
         <div class="vault-card" data-category="exterior" onclick="openTheater(7)">
-          <img src="images/venue/venue-driveway-night.jpg" alt="Illuminated Star Gate &amp; Private Driveway" loading="lazy">
+          <img src="images/venue/venue-driveway-night.jpg" alt="Illuminated Star Gate &amp; Private Driveway" loading="lazy" decoding="async">
           <span class="vault-card-badge">🏛️ DRIVEWAY &amp; GROUNDS</span>
           <div class="vault-card-caption">
             Spacious Grounds &amp; Driveway
@@ -1872,7 +1870,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 8: Photo Royal Wedding Mandap & Stage Setup -->
         <div class="vault-card" data-category="banquet" onclick="openTheater(8)">
-          <img src="images/venue/venue-event-space-1.jpg" alt="Royal Wedding Mandap &amp; Stage Setup" loading="lazy">
+          <img src="images/venue/venue-event-space-1.jpg" alt="Royal Wedding Mandap &amp; Stage Setup" loading="lazy" decoding="async">
           <span class="vault-card-badge">👑 MANDAP &amp; STAGE</span>
           <div class="vault-card-caption">
             Royal Mandap &amp; Varmala Stage
@@ -1882,7 +1880,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 9: Photo Banquet Celebration & Dining Setup -->
         <div class="vault-card" data-category="banquet" onclick="openTheater(9)">
-          <img src="images/venue/venue-buffet-celebration-setup.jpg" alt="Banquet Celebration &amp; Dining Setup" loading="lazy">
+          <img src="images/venue/venue-buffet-celebration-setup.jpg" alt="Banquet Celebration &amp; Dining Setup" loading="lazy" decoding="async">
           <span class="vault-card-badge">🍽️ BANQUET DINING</span>
           <div class="vault-card-caption">
             Banquet Dining &amp; Catering Setup
@@ -1892,7 +1890,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 10: Photo Festive Welcome Canopy & Draping -->
         <div class="vault-card" data-category="banquet" onclick="openTheater(10)">
-          <img src="images/venue/venue-exterior-2.jpg" alt="Festive Welcome Canopy &amp; Celebration Drapes" loading="lazy">
+          <img src="images/venue/venue-exterior-2.jpg" alt="Festive Welcome Canopy &amp; Celebration Drapes" loading="lazy" decoding="async">
           <span class="vault-card-badge">👑 WELCOME CANOPY</span>
           <div class="vault-card-caption">
             Festive Welcome Canopy
@@ -1902,7 +1900,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 11: Photo Traditional Wedding Stage Aarti Ritual -->
         <div class="vault-card" data-category="ceremonies" onclick="openTheater(11)">
-          <img src="videos/posters/poster-sacred-aarti.jpg" alt="Traditional Wedding Stage Aarti Ritual" loading="lazy">
+          <img src="videos/posters/poster-sacred-aarti.jpg" alt="Traditional Wedding Stage Aarti Ritual" loading="lazy" decoding="async">
           <span class="vault-card-badge">🕯️ VEDIC RITUAL</span>
           <div class="vault-card-caption">
             Vedic Aarti Ceremony
@@ -1912,7 +1910,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 12: Photo Aisle of Rings Floral Entry -->
         <div class="vault-card" data-category="ceremonies" onclick="openTheater(12)">
-          <img src="videos/posters/poster-clip-archway.jpg" alt="Aisle of Rings Floral Procession Entry" loading="lazy">
+          <img src="videos/posters/poster-clip-archway.jpg" alt="Aisle of Rings Floral Procession Entry" loading="lazy" decoding="async">
           <span class="vault-card-badge">🕯️ GRAND ENTRY</span>
           <div class="vault-card-caption">
             Aisle of Lighted Rings
@@ -1922,7 +1920,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
         <!-- Item 13: Photo Authentic Circular Durga Maa Medallion -->
         <div class="vault-card" data-category="ceremonies" onclick="openTheater(13)">
-          <img src="images/brand/durga-circle-logo.jpg" alt="Authentic Circular Durga Maa Medallion" loading="lazy">
+          <img src="images/brand/durga-circle-logo.jpg" alt="Authentic Circular Durga Maa Medallion" loading="lazy" decoding="async">
           <span class="vault-card-badge">🕉️ SACRED EMBLEM</span>
           <div class="vault-card-caption">
             Authentic Maa Durga Medallion
@@ -2035,7 +2033,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
     <div class="footer-grid">
       <div>
         <a href="#top" class="brand">
-          <img src="images/brand/durga-circle-logo.png" alt="Maa Sharda Utsav Lawn Logo" class="brand-logo-img" style="border-color:var(--gold);box-shadow:0 0 16px rgba(215,20,26,.5);">
+          <img src="images/brand/durga-circle-logo.png" alt="Maa Sharda Utsav Lawn Logo" class="brand-logo-img" style="border-color:var(--gold);box-shadow:0 0 16px rgba(215,20,26,.5);" decoding="async">
           <span class="brand-text"><strong style="color:var(--plaster)">माँ शारदा</strong><span style="color:var(--gold)">उत्सव लॉन</span></span>
         </a>
         <p class="foot-desc">A premium celebration destination rooted in tradition, built on trust, and designed to turn your most important moments into timeless memories.</p>
@@ -2077,84 +2075,22 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 </a>
 
 <script>
-  // ── 1. Lenis Smooth Scroll Engine (High-end buttery scrolling) ──
-  let lenis;
-  if (typeof Lenis !== 'undefined') {
-    lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 0.9,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }
-
-  // ── 2. GSAP & ScrollTrigger Animations ──
-  if (typeof gsap !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Hero visual entrance
-    gsap.from(".hero h1", {
-      opacity: 0,
-      y: 40,
-      duration: 1.2,
-      ease: "power3.out",
-      delay: 0.2
-    });
-
-    gsap.from(".hero-copy, .hero-actions, .hero-proof", {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      stagger: 0.15,
-      ease: "power3.out",
-      delay: 0.4
-    });
-
-    gsap.from(".arch-frame", {
-      opacity: 0,
-      scale: 0.94,
-      y: 50,
-      duration: 1.4,
-      ease: "power3.out",
-      delay: 0.3
-    });
-
-    gsap.from(".floating-badge", {
-      opacity: 0,
-      y: 20,
-      stagger: 0.2,
-      duration: 0.9,
-      ease: "back.out(1.7)",
-      delay: 0.8
-    });
-
-    // Parallax effect on arch frame while scrolling
-    gsap.to(".arch-frame img", {
-      yPercent: 12,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
-    });
-  }
+  // Native browser smooth scrolling avoids wheel hijacking and external runtime dependencies.
+  // Scroll reveals and counters below use lightweight browser observers.
 
   // ── 3. Cursor Glow follower ──
   const cursorGlow = document.getElementById('cursorGlow');
-  if (cursorGlow && matchMedia('(pointer:fine)').matches) {
+  if (cursorGlow && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let glowX = 0, glowY = 0, glowQueued = false;
     window.addEventListener('pointermove', (e) => {
-      cursorGlow.style.left = e.clientX + 'px';
-      cursorGlow.style.top = e.clientY + 'px';
+      glowX = e.clientX;
+      glowY = e.clientY;
+      if (glowQueued) return;
+      glowQueued = true;
+      requestAnimationFrame(() => {
+        cursorGlow.style.transform = `translate3d(${glowX}px,${glowY}px,0) translate(-50%,-50%)`;
+        glowQueued = false;
+      });
     }, { passive: true });
   } else if (cursorGlow) {
     cursorGlow.style.display = 'none';
@@ -2164,11 +2100,17 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
   const tiltCards = document.querySelectorAll('.service, .gallery-card, .cta-box');
   if (matchMedia('(pointer:fine)').matches) {
     tiltCards.forEach(card => {
+      let tiltFrame = 0, tiltPoint = null;
       card.addEventListener('pointermove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `perspective(800px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateY(-4px)`;
+        tiltPoint = { x: e.clientX, y: e.clientY };
+        if (tiltFrame) return;
+        tiltFrame = requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          const x = (tiltPoint.x - rect.left) / rect.width - 0.5;
+          const y = (tiltPoint.y - rect.top) / rect.height - 0.5;
+          card.style.transform = `perspective(800px) rotateX(${(-y * 4).toFixed(2)}deg) rotateY(${(x * 4).toFixed(2)}deg) translateY(-3px)`;
+          tiltFrame = 0;
+        });
       });
       card.addEventListener('pointerleave', () => {
         card.style.transform = '';
@@ -2178,22 +2120,40 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
   // ── 6. Fallback Scroll reveal ──
   const revealEls = [...document.querySelectorAll('[data-reveal]')];
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    revealEls.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 1.05) el.classList.add('visible');
     });
-  }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach((el, i) => {
-    el.style.transitionDelay = (i % 4) * .05 + 's';
-    obs.observe(el);
-  });
+    document.documentElement.classList.add('motion-ready');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: .08, rootMargin: '0px 0px 120px 0px' });
+    revealEls.filter(el => !el.classList.contains('visible')).forEach((el, i) => {
+      el.style.transitionDelay = (i % 3) * .055 + 's';
+      obs.observe(el);
+    });
+  } else {
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
 
   // ── 7. Counter animation ──
   const counters = document.querySelectorAll('.counter');
   const countObs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const el = entry.target, target = Number(el.dataset.target), start = performance.now(), duration = 1400;
+      const el = entry.target, target = Number(el.dataset.target);
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.textContent = target.toLocaleString('en-IN') + '+';
+        countObs.unobserve(el);
+        return;
+      }
+      const start = performance.now(), duration = 1100;
       const tick = (t) => {
         const p = Math.min(1, (t - start) / duration), eased = 1 - Math.pow(1 - p, 3);
         el.textContent = Math.round(target * eased).toLocaleString('en-IN') + '+';
@@ -2212,8 +2172,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 
   // ── 9. Sticky nav shadow ──
   const nav = document.querySelector('header');
+  let navFrame = 0;
   window.addEventListener('scroll', () => {
-    nav.style.boxShadow = window.scrollY > 20 ? '0 10px 30px rgba(44,24,16,.06)' : 'none';
+    if (navFrame) return;
+    navFrame = requestAnimationFrame(() => {
+      nav?.classList.toggle('scrolled', window.scrollY > 20);
+      navFrame = 0;
+    });
   }, { passive: true });
 
   // ── 10. Mobile menu ──
@@ -2579,54 +2544,78 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
     }
   };
 
-  // Viewport IntersectionObserver to optimize ambient clip playback
+  // Fetch ambient clips only near the viewport and pause them when they leave.
   if ('IntersectionObserver' in window) {
     const clipObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const vid = entry.target;
         if (entry.isIntersecting) {
+          if (!vid.getAttribute('src') && vid.dataset.src) {
+            vid.src = vid.dataset.src;
+            vid.load();
+          }
           vid.play().catch(() => {});
         } else {
           vid.pause();
         }
       });
-    }, { threshold: 0.25 });
-
-    document.querySelectorAll('.cinema-video-wrap video').forEach(v => clipObserver.observe(v));
+    }, { threshold: 0.15, rootMargin: '180px 0px' });
+    document.querySelectorAll('.cinema-video-wrap video[data-src]').forEach(v => clipObserver.observe(v));
   }
 
-  // ── Royal Cinematic Wedding Invitation Audio & Playback Controls ──
-  window.toggleInviteSound = function() {
-    const vid = document.getElementById("invitationVideo");
-    const icon = document.getElementById("inviteSoundIcon");
-    const label = document.getElementById("inviteSoundLabel");
-    const barIcon = document.getElementById("barSoundIcon");
-    const barBtn = document.getElementById("btnInviteSoundBar");
-    if (!vid) return;
-
-    if (vid.muted) {
-      vid.muted = false;
-      vid.play().catch(() => {});
-      if (icon) icon.textContent = "🔊";
-      if (label) label.textContent = "Mute";
-      if (barIcon) barIcon.textContent = "🔇";
-      if (barBtn) barBtn.innerHTML = '<span id="barSoundIcon">🔇</span> <span id="inviteMusicText">Mute music</span>';
-    } else {
-      vid.muted = true;
-      if (icon) icon.textContent = "🔇";
-      if (label) label.textContent = "Sound On";
-      if (barIcon) barIcon.textContent = "🔊";
-      if (barBtn) barBtn.innerHTML = '<span id="barSoundIcon">🔊</span> <span id="inviteMusicText">Enable music</span>';
+  // Invitation film: poster-first. The large MP4 is fetched only after a visitor chooses to play.
+  function ensureInvitationVideoLoaded(vid) {
+    if (!vid) return null;
+    if (!vid.getAttribute('src') && vid.dataset.src) {
+      vid.src = vid.dataset.src;
+      vid.load();
     }
+    return vid;
+  }
+
+  function syncInvitationPlayButton() {
+    const vid = document.getElementById("invitationVideo");
+    const label = document.getElementById("invitePlayText");
+    const icon = document.getElementById("invitePlayIcon");
+    const button = document.getElementById("btnInvitePlay");
+    if (!vid) return;
+    const playing = !vid.paused && !vid.ended;
+    if (label) label.textContent = playing ? "Pause invitation" : "Play invitation";
+    if (icon) icon.textContent = playing ? "Ⅱ" : "▶";
+    if (button) button.setAttribute("aria-label", playing ? "Pause invitation film" : "Play invitation film");
+  }
+
+  const invitationVideo = document.getElementById("invitationVideo");
+  invitationVideo?.addEventListener("play", syncInvitationPlayButton);
+  invitationVideo?.addEventListener("pause", syncInvitationPlayButton);
+  invitationVideo?.addEventListener("ended", syncInvitationPlayButton);
+
+  window.toggleInvitePlayback = function() {
+    const vid = ensureInvitationVideoLoaded(document.getElementById("invitationVideo"));
+    if (!vid) return;
+    if (vid.paused || vid.ended) vid.play().catch(() => {});
+    else vid.pause();
+    syncInvitationPlayButton();
+  };
+
+  window.toggleInviteSound = function() {
+    const vid = ensureInvitationVideoLoaded(document.getElementById("invitationVideo"));
+    const icon = document.getElementById("barSoundIcon");
+    const label = document.getElementById("inviteMusicText");
+    if (!vid) return;
+    vid.muted = !vid.muted;
+    if (!vid.muted) vid.play().catch(() => {});
+    if (icon) icon.textContent = vid.muted ? "🔇" : "🔊";
+    if (label) label.textContent = vid.muted ? "Enable music" : "Mute music";
   };
 
   window.replayInviteVideo = function() {
-    const vid = document.getElementById("invitationVideo");
+    const vid = ensureInvitationVideoLoaded(document.getElementById("invitationVideo"));
     if (!vid) return;
-    vid.currentTime = 0;
+    try { vid.currentTime = 0; } catch (_) {}
     vid.play().catch(() => {});
+    syncInvitationPlayButton();
   };
-
 </script>
 </body>
 </html>
